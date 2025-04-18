@@ -6,7 +6,8 @@
 \usepackage{indentfirst}
 \usepackage{graphicx}
 \usepackage{multicol,lipsum}
-\usepackage{fancyhdr}
+\usepackage{fancyhdr}\usepackage[a4paper, left=3cm, right=2cm, top=3cm, bottom=2cm]{geometry}
+
 
 \begin{document}
 %\maketitle
@@ -19,14 +20,12 @@
 	%\includegraphics[width=2cm]{c:/ufba.jpg}
 	%\end{figure}
 
-		\Huge{Instituto de Bioci\^{e}ncias, Letras e Ci\^{e}ncias Exatas, Unesp}\\
-		\large{Departamento de Ciências de Computação e Estatística}\\ 
-		
-		\vspace{15pt}
-        \vspace{95pt}
-        \textbf{\LARGE{Aplicativo para engajamento comunitário - PuSystem}}\\
+        \includegraphics[width=10cm]{Logo Transparente Preto.png} \\ 
+		\vspace{115pt}
+        \textbf{\Huge{Aplicativo para engajamento comunitário}}\\
 		%\title{{\large{Título}}}
-		\vspace{3,5cm}
+        
+		\vspace{115pt}
         Carlos Eduardo Nogueira Silva \\
         Felipe Gomes da Silva \\
         Felipe Matheus Possari \\
@@ -49,18 +48,20 @@
 \thispagestyle{empty}
 
 \newpage
-\pagenumbering{arabic}
 \pagestyle{fancy}
-\fancyhead[L]{\nouppercase{\leftmark}}
-\rhead{\includegraphics[width=2cm]{Logo Transparente Preto.png}}
-\setlength\headheight{26pt}
 
+\fancyhead[L]{\nouppercase{\leftmark}}  % Left header: Chapter/section name
+\rhead{\includegraphics[width=2cm]{Logo Transparente Preto.png}}  % Right header: Logo
+\fancyfoot[R]{\thepage}  % Right footer: Page number
+\fancyfoot[C]{}  % Clear center footer
+\fancyfoot[L]{}  % Clear left footer
+\setlength\headheight{26pt}  % Adjust head height if needed
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Introdução}
 O município de São José do Rio Preto está lidando com uma das mais graves epidemias de dengue já registradas no estado, com mais de 35.000 casos confirmados da enfermidade apenas em 2025, posicionando-se como a cidade com maior probabilidade de casos em todo o Brasil. Conquanto haja esforços das autoridades públicas para conscientizar a população, essa epidemia ainda parece longe de cessar. Deste modo, uma urbanização adequada e a eliminação de focos do mosquito da dengue, com o esforço público, fazem-se necessárias.
 
-Destaca-se a importância da população na luta contra o mosquito, sendo o único grupo capaz de identificar facilmente os focos de dengue em sua residência e arredores. Portanto, o objetivo PuSystem da é capacitar os habitantes de São José do Rio Preto para que eles mesmos possam aprimorar a condição da cidade e se empenhem para isso.
+Destaca-se a importância da população na luta contra o mosquito, sendo o único grupo capaz de identificar facilmente os focos de dengue em sua residência e arredores. Portanto, o objetivo da PuSystem é capacitar os habitantes de São José do Rio Preto para que eles mesmos possam aprimorar a condição da cidade e se empenhem para isso.
 
 Para estimular a participação, o sistema se baseará no modelo de \textit{gamificação} Octalysis, criado pelo escritor e empresário Yu-Kai Chou.  O modelo Octalysis é empregado na criação de sistemas de \textit{gamificação} destinados a potencializar a motivação humana.  Ele alcança esse objetivo ao reconhecer oito "impulsos principais" que precisam ser estimulados:
 
