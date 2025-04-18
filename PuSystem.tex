@@ -81,8 +81,6 @@ Assim, nosso objetivo é desenvolver um sistema que incentive todos esses elemen
 \newpage
 \section{Especificação de Requisitos}
 
-já tá feito, melhorar a análise com os temas do garotinho lá
-
 Para que atinja a sua descrição e seus objetivos, o sistema desenvolvido deverá conter:
 
 \subsection{Registro e Gestão de Usuários}
@@ -156,7 +154,54 @@ Para que atinja a sua descrição e seus objetivos, o sistema desenvolvido dever
 % descreve a divisão do projeto em atividades e identifica os marcos e os produtos associados a cada atividade
 
 \subsection{Cronograma de Projeto}
-% uso de diagramas; descreve as dependências entre atividades, o tempo estimado para atingir cada marco e a alocação de pessoas
+
+Considerando os requisitos apresentados, a estimativa de tempo para o desenvolvimento do sistema, por uma equipe formada por cinco profissionais da área de tecnologia (desenvolvedores backend e frontend, designer UX/UI, analista de qualidade e gestor de produto), pode ser organizada com base na metodologia ágil, utilizando sprints de duas semanas.
+
+A seguir, a Tabela \ref{tab:cronograma}  apresenta a estimativa de tempo por módulo funcional detalhada para cada etapa:
+
+\begin{table}[h]
+\centering
+\caption{Duração Estimada por Requisito Principal}
+\label{tab:cronograma}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Requisito} & \textbf{Sprints} & \textbf{Duração} \\
+\hline
+Registro e Gestão de Usuários & 2 a 3 & 4 a 6 \\
+Módulo Educacional & 3  & 6 \\
+Sistema de Gamificação & 4 a 5  & 8 a 10 \\
+Sistema de Denúncias e Monitoramento de Áreas de Risco & 3  & 6  \\
+Sistema de Monitoramento de Sintomas & 1  & 2  \\
+Gerenciamento e Suporte a Autoridades & 2 a 3  & 4 a 6  \\
+Infraestrutura, Testes e Lançamento & 2  & 4 \\
+\hline
+\textbf{Total} & \textbf{17 a 20} & \textbf{34 a 40} \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent \textbf{Observações:}
+\begin{itemize}
+    \item \textbf{Prazo Total:} O projeto pode levar de \textbf{8,5 a 10 meses} (considerando 1 sprint = 2 semanas).
+    \item \textbf{Maior Complexidade:} O \textbf{Sistema de Gamificação} é o mais demandante (até 10 semanas), sugerindo necessidade de recursos especializados (ex.: designers de UX para mecânicas de jogo).
+    \item \textbf{Itens Críticos:} 
+    \begin{itemize}
+        \item \textbf{Infraestrutura e Lançamento} (4 semanas) deve incluir testes de carga e segurança.
+        \item \textbf{Monitoramento de Sintomas} (2 semanas) pode ser estendido se integrar APIs externas (ex.: dados de saúde).
+    \end{itemize}
+    \item \textbf{Dependências:} 
+    \begin{itemize}
+        \item O \textbf{Módulo Educacional} pode depender de conteúdo aprovado por especialistas.
+        \item O \textbf{Sistema de Denúncias} requer integração com mapas (ex.: Google Maps API).
+    \end{itemize}
+\end{itemize}
+
+Podemos ter uma visualização mais detalhada do projeto, no diagrama de Gantt a seguir:
+
+\begin{center}
+\includegraphics[width=\textwidth,keepaspectratio]{2025-04-18_16-03-51_screenshot.png}
+\end{center}
+
 
 \subsection{Mecanismos de Monitoramento e Elaboração de Relatórios}
 % descreve os relatórios de gerência que devem ser produzidos, quando e quais mecanismos de monitoramento são utilizados
