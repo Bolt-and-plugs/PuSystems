@@ -1,0 +1,169 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[portuges]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{multicol,lipsum}
+\usepackage{fancyhdr}
+
+\begin{document}
+%\maketitle
+
+\begin{titlepage}
+	\begin{center}
+	
+	%\begin{figure}[!ht]
+	%\centering
+	%\includegraphics[width=2cm]{c:/ufba.jpg}
+	%\end{figure}
+
+		\Huge{Instituto de Bioci\^{e}ncias, Letras e Ci\^{e}ncias Exatas, Unesp}\\
+		\large{Departamento de Ciências de Computação e Estatística}\\ 
+		
+		\vspace{15pt}
+        \vspace{95pt}
+        \textbf{\LARGE{Aplicativo para engajamento comunitário - PuSystem}}\\
+		%\title{{\large{Título}}}
+		\vspace{3,5cm}
+        Carlos Eduardo Nogueira Silva \\
+        Felipe Gomes da Silva \\
+        Felipe Matheus Possari \\
+        Matheus Thomé da Silva\\ 
+        Santiago Pinheiro Martins \\
+	\end{center}
+	
+	
+	\vspace{1cm}
+	\begin{center}
+		\vspace{\fill}
+		 Abril \\
+		 2025
+			\end{center}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Introdução}
+O municipio de São José do Rio Preto está lidando com uma das mais graves epidemias de dengue já registradas no estado, com mais de 35.000 casos confirmados da enfermidade apenas em 2025, posicionando-se como a cidade com maior probabilidade de casos em todo o Brasil. Conquanto haja esforços das autoridades públicas para conscientizar a população, essa epidemia ainda parece longe de cessar. Deste modo, uma urbanização adequada e eliminar focos do mosquito da dengue, com o esforco publico se faz necessario.
+
+Destaca-se a importância da população na luta contra o mosquito, sendo o único grupo capaz de identificar facilmente os focos de dengue em sua residência e arredores. Então, nosso objetivo é capacitar os habitantes de São José do Rio Preto para que eles mesmos possam aprimorar a condição da cidade e se empenhem para isso.
+
+Para estimular a participação, o sistema se baseará no modelo de gamificação Octalysis, criado pelo escritor e empresário Yu-Kai Chou.  O modelo Octalysis é empregado na criação de sistemas de gamificação destinados a potencializar a motivação humana.  Ele alcança esse objetivo ao reconhecer oito "impulsos principais" que precisam ser estimulados:
+
+\begin{enumerate}
+    \item \textbf{Epic Meaning \& Calling} se refere à motivação em participar de algo que consideramos maior que nós mesmos, tomando partido em uma causa nobre ou propósito grandioso com impacto importante a nossa vizinhança, cidade, país ou mundo. 
+    \item \textbf{Development \& Accomplishment} é o desejo de melhorar, crescer e conquistar. Refere-se à motivação que obtemos ao avançar em direção a algum objetivo e superarmos obstáculos e alcançarmos marcos, seja em habilidades, conquistas ou metas pessoais.
+    \item \textbf{Empowerment of Creativity \& Feedback} é a motivação que surge da chance de criar, experimentar e observar as consequências de suas ações. As pessoas se sentem estimuladas quando possuem liberdade para explorar e fazer suas próprias escolhas. 
+    \item \textbf{Ownership \& Possession} é o impulso que temos ao percebermos que possuímos responsabilidade sobre algo, seja um projeto, ideia ou objetivo. Nos sentimos mais estimulados ao investir tempo e esforço para preservar e aprimorar o que consideramos nosso
+    \item \textbf{Social Influence \& Relatedness} é a motivação social e ocorre através do contato com outras pessoas. Indivíduos se sentem estimulados a aderir a grupos ou  obter o apoio de seus colegas. 
+    \item \textbf{Scarcity \& Impatience} está intimamente ligado à percepção de valor que aumenta quando a disponibilidade de um item ou recurso é restrita. Além disso, a frustração causada pela espera ou pela falta de acesso a esses recursos escassos pode gerar um impulso emocional mais intenso para obtê-los.
+    \item \textbf{Unpredictability \& Curiosity} explora a imprevisibilidade presente em uma experiência, como surpresas e enigmas a serem desvendados, como uma forte fonte de motivação. Quando há dúvidas sobre o futuro, as pessoas costumam se envolver mais para satisfazer sua curiosidade e prever o que está por vir.
+    \item \textbf{Loss \& Avoidance} é a motivação que origina da vontade de evitar danos ou prejuízos, fazendo uso do instinto de protegermos aquilo que já possúimos, como um recurso, posição ou vantagem.
+\end{enumerate}
+
+Assim, nosso objetivo é desenvolver um sistema que incentive todos esses elementos motivacionais na população de São José do Rio Preto, permitindo que eles se conscientizem sobre sua própria saúde, entendam o ciclo de vida do Aedes aegypti e do vírus da dengue, além de agirem, eliminando focos de proliferação e acionando as autoridades em situações de emergência. Cada um dos 8 focos estará associado a requisitos funcionais abaixo.
+
+\newpage
+\section{Especificação de Requisitos}
+
+ja ta feito, melhorar a analise com os temas do garotinho la
+
+Para que atinja a sua descrição e seus objetivos, o sistema desenvolvido deverá conter:
+
+\subsection{Registro e Gestão de Usuários}
+\begin{enumerate}
+    \item Registro de um perfil personalizado, com os seguintes campos: nome social, documento oficial, foto de perfil, gênero, idade, endereço (bairro) e foco no combate à dengue.
+    \item Exigência de login com senha e documento oficial e senha para acesso aos recursos do aplicativo.
+    \item Possibilidade de atualização dos dados cadastrais.
+\end{enumerate}
+
+\subsection{Módulo Educacional}
+\begin{enumerate}
+    \item Conteúdo organizado em diferentes cursos/módulos para melhor absorção e aprendizado.
+    \item Player de vídeos para vídeo-aulas, com suporte a legendas.
+    \item Transmissões ao vivo para anúncios oficiais em palestras de temas relevantes
+    \item Tutoriais multimídias (textos, vídeos e quizzes) que ensinam a identificar e eliminar focos de mosquito da dengue.
+\end{enumerate}
+
+\subsection{Sistema de Gamificação}
+\begin{enumerate}
+    \item Um score pessoal para cada usuário registrado.
+    \item Ranking geral e por bairro mostrando a classificação de todos os usuários, incentivando uma competição de maneira saudável.
+    \item Destaque para os usuários de com maior ganho de pontuação na página principal.
+    \item Conquistas pessoais associadas a realização de ações incentivadas um número específico de vezes.
+    \item Histórico de conquista onde cada usuário poderá visualizar suas próprias conquistas, estatísticas e a de outros usuários.
+    \item Missões individuais aleatórias como assistir um número determinado de aulas, realizar ou eliminar um número específicos de focos, etc.
+    \item Missões cooperativas como reduzir o número de casos reportados ou focos denunciados, elevando o score da região.
+    \item Recompensas como ganho de pontos e conquistas ao concluir missões e realizar ações incentivadas.
+    \item Penalidades como perda de pontos por inatividade.
+    \item Recompensas surpresa ao preencher o registro de sintomas ou consumir conteúdo educacional regularmente, como pontos extras ou conquistas especiais.
+    \item Geração de missões de tempo limitado, com tarefas especiais surgindo por um período curto.
+\end{enumerate}
+
+\subsection{Sistema de Denúncias e Monitoramento de Áreas de Risco}
+\begin{enumerate}
+    \item Formulário de denúncia de focos de mosquito, incluindo texto, foto e localização.
+    \item Envio automático de denúncias para a equipe responsável para que validem e atualizem o status do foco. 
+    \item Exibição de áreas de risco no mapa, utilizando dados climáticos, registros de casos e localização de denúncias para indicar regiões com maior incidência.
+    \item Envio de notificações ao usuário sobre aumento de casos em sua região ou surgimento de focos próximos ao seu endereço.
+    \item Envio de notificações sobre a pontuação do bairro, informando se está melhorando ou piorando com base no engajamento comunitário.
+\end{enumerate}
+
+\subsection{Sistema de Monitoramento de Sintomas}
+\begin{enumerate}
+    \item Um questionário simples com perguntas sobre febre, dor de cabeça, dores musculares e outros sintomas característicos da dengue que pode ser preenchido periodicamente
+    \item Alertas de suspeita, caso os sintomas sejam compatíveis com a doença, indicando a necessidade de buscar atendimento médico e informando as autoridades de saúde.
+\end{enumerate}
+\subsection{Gerenciamento e Suporte a Autoridades}
+\begin{enumerate}
+    \item Painel de estatísticas permitindo que autoridades monitorem as informações geoespaciais da cidade e bairros, as denúncias de focos e o número de casos  reportados
+    \item Painel para a avaliação e atualização dos status de denúncias realizadas.
+    \item Integração com sistema oficiais para que dados sobre surtos, casos e relatórios de saúde pública possam ser importados.
+\end{enumerate}
+
+\newpage
+\section{Plano de Projeto}
+
+\subsection{Introdução}
+% descreve os objetivos gerais do trabalho e restrições que afetam a gerência do projeto
+
+\subsection{Organização do Projeto}
+% descreve o modo como a equipe de desenvolvimento é organizada, as pessoas envolvidas e seus papéis na equipe
+
+\subsection{Análise de Riscos}
+% descreve possíveis riscos de projeto, a probabilidade de surgir tais riscos e as estratégias propostas para a sua redução
+
+\subsection{Requisitos Necessários de Hardware e Software}
+% descreve o hw e o sw de apoio exigidos para realizar o desenvolvimento. 
+% Se o hw precisar ser comprado, incluir prazos de entrega e estimativas de preço
+
+\subsection{Divisão de Trabalho}
+% descreve a divisão do projeto em atividades e identifica os marcos e os produtos associados a cada atividade
+
+\subsection{Cronograma de Projeto}
+% uso de diagramas; descreve as dependências entre atividades, o tempo estimado para atingir cada marco e a alocação de pessoas
+
+\subsection{Mecanismos de Monitoramento e Elaboração de Relatórios}
+% descreve os relatórios de gerência que devem ser produzidos, quando e quais mecanismos de monitoramento são utilizados
+
+\newpage
+\section{Protótipo de Interface}
+
+\newpage
+\section{Conclusão}
+
+\newpage
+\section{Bibliografia}
+
+\end{document}
