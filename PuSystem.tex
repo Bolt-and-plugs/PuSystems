@@ -50,11 +50,12 @@
 \newpage
 \pagestyle{fancy}
 
-\fancyhead[L]{\nouppercase{\leftmark}}  % Left header: Chapter/section name
+\fancyhead[L]{\thepage}
+\fancyhead[C]{\nouppercase{\leftmark}}% Left header: Chapter/section name
 \rhead{\includegraphics[width=2cm]{Logo Transparente Preto.png}}  % Right header: Logo
-\fancyfoot[R]{\thepage}  % Right footer: Page number
-\fancyfoot[C]{}  % Clear center footer
-\fancyfoot[L]{© 2025 - PuSystems}  % Clear left footer
+\fancyfoot[R]{}  % Right footer: Page number
+\fancyfoot[C]{© 2025 - PuSystems}  % Clear center footer
+\fancyfoot[L]{}  % Clear left footer
 \setlength\headheight{26pt}  % Adjust head height if needed
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -153,9 +154,10 @@ Para que atinja a sua descrição e seus objetivos, o sistema desenvolvido dever
 \subsection{Divisão de Trabalho}
 % descreve a divisão do projeto em atividades e identifica os marcos e os produtos associados a cada atividade
 
+
 \subsection{Cronograma de Projeto}
 
-Considerando os requisitos apresentados, a estimativa de tempo para o desenvolvimento do sistema, por uma equipe formada por cinco profissionais da área de tecnologia (desenvolvedores backend e frontend, designer UX/UI, analista de qualidade e gestor de produto), pode ser organizada com base na metodologia ágil, utilizando sprints de duas semanas.
+Considerando os requisitos apresentados, a estimativa de tempo para o desenvolvimento do sistema, por uma equipe formada por cinco profissionais da área de tecnologia, pode ser organizada com base na metodologia ágil, utilizando sprints de duas semanas.
 
 A seguir, a Tabela \ref{tab:cronograma}  apresenta a estimativa de tempo por módulo funcional detalhada para cada etapa:
 
@@ -217,6 +219,16 @@ Podemos ter uma visualização mais detalhada do projeto, no diagrama de Gantt a
 \section{Conclusão}
 
 \newpage
-\section{Bibliografia}
+\renewcommand{\refname}{Bibliografia}
+\begin{thebibliography}{09}
+\bibitem{} %{title} %author name here
+\textbf{}. %text here
 
+\bibitem{} %{title} %author name here
+\textbf{}. %text here
+
+\bibitem{} %{title} %author name here
+\textbf{}. %text here
+
+\end{thebibliography}
 \end{document}
