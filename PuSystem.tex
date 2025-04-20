@@ -8,6 +8,9 @@
 \usepackage{multicol,lipsum}
 \usepackage{enumitem}
 \usepackage{url}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tocloft}
 \usepackage{fancyhdr}\usepackage[a4paper, left=3cm, right=2cm, top=3cm, bottom=2cm]{geometry}
 
 
@@ -17,12 +20,12 @@
 \begin{titlepage}
 	\begin{center}
 	
-	%\begin{figure}[!ht]
-	%\centering
-	%\includegraphics[width=2cm]{c:/ufba.jpg}
-	%\end{figure}
+	\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=10cm]{Logo Transparente Preto.png} \\ 
+    \end{figure}
 
-        \includegraphics[width=10cm]{Logo Transparente Preto.png} \\ 
+        
 		\vspace{115pt}
         \textbf{\Huge{Aplicativo para engajamento comunitário}}\\
 		%\title{{\large{Título}}}
@@ -45,20 +48,31 @@
 \end{titlepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+
 \newpage
-\tableofcontents
 \thispagestyle{empty}
+\tableofcontents
+
+\newpage 
+\thispagestyle{empty}
+\listoffigures
+
+\newpage
+\thispagestyle{empty}
+\listoftables
 
 \newpage
 \pagestyle{fancy}
 
 \fancyhead[L]{\thepage}
-\fancyhead[C]{\nouppercase{\leftmark}}% Left header: Chapter/section name
-\rhead{\includegraphics[width=2cm]{Logo Transparente Preto.png}}  % Right header: Logo
-\fancyfoot[R]{}  % Right footer: Page number
-\fancyfoot[C]{© 2025 - PuSystems}  % Clear center footer
-\fancyfoot[L]{}  % Clear left footer
-\setlength\headheight{26pt}  % Adjust head height if needed
+\fancyhead[C]{\nouppercase{\leftmark}}
+\rhead{\includegraphics[width=2cm]{Logo Transparente Preto.png}}
+\fancyfoot[R]{}
+\fancyfoot[C]{© 2025 - PuSystems}
+\fancyfoot[L]{}
+\setlength\headheight{26pt}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Introdução}
@@ -155,7 +169,7 @@ Para que atinja a sua descrição e seus objetivos, o sistema desenvolvido dever
 
 Para obter-se o melhor resultado na produção deste software, precisa-se analisar quais são os sistemas de apoio, tanto físicos quanto lógicos que são necessários. No geral, o desenvolvimento, pela parte da PuSystems, não precisara de uma grande massa de recursos, estes estarão, ou armazenados em outro servidores, ou na própria borda do sistema, no usuário final. 
 
-Estes, a seguir, sao comportamentos esperadas do sistema, baseados nos requisitos funcionais: 
+Estes, a seguir, são comportamentos esperadas do sistema, baseados nos requisitos funcionais: 
 
 \subsubsection{Desempenho e Qualidade}
 \begin{itemize}[label=--]
@@ -201,7 +215,7 @@ O calculo deste hardware eh baseado na ultima pesquisa do IBGE \cite{ibge-2022}
 - Firewall: Regras de segurança baseadas em IPS/IDS.
 \end{itemize}
 
-\subsubsection{Integracoes externas}
+\subsubsection{Integrações externas}
 \begin{itemize}[]
 \item APIs de Terceiros:
 - Clima: OpenWeatherMap (previsão em tempo real).
@@ -214,19 +228,38 @@ O calculo deste hardware eh baseado na ultima pesquisa do IBGE \cite{ibge-2022}
 \subsubsection*{Desempenho e Segurança}
 \begin{itemize}[]
 \item Latência: Carregamento de páginas em até 1.5s (em redes 4G).
-\item Disponibilidade: SLA de 99.9\% (com plano de disaster recovery).
+\item Disponibilidade: SLA (Service Level Agreement) de 99.9\% 
 \item Segurança: Autenticação em duas etapas (2FA) e varreduras de vulnerabilidades semanais.
 \item Usabilidade: Taxa de retenção de usuários >70\% após 7 dias (métrica para validar UI/UX).
 \end{itemize}
 
-\subsubsection{Orcamento e aquisicoes}
-\begin{itemize}[]
-\item Servidores: R\$ 120.000 (hardware) + R\$ 25.000/ano (manutenção).
-\item Licenças: R\$ 15.000/ano (PostgreSQL, ferramentas de monitoramento).
-\item Cloudflare/CDN: R\$ 8.000/ano (para otimização de tráfego global).
-\end{itemize}
+\subsubsection{Orçamento e aquisições}
+\begin{table}[h]
+\centering
+\caption{Detalhamento de Custos para Implementação do Projeto}
+\label{tab:custos}
+\begin{tabular}{@{} >{\raggedright}p{2.5cm} r r p{3.5cm} @{}}
+\toprule
+\textbf{Item} & \textbf{Investimento (R\$)} & \textbf{Custo Anual (R\$)} & \textbf{Justificativa} \\
+\midrule
+Servidores (Hardware) & 100.000,00 & -- & Equipamentos de alta performance: 32 núcleos, 512GB RAM, 20TB SSD NVMe. \\
+\addlinespace
+Manutenção de Servidores & -- & 25.000,00 & Atualizações de segurança, reposição de peças e suporte técnico 24/7. \\
+\addlinespace
+Licenças de Software & -- & 15.000,00 & Licenças enterprise (PostgreSQL) e ferramentas de monitoramento (Grafana, Prometheus). \\
+\addlinespace
+Cloudflare/CDN & -- & 8.000,00 & Otimização de tráfego global e proteção contra ataques DDoS. \\
+\bottomrule
+\textbf{Total} & \textbf{100.000,00} & \textbf{48.000,00} & \\
+\bottomrule
+\end{tabular}
+\smallskip
+\centering\footnotesize Elaborado pelos autores (2025).
+\end{table}
 
 Acredita-se, portanto, que os requisitos supracitados serão necessários para atender as demandas do produto, assim como as expectativas do contratante.
+
+\newpage
 
 \subsection{Divisão de Trabalho}
 % descreve a divisão do projeto em atividades e identifica os marcos e os produtos associados a cada atividade
@@ -257,6 +290,8 @@ Infraestrutura, Testes e Lançamento & 2  & 4 \\
 \textbf{Total} & \textbf{17 a 20} & \textbf{34 a 40} \\
 \hline
 \end{tabular}
+\smallskip
+Elaborado pelos autores (2025).
 \end{table}
 
 \noindent \textbf{Observações:}
@@ -277,9 +312,13 @@ Infraestrutura, Testes e Lançamento & 2  & 4 \\
 
 Podemos ter uma visualização mais detalhada do projeto, no diagrama de Gantt a seguir:
 
-\begin{center}
-\includegraphics[width=\textwidth,keepaspectratio]{2025-04-18_16-03-51_screenshot.png}
-\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth,keepaspectratio]{2025-04-18_16-03-51_screenshot.png}
+    \caption{Diagrama de Gantt}
+    \label{fig:enter-label}
+\end{figure}
+
 
 
 \subsection{Mecanismos de Monitoramento e Elaboração de Relatórios}
