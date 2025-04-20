@@ -6,6 +6,8 @@
 \usepackage{indentfirst}
 \usepackage{graphicx}
 \usepackage{multicol,lipsum}
+\usepackage{enumitem}
+\usepackage{url}
 \usepackage{fancyhdr}\usepackage[a4paper, left=3cm, right=2cm, top=3cm, bottom=2cm]{geometry}
 
 
@@ -147,9 +149,84 @@ Para que atinja a sua descrição e seus objetivos, o sistema desenvolvido dever
 \subsection{Análise de Riscos}
 % descreve possíveis riscos de projeto, a probabilidade de surgir tais riscos e as estratégias propostas para a sua redução
 
-\subsection{Requisitos Necessários de Hardware e Software}
+\subsection{Requisitos de Apoio de Hardware e Software}
 % descreve o hw e o sw de apoio exigidos para realizar o desenvolvimento. 
 % Se o hw precisar ser comprado, incluir prazos de entrega e estimativas de preço
+
+Para obter-se o melhor resultado na produção deste software, precisa-se analisar quais são os sistemas de apoio, tanto físicos quanto lógicos que são necessários. No geral, o desenvolvimento, pela parte da PuSystems, não precisara de uma grande massa de recursos, estes estarão, ou armazenados em outro servidores, ou na própria borda do sistema, no usuário final. 
+
+Estes, a seguir, sao comportamentos esperadas do sistema, baseados nos requisitos funcionais: 
+
+\subsubsection{Desempenho e Qualidade}
+\begin{itemize}[label=--]
+  \item Velocidade: Páginas principais devem carregar em até 2 segundos.
+  \item Disponibilidade: Sistema online 24/7.
+  \item Segurança: Criptografia avançada dos dados sensíveis.
+  \item Usabilidade: Usuário deve se adaptar em até 2 horas; caso contrário, rever UI/UX.
+\end{itemize}
+
+O sucesso do projeto depende de uma infraestrutura adequada e da adoção de padrões técnicos claros. Para garantir eficiência, segurança e escalabilidade, foram definidos os seguintes requisitos:
+
+\subsubsection{Tecnologia e Ferramentas}
+\begin{itemize}[]
+\item Front-end: React Native com TypeScript (para desenvolvimento multiplataforma).
+\item Back-end: Node.js + Express.js, com PostgreSQL para armazenamento de dados.
+\item Arquitetura: MVC (Model-View-Controller) para separação de responsabilidades.
+\item Controle de Versão: Git + GitHub (com políticas de branches e code reviews).
+\item Ferramentas Auxiliares: Docker para containerização e Jest para testes automatizados.
+\end{itemize}
+
+\subsubsection{Requisitos de Hardware}
+
+\textbf{Para o Usuário (Celular)}
+\begin{itemize}[]
+\item Sistema Operacional: Android 10+ (compatível com 95\% dos dispositivos ativos) ou iOS 14+.
+\item Hardware Mínimo: 3GB de RAM, 250MB de armazenamento livre, e suporte a GPS.
+\item Conexão: 4G/LTE ou Wi-Fi estável.
+\end{itemize}
+
+\textbf{Para o Servidor (Escalado para 500 mil usuários)}
+O calculo deste hardware eh baseado na ultima pesquisa do IBGE \cite{ibge-2022}
+\begin{itemize}[]
+\item Hardware:
+- Processador: 32 núcleos (AMD EPYC ou Intel Xeon).
+- Memória RAM: 512GB DDR4 ECC (para alto throughput de requisições).
+- Armazenamento: 20TB em SSD NVMe (com redundância RAID 10).
+\item Software:
+- Sistema Operacional: Ubuntu Server 22.04 LTS (suporte de longo prazo).
+- Banco de Dados: PostgreSQL 15 com replicação em cluster.
+- Cache: Redis para otimização de consultas frequentes.
+\item Rede:
+- Banda larga: 2Gbps dedicada (com balanceador de carga como NGINX).
+- Firewall: Regras de segurança baseadas em IPS/IDS.
+\end{itemize}
+
+\subsubsection{Integracoes externas}
+\begin{itemize}[]
+\item APIs de Terceiros:
+- Clima: OpenWeatherMap (previsão em tempo real).
+- Saúde: Integration with Apple HealthKit e Google Fit.
+\item Conformidade Legal:
+- LGPD: Auditorias trimestrais, criptografia AES-256 e registro de consentimento.
+- Certificação SSL/TLS: Let's Encrypt ou soluções corporativas (ex: DigiCert).
+\end{itemize}
+
+\subsubsection*{Desempenho e Segurança}
+\begin{itemize}[]
+\item Latência: Carregamento de páginas em até 1.5s (em redes 4G).
+\item Disponibilidade: SLA de 99.9\% (com plano de disaster recovery).
+\item Segurança: Autenticação em duas etapas (2FA) e varreduras de vulnerabilidades semanais.
+\item Usabilidade: Taxa de retenção de usuários >70\% após 7 dias (métrica para validar UI/UX).
+\end{itemize}
+
+\subsubsection{Orcamento e aquisicoes}
+\begin{itemize}[]
+\item Servidores: R\$ 120.000 (hardware) + R\$ 25.000/ano (manutenção).
+\item Licenças: R\$ 15.000/ano (PostgreSQL, ferramentas de monitoramento).
+\item Cloudflare/CDN: R\$ 8.000/ano (para otimização de tráfego global).
+\end{itemize}
+
+Acredita-se, portanto, que os requisitos supracitados serão necessários para atender as demandas do produto, assim como as expectativas do contratante.
 
 \subsection{Divisão de Trabalho}
 % descreve a divisão do projeto em atividades e identifica os marcos e os produtos associados a cada atividade
@@ -221,8 +298,11 @@ Podemos ter uma visualização mais detalhada do projeto, no diagrama de Gantt a
 \newpage
 \renewcommand{\refname}{Bibliografia}
 \begin{thebibliography}{09}
-\bibitem{} %{title} %author name here
-\textbf{}. %text here
+\bibitem{ibge-2022} INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). 
+\textbf{Censo Demográfico 2022: São José do Rio Preto}. 
+2022. 
+Disponível em: \url{https://www.ibge.gov.br/cidades-e-estados/sp/sao-jose-do-rio-preto.html}. 
+Acesso em: 20 abr. 2025.
 
 \bibitem{} %{title} %author name here
 \textbf{}. %text here
