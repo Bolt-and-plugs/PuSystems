@@ -2,6 +2,11 @@
 
 \usepackage[portuges]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times} % Fonte Times New Roman
+\usepackage{setspace}
+\usepackage{mathptmx} 
+\onehalfspacing
 \usepackage{amsmath}
 \usepackage{indentfirst}
 \usepackage{graphicx}
@@ -11,10 +16,17 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{tocloft}
-\usepackage{fancyhdr}\usepackage[a4paper, left=3cm, right=2cm, top=3cm, bottom=2cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage[a4paper, 
+            left=3cm,    
+            right=2cm,   
+            top=3cm,    
+            bottom=2cm   
+            ]{geometry}
 
 
 \begin{document}
+%\maketitle
 
 \begin{titlepage}
 	\begin{center}
@@ -27,6 +39,7 @@
         
 		\vspace{115pt}
         \textbf{\Huge{Aplicativo para engajamento comunitário}}\\
+		%\title{{\large{Título}}}
         
 		\vspace{115pt}
         Carlos Eduardo Nogueira Silva \\
@@ -91,12 +104,12 @@ Para estimular a participação, o sistema se baseará no modelo de \textit{gami
     \item \textbf{Loss \& Avoidance} é a motivação que origina da vontade de evitar danos ou prejuízos, fazendo uso do instinto de protegermos aquilo que já possúimos, como um recurso, posição ou vantagem.
 \end{enumerate}
 
-Assim, nosso objetivo é desenvolver um sistema que incentive todos esses elementos motivacionais na população de São José do Rio Preto, permitindo que eles se conscientizem sobre sua própria saúde, entendam o ciclo de vida do Aedes aegypti e do vírus da dengue, além de agirem eliminando focos de proliferação e acionando as autoridades em situações de emergência. Cada um dos 8 focos estará associado a requisitos funcionais citados no capitulo \ref{sec:requisitos}.    
+Seguindo tais principios, o objetivo da PuSystems é desenvolver um sistema que incentive todos os elementos motivacionais na população de São José do Rio Preto, permitindo que eles se conscientizem sobre sua própria saúde, entendam o ciclo de vida do Aedes aegypti e do vírus da dengue, além de agirem eliminando focos de proliferação e acionando as autoridades em situações de emergência. Cada um dos 8 focos estará associado a requisitos funcionais citados no capitulo \ref{sec:requisitos}.
 
 \newpage
 \section{Especificação de Requisitos}\label{sec:requisitos}
 
-Para que atinja a sua descrição e seus objetivos, o sistema desenvolvido deverá conter:
+A documentação clara e organizada das necessidades, funcionalidades e limitações de um sistema ou projeto é chamada de especificação de requisitos.  A meta é chegar a um consenso entre os interessados, assegurando que o produto final cumpra as expectativas e exigências técnicas.  Este passo é crucial no processo de desenvolvimento, pois estabelece a fundação para o design, a implementação e a validação.  Emprega métodos como a coleta de requisitos funcionais, não funcionais e casos de uso, garantindo exatidão e abrangência.  Uma descrição adequada minimiza ambiguidades e diminui os custos de retrabalho. Desta forma, o sistema desenvolvido deverá conter:
 
 \subsection{Registro e Gestão de Usuários}
 \begin{enumerate}
@@ -160,6 +173,100 @@ Para que atinja a sua descrição e seus objetivos, o sistema desenvolvido dever
 
 \subsection{Análise de Riscos}
 % descreve possíveis riscos de projeto, a probabilidade de surgir tais riscos e as estratégias propostas para a sua redução
+
+A avaliação de riscos consiste em um procedimento sistemático para detectar, avaliar e atenuar potenciais ameaças que possam afetar metas, projetos ou operações. Inclui a identificação de cenários desfavoráveis, a probabilidade de sua ocorrência e a severidade das consequências. Este método é fundamental em campos como engenharia, administração de projetos e segurança da informação, possibilitando decisões fundamentadas em provas. A abordagem mescla métodos qualitativos e quantitativos para destacar medidas preventivas e corretivas, minimizando incertezas e vulnerabilidades.
+
+\subsubsection{Metodologia de Análise de Riscos}
+
+Para o desenvolvimento adequado do projeto e propor estratégias com o fim de mitigar os principais riscos que podem comprometer o sucesso do projeto, adotamos a metodologia da análise qualitativa de riscos, na qual valores são atribuídos aos riscos para identificar o impacto potencial desses itens nos resultados possíveis. Assim, a avaliação é baseada nos seguintes critérios:
+
+\begin{itemize}
+    \item \textbf{Probabilidade (P):} Baixa (1), Média (2), Alta (3)
+    \item \textbf{Impacto (I):} Baixo (1), Médio (2), Alto (3)
+    \item \textbf{Nível de Risco (R):} R = P × I
+    \item \textbf{Classificação:}
+    \begin{itemize}
+        \item Baixo (1 a 2)
+        \item Moderado (3 a 4)
+        \item Alto (6 a 8)
+        \item Crítico (9)
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Riscos Identificados}
+A Tabela \ref{tab:risks} apresenta os principais riscos identificados no projeto, contemplando suas causas, potenciais impactos e estratégias iniciais de mitigação. Esta análise preliminar visa antecipar desafios críticos que poderiam comprometer prazos, custos ou qualidade do produto. 
+
+\begin{table}
+\caption{Riscos Identificados}
+\label{tab:risks}
+\begin{tabular}{|c|p{4cm}|c|c|c|p{5.7cm}|}
+\hline
+\textbf{ID} & \textbf{Risco} & \textbf{P} & \textbf{I} & \textbf{R} & \textbf{Estratégia} \\
+\hline
+R1 & Baixa adesão da população ao aplicativo & 2 & 3 & 6 (Alto) & Campanhas de conscientização, foco em UX e gamificação. \\
+\hline
+R2 & Denúncias falsas & 2 & 3 & 6 (Alto) & Validação por autoridades; penalidades para abuso. \\
+\hline
+R3 & Perda de dados ou vazamento & 2 & 3 & 6 (Alto) & Implementar criptografia AES-256, seguindo a LGPD. \\
+\hline
+R4 & Resistência de autoridades à adoção do sistema & 2 & 3 & 6 (Alto) & Envolver representantes da saúde pública nas etapas iniciais. Treinamentos e demonstração de benefícios. \\
+\hline
+R5 & Desinteresse após uso inicial (retenção de usuários) & 3 & 3 & 9 (Crítico) & Missões dinâmicas, notificações personalizadas, recompensas variadas e surpresas. \\
+\hline
+R6 & Difícil obtenção de dados climáticos e epidemiológicos em tempo real & 2 & 2 & 4 (Moderado) & Utilizar, bibliotecas, APIs e fontes públicas confiáveis, com fallback offline. \\
+\hline
+R7 & Desistência de membros da equipe durante o projeto & 1 & 3 & 3 (Moderado) & Garantir divisão de tarefas e documentação. \\
+\hline
+R8 & Falha no sistema de gamificação & 2 & 3 & 6 (Alto) & Testes rigorosos e feedback contínuo dos usuários\\
+\hline
+R9 & Dependência excessiva de autoridades para validar denúncias & 3 & 2 & 6 (Alto) & Automatizar validações com IA (ex.: análise de fotos) e capacitar equipes locais. \\
+\hline
+R10 & Falha na integração com sistemas oficiais de saúde & 2 & 3 & 6 (Alto) & APIs robustas, parcerias prévias com órgãos públicos, plano de contingência manual. \\
+\hline
+R11 & Conteúdo educacional ineficaz ou desatualizado & 1 & 2 & 2 (Baixo) & Revisão periódica por especialistas em saúde; feedback dos usuários. \\
+\hline
+R12 & Sobrecarga de servidores devido ao alto tráfego & 2 & 3 & 6 (Alto) & Infraestrutura escalável (cloud computing) e monitoramento em tempo real. \\
+\hline
+R13 & Viés em rankings (ex.: bairros mais pobres com menos engajamento) & 2 & 3 & 6 (Alto) & Adaptar critérios de pontuação por contexto socioeconômico e missões equilibradas. \\
+\hline
+R14 & Falha no monitoramento de sintomas  & 2 & 3 & 6 (Alto) & Revisão por médicos e alertas sobre limitações. \\
+\hline
+\end{tabular}
+\smallskip
+Elaborado pelos autores (2025).
+\end{table}
+
+\newpage
+\subsubsection{Plano de Ação para Riscos Críticos}
+
+Para os riscos classificados como \textbf{alto impacto} (R $\geq$ 6) e \textbf{críticos} (R = 9), serão adotadas as seguintes ações prioritárias:
+
+\begin{itemize}
+    \item \textbf{R1 (Baixa adesão):} Desenvolver MVP com foco em gamificação e realizar testes de usabilidade com moradores de diferentes perfis socioeconômicos.
+    \item \textbf{R2 (Denúncias falsas):} Implementar sistema de verificação em duas etapas: análise automatizada de fotos por meio de IA e validação manual amostral.
+    \item \textbf{R3 (Vazamento de dados):} Adotar autenticação OAuth2, criptografia AES-256 para dados sensíveis e auditorias de segurança bimestrais.
+    \item \textbf{R4 (Resistência de autoridades):} Criar comitê consultivo com representantes da vigilância sanitária municipal desde a fase de prototipagem.
+    \item \textbf{R5 (Desinteresse pós-uso):} Designar um "gamification owner" na equipe para atualizar semanalmente missões e recompensas surpresa.
+    \item \textbf{R8 (Falhas na gamificação):} Implementar sistema A/B testing para mecânicas de pontuação e criar ambiente sandbox para testes antes do deploy.
+    \item \textbf{R9 (Dependência de autoridades):} Capacitar agentes comunitários de saúde como validadores secundários via aplicativo dedicado.
+    \item \textbf{R10 (Integração com sistemas):} Estabelecer parceria formal com a Secretaria Municipal de Saúde para acesso a APIs oficiais de dados epidemiológicos.
+    \item \textbf{R12 (Sobrecarga de servidores):} Configurar auto-scaling na AWS com monitoramento contínuo via CloudWatch e plano de contingência para picos.
+    \item \textbf{R13 (Viés em rankings):} Desenvolver algoritmo de ponderação que considere indicadores socioeconômicos do IBGE por região.
+    \item \textbf{R14 (Falsos sintomas):} Integrar sistema com protocolos clínicos oficiais do Ministério da Saúde e incluir disclaimer médico nos alertas.
+\end{itemize}
+
+\subsubsection{Monitoramento Contínuo}
+    Será realizada uma revisão trimestral do risk register pelo comitê que reune a equipe técnica e os representantes da saúde pública de São José do Rio Preto com a finalidade de levantar os dados sobre os riscos e manter o aplicativo funcional e com boa performance. 
+    Um relatório mensal de eficácia das ações mitigatórias também será feito, além da crição de dashboard de riscos para uma melhor compreensão do progresso da aplicação, contendo indicadores como: 
+    \begin{itemize}
+        \item Número de denúncias validadas/invalidadas
+        \item Taxa de engajamento por bairro
+        \item Tempo médio de resposta das autoridades
+        \item Incidentes de segurança registrados
+    \end{itemize}
+    Além disso haverá atualização dos níveis de risco após cada release importante do aplicativo.
+
+
 
 \subsection{Requisitos de Apoio de Hardware e Software}
 % descreve o hw e o sw de apoio exigidos para realizar o desenvolvimento. 
@@ -251,8 +358,9 @@ Cloudflare/CDN & -- & 8.000,00 & Otimização de tráfego global e proteção co
 \textbf{Total} & \textbf{100.000,00} & \textbf{48.000,00} & \\
 \bottomrule
 \end{tabular}
+
 \smallskip
-\centering\footnotesize Elaborado pelos autores (2025).
+Elaborado pelos autores (2025).
 \end{table}
 
 Acredita-se, portanto, que os requisitos supracitados serão necessários para atender as demandas do produto, assim como as expectativas do contratante e, também, que os custos mencionados na tabela \ref{tab:custos} estão de acordo com o esperado.
@@ -288,6 +396,7 @@ Infraestrutura, Testes e Lançamento & 2  & 4 \\
 \textbf{Total} & \textbf{17 a 20} & \textbf{34 a 40} \\
 \hline
 \end{tabular}
+
 \smallskip
 Elaborado pelos autores (2025).
 \end{table}
