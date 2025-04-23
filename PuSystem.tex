@@ -6,6 +6,7 @@
 \usepackage{times} % Fonte Times New Roman
 \usepackage{setspace}
 \usepackage{mathptmx} 
+\usepackage{geometry} 
 \onehalfspacing
 \usepackage{amsmath}
 \usepackage{indentfirst}
@@ -17,6 +18,11 @@
 \usepackage{array}
 \usepackage{tocloft}
 \usepackage{fancyhdr}
+\usepackage{tabularx}   
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{booktabs}   
+\usepackage{makecell}
 \usepackage[a4paper, 
             left=3cm,    
             right=2cm,   
@@ -170,6 +176,58 @@ A documentação clara e organizada das necessidades, funcionalidades e limitaç
 
 \subsection{Organização do Projeto}
 % descreve o modo como a equipe de desenvolvimento é organizada, as pessoas envolvidas e seus papéis na equipe
+A equipe de desenvolvimento do projeto foi selecionada visando criar um grupo coeso, permitindo que os seus indivíduos trabalhem com eficiência em prol de entregar o melhor produto possível dentro do prazo e com bom custo-benefício. A seleção foi feita buscando criar um equilíbrio entre as habilidades técnicas (\textit{hard skills}) e personalidades complementares, facilitando assim o trabalho em equipe.
+
+Levando em consideração o porte médio e a urgência do projeto, foi priorizada uma equipe pequena formada por desenvolvedores experientes e multifuncionais. Isto permite uma organização democrática e informal, com comunicação, troca de informação e tomada de decisão altamente eficaz. Desta forma, o líder de projeto está envolvido diretamente no desenvolvimento do software, e as tarefas são alocadas conforme as habilidades e experiências de cada membro. As decisões referentes ao projeto são tomadas através do consenso entre a equipe, com o líder técnico podendo usar sua experiência para guiá-las. A troca de informação, discussões e documentação do projeto é realizada através de uma \textit{wiki} particular e e-mails, permitindo que membros trabalhando remotamente se comuniquem efetivamente.
+
+A metodologia de desenvolvimento usada é equilibrada, fazendo uso de muitos dos princípios da metodologia ágil e adaptando-se às necessidades do cliente. \textbf{Optou-se pelo framework Scrum} devido à sua ênfase em entregas incrementais, transparência e adaptabilidade. O Scrum favorece a auto-organização da equipe, permitindo que os membros definam suas próprias tarefas com base nas prioridades do \textit{Product Backlog}, enquanto mantêm ciclos de trabalho curtos (\textit{sprints} de 2 semanas). Isso alinha-se ao contexto do projeto, que exige respostas rápidas a mudanças regulatórias (como integrações com sistemas de saúde públicos) e à necessidade de validar funcionalidades com \textit{stakeholders} frequentemente. 
+
+
+\begin{longtable}[c]{@{} >{\raggedright\arraybackslash}p{4.5cm} >{\raggedright\arraybackslash}p{11cm} @{}}
+  \caption{Equipe de desenvolvimento e papéis principais} \\
+  \toprule
+  \textbf{Membro e Cargo} & \textbf{Responsabilidades‑chave} \\
+  \midrule
+\endfirsthead
+
+\multicolumn{2}{@{}l}{\textbf{Continuação da página anterior}} \\
+  \toprule
+  \textbf{Membro e Cargo} & \textbf{Responsabilidades‑chave} \\
+  \midrule
+\endhead
+
+\bottomrule
+\endfoot
+
+\textbf{Carlos} \\ \textit{Technical Lead \& Scrum Master} &
+  Lidera a equipe técnica, sendo responsável pela definição da arquitetura do sistema, assegurando sua escalabilidade, segurança e performance.\
+  Facilita a adoção e a prática de metodologias ágeis, coordenando as cerimônias ágeis e garantindo o alinhamento do time com os objetivos estratégicos do projeto.\
+  Atua como ponto de comunicação entre a equipe técnica e as demais partes envolvidas, visando a eficiência no cumprimento de prazos e qualidade nas entregas. \\
+
+\textbf{Felipe Gomes} \\ \textit{Backend \& Infrastructure Engineer} &
+  Projetista e implementador da lógica de negócios no backend, desenvolvendo APIs altamente escaláveis e seguras, com foco em alta disponibilidade e desempenho.\
+  Responsável pela infraestrutura do projeto, incluindo automação de deploys, integração contínua e gestão da nuvem e containers.\
+  Aplica práticas avançadas de segurança e otimização de performance em toda a stack de backend. \\
+
+\textbf{Felipe Possari} \\ \textit{Frontend Engineer \& PO Liaison} &
+  Desenvolve interfaces de usuário altamente interativas e intuitivas, utilizando as mais avançadas tecnologias de frontend e garantindo a melhor experiência para o usuário (UX/UI).\
+  Trabalha em estreita colaboração com as equipes de produto e stakeholders para traduzir requisitos de negócio em soluções técnicas viáveis e inovadoras.\
+  \textit{É responsável pela comunicação contínua com stakeholders externos, assegurando que suas necessidades e expectativas sejam plenamente atendidas e alinhadas com os objetivos do projeto.} \\
+
+\textbf{Santiago} \\ \textit{Data Scientist \& Analytics Engineer} &
+  Aplica técnicas avançadas de ciência de dados, desenvolvendo modelos preditivos e algoritmos de machine learning para extrair insights valiosos a partir de grandes volumes de dados.\
+  Lidera a criação de dashboards e relatórios analíticos para apoiar decisões estratégicas, além de garantir a integridade e qualidade dos dados ao longo do ciclo de vida do projeto.\
+  Trabalha com grandes datasets, otimizando processos de limpeza, transformação e validação dos dados. \\
+
+\textbf{Matheus Thomé} \\ \textit{QA Engineer \& DevOps Specialist} &
+  Conduz o processo de garantia de qualidade do software, desenvolvendo uma abordagem robusta para testes automatizados, além de realizar auditorias manuais nas funcionalidades e no código.\
+  Trabalha na integração contínua e automação de deploys, implementando pipelines eficientes e práticas de DevOps para garantir a agilidade e a qualidade nas entregas.\
+  Além disso, é responsável por criar soluções para monitoramento e performance do sistema em produção, garantindo a estabilidade e escalabilidade. \\
+
+\end{longtable}
+
+A sinergia entre habilidades técnicas e papéis definidos no Scrum potencializa a eficiência da equipe. A combinação de expertise em segurança (Felipe Gomes), usabilidade (Felipe Possari), análise de dados (Santiago) e garantia de qualidade (Matheus Thomé), supervisionada pela liderança técnica de Carlos cria um ambiente propício para inovação e resposta rápida a desafios.
+
 
 \subsection{Análise de Riscos}
 % descreve possíveis riscos de projeto, a probabilidade de surgir tais riscos e as estratégias propostas para a sua redução
@@ -256,15 +314,15 @@ Para os riscos classificados como \textbf{alto impacto} (R $\geq$ 6) e \textbf{c
 \end{itemize}
 
 \subsubsection{Monitoramento Contínuo}
-    Será realizada uma revisão trimestral do risk register pelo comitê que reune a equipe técnica e os representantes da saúde pública de São José do Rio Preto com a finalidade de levantar os dados sobre os riscos e manter o aplicativo funcional e com boa performance. 
-    Um relatório mensal de eficácia das ações mitigatórias também será feito, além da crição de dashboard de riscos para uma melhor compreensão do progresso da aplicação, contendo indicadores como: 
+    Será realizada uma revisão trimestral do risk register pelo comitê que reúne a equipe técnica e os representantes da saúde pública de São José do Rio Preto com a finalidade de levantar os dados sobre os riscos e manter o aplicativo funcional e com boa performance. 
+    Um relatório mensal de eficácia das ações mitigatórias também será feito, além da criação de dashboard de riscos para uma melhor compreensão do progresso da aplicação, contendo indicadores como: 
     \begin{itemize}
         \item Número de denúncias validadas/invalidadas
         \item Taxa de engajamento por bairro
         \item Tempo médio de resposta das autoridades
         \item Incidentes de segurança registrados
     \end{itemize}
-    Além disso haverá atualização dos níveis de risco após cada release importante do aplicativo.
+    Além disso, haverá atualização dos níveis de risco após cada release importante do aplicativo.
 
 
 
@@ -274,7 +332,7 @@ Para os riscos classificados como \textbf{alto impacto} (R $\geq$ 6) e \textbf{c
 
 Para obter-se o melhor resultado na produção deste software, precisa-se analisar quais são os sistemas de apoio, tanto físicos quanto lógicos necessários. No geral, o desenvolvimento, pela parte da PuSystems, não precisara de uma grande massa de recursos, estes estarão ou armazenados em outros servidores, ou na própria borda do sistema, no usuário final. 
 
-Estes, a seguir, são comportamentos esperadas do sistema, baseados nos requisitos funcionais: 
+Estes, a seguir, são comportamentos esperados do sistema, baseados nos requisitos funcionais: 
 
 \subsubsection{Desempenho e Qualidade}
 \begin{itemize}[]
