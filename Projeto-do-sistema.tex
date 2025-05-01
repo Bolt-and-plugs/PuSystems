@@ -1,0 +1,110 @@
+\documentclass[a5paper, 12pt]{article}
+
+\usepackage[portuges]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times} % Fonte Times New Roman
+\usepackage{setspace}
+\usepackage{mathptmx} 
+\onehalfspacing
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{multicol,lipsum}
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{tabularx}   
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{booktabs}   
+\usepackage{makecell}
+\usepackage[a4paper, 
+            left=3cm,    
+            right=2cm,   
+            top=3cm,    
+            bottom=2cm   
+            ]{geometry}
+
+
+\begin{document}
+%\maketitle
+
+\begin{titlepage}
+	\begin{center}
+	
+	\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=10cm]{Logo Transparente Preto.png} \\ 
+    \end{figure}
+
+        
+		\vspace{115pt}
+        \textbf{\Huge{Projeto do Sistema}}\\
+		%\title{{\large{Título}}}
+        
+		\vspace{115pt}
+        Carlos Eduardo Nogueira Silva \\
+        Felipe Gomes da Silva \\
+        Felipe Matheus Possari \\
+        Matheus Thomé da Silva\\ 
+        Santiago Pinheiro Martins \\
+	\end{center}
+	
+	
+	\vspace{1cm}
+	\begin{center}
+		\vspace{\fill}
+		 Abril \\
+		 2025
+			\end{center}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+\pagestyle{fancy}
+
+\fancyhead[L]{\thepage}
+\fancyhead[C]{\nouppercase{\leftmark}}
+\rhead{\includegraphics[width=2cm]{Logo Transparente Preto.png}}
+\fancyfoot[R]{}
+\fancyfoot[C]{© 2025 - PuSystems}
+\fancyfoot[L]{}
+\setlength\headheight{26pt}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\newpage
+\section{Introdução}
+% descreve os objetivos gerais do trabalho e restrições que afetam a gerência do projeto
+\newpage
+\section{Desenvolvimento}
+
+\newpage
+\section{Conclusão}
+
+\newpage
+\renewcommand{\refname}{Bibliografia}
+\begin{thebibliography}{09}
+\bibitem{ibge-2022} INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). 
+\textbf{Censo Demográfico 2022: São José do Rio Preto}. 
+2022. 
+Disponível em: \url{https://www.ibge.gov.br/cidades-e-estados/sp/sao-jose-do-rio-preto.html}. 
+Acesso em: 20 abr. 2025.
+
+\bibitem{} %{title} %author name here
+\textbf{}. %text here
+
+\bibitem{} %{title} %author name here
+\textbf{}. %text here
+
+\end{thebibliography}
+\end{document}

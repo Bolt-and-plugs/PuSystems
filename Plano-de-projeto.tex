@@ -43,7 +43,7 @@
 
         
 		\vspace{115pt}
-        \textbf{\Huge{Aplicativo para engajamento comunitário}}\\
+        \textbf{\Huge{Plano de Projeto}}\\
 		%\title{{\large{Título}}}
         
 		\vspace{115pt}
@@ -65,19 +65,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-
 \newpage
 \thispagestyle{empty}
 \tableofcontents
-
-\newpage 
-\thispagestyle{empty}
-\listoffigures
-
-\newpage
-\thispagestyle{empty}
-\listoftables
 
 \newpage
 \pagestyle{fancy}
@@ -91,88 +81,13 @@
 \setlength\headheight{26pt}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\newpage
+
 \section{Introdução}
-O município de São José do Rio Preto está lidando com uma das mais graves epidemias de dengue já registradas no estado, com mais de 35.000 casos confirmados da enfermidade apenas em 2025, posicionando-se como a cidade com maior probabilidade de casos em todo o Brasil. Conquanto haja esforços das autoridades públicas para conscientizar a população, essa epidemia ainda parece longe de cessar. Deste modo, uma urbanização adequada e a eliminação de focos do mosquito da dengue, com o esforço público, fazem-se necessárias.
-
-Destaca-se a importância da população na luta contra o mosquito, sendo o único grupo capaz de identificar facilmente os focos de dengue em sua residência e arredores. Portanto, o objetivo da PuSystem é capacitar os habitantes de São José do Rio Preto para que eles mesmos possam aprimorar a condição da cidade e se empenhem para isso.
-
-Para estimular a participação, o sistema se baseará no modelo de \textit{gamificação} Octalysis, criado pelo escritor e empresário Yu-Kai Chou.  O modelo Octalysis é empregado na criação de sistemas de \textit{gamificação} destinados a potencializar a motivação humana.  Ele alcança esse objetivo ao reconhecer oito "impulsos principais" que precisam ser estimulados:
-
-\begin{enumerate}
-    \item \textbf{Epic Meaning \& Calling} se refere à motivação em participar de algo que consideramos maior que nós mesmos, tomando partido em uma causa nobre ou propósito grandioso com impacto importante a nossa vizinhança, cidade, país ou mundo. 
-    \item \textbf{Development \& Accomplishment} é o desejo de melhorar, crescer e conquistar. Refere-se à motivação que obtemos ao avançar em direção a algum objetivo e superarmos obstáculos e alcançarmos marcos, seja em habilidades, conquistas ou metas pessoais.
-    \item \textbf{Empowerment of Creativity \& Feedback} é a motivação que surge da chance de criar, experimentar e observar as consequências de suas ações. As pessoas se sentem estimuladas quando possuem liberdade para explorar e fazer suas próprias escolhas. 
-    \item \textbf{Ownership \& Possession} é o impulso que temos ao percebermos que possuímos responsabilidade sobre algo, seja um projeto, ideia ou objetivo. Nos sentimos mais estimulados ao investir tempo e esforço para preservar e aprimorar o que consideramos nosso
-    \item \textbf{Social Influence \& Relatedness} é a motivação social e ocorre através do contato com outras pessoas. Indivíduos se sentem estimulados a aderir a grupos ou  obter o apoio de seus colegas. 
-    \item \textbf{Scarcity \& Impatience} está intimamente ligado à percepção de valor que aumenta quando a disponibilidade de um item ou recurso é restrita. Além disso, a frustração causada pela espera ou pela falta de acesso a esses recursos escassos pode gerar um impulso emocional mais intenso para obtê-los.
-    \item \textbf{Unpredictability \& Curiosity} explora a imprevisibilidade presente em uma experiência, como surpresas e enigmas a serem desvendados, como uma forte fonte de motivação. Quando há dúvidas sobre o futuro, as pessoas costumam se envolver mais para satisfazer sua curiosidade e prever o que está por vir.
-    \item \textbf{Loss \& Avoidance} é a motivação que origina da vontade de evitar danos ou prejuízos, fazendo uso do instinto de protegermos aquilo que já possúimos, como um recurso, posição ou vantagem.
-\end{enumerate}
-
-Seguindo tais principios, o objetivo da PuSystems é desenvolver um sistema que incentive todos os elementos motivacionais na população de São José do Rio Preto, permitindo que eles se conscientizem sobre sua própria saúde, entendam o ciclo de vida do Aedes aegypti e do vírus da dengue, além de agirem eliminando focos de proliferação e acionando as autoridades em situações de emergência. Cada um dos 8 focos estará associado a requisitos funcionais citados no capitulo \ref{sec:requisitos}.
-
-\newpage
-\section{Especificação de Requisitos}\label{sec:requisitos}
-
-A documentação clara e organizada das necessidades, funcionalidades e limitações de um sistema ou projeto é chamada de especificação de requisitos.  A meta é chegar a um consenso entre os interessados, assegurando que o produto final cumpra as expectativas e exigências técnicas.  Este passo é crucial no processo de desenvolvimento, pois estabelece a fundação para o design, a implementação e a validação.  Emprega métodos como a coleta de requisitos funcionais, não funcionais e casos de uso, garantindo exatidão e abrangência.  Uma descrição adequada minimiza ambiguidades e diminui os custos de retrabalho. Desta forma, o sistema desenvolvido deverá conter:
-
-\subsection{Registro e Gestão de Usuários}
-\begin{enumerate}
-    \item Registro de um perfil personalizado, com os seguintes campos: nome social, documento oficial, foto de perfil, gênero, idade, endereço (bairro) e foco no combate à dengue.
-    \item Exigência de login com senha e documento oficial e senha para acesso aos recursos do aplicativo.
-    \item Possibilidade de atualização dos dados cadastrais.
-\end{enumerate}
-
-\subsection{Módulo Educacional}
-\begin{enumerate}
-    \item Conteúdo organizado em diferentes cursos/módulos para melhor absorção e aprendizado.
-    \item \textit{Player} de vídeos para vídeo-aulas, com suporte a legendas.
-    \item Transmissões ao vivo para anúncios oficiais em palestras de temas relevantes
-    \item Tutoriais multimídias (textos, vídeos e \textit{quizzes}) que ensinam a identificar e eliminar focos de mosquito da dengue.
-\end{enumerate}
-
-\subsection{Sistema de \textit{Gamificação}}
-\begin{enumerate}
-    \item Um score pessoal para cada usuário registrado.
-    \item Ranking geral e por bairro mostrando a classificação de todos os usuários, incentivando uma competição de maneira saudável.
-    \item Destaque para os usuários de com maior ganho de pontuação na página principal.
-    \item Conquistas pessoais associadas a realização de ações incentivadas um número específico de vezes.
-    \item Histórico de conquista onde cada usuário poderá visualizar suas próprias conquistas, estatísticas e a de outros usuários.
-    \item Missões individuais aleatórias como assistir um número determinado de aulas, realizar ou eliminar um número específicos de focos, etc.
-    \item Missões cooperativas como reduzir o número de casos reportados ou focos denunciados, elevando o score da região.
-    \item Recompensas como ganho de pontos e conquistas ao concluir missões e realizar ações incentivadas.
-    \item Penalidades como perda de pontos por inatividade.
-    \item Recompensas surpresa ao preencher o registro de sintomas ou consumir conteúdo educacional regularmente, como pontos extras ou conquistas especiais.
-    \item Geração de missões de tempo limitado, com tarefas especiais surgindo por um período curto.
-\end{enumerate}
-
-\subsection{Sistema de Denúncias e Monitoramento de Áreas de Risco}
-\begin{enumerate}
-    \item Formulário de denúncia de focos de mosquito, incluindo texto, foto e localização.
-    \item Envio automático de denúncias para a equipe responsável para que validem e atualizem o status do foco. 
-    \item Exibição de áreas de risco no mapa, utilizando dados climáticos, registros de casos e localização de denúncias para indicar regiões com maior incidência.
-    \item Envio de notificações ao usuário sobre aumento de casos em sua região ou surgimento de focos próximos ao seu endereço.
-    \item Envio de notificações sobre a pontuação do bairro, informando se está melhorando ou piorando com base no engajamento comunitário.
-\end{enumerate}
-
-\subsection{Sistema de Monitoramento de Sintomas}
-\begin{enumerate}
-    \item Um questionário simples com perguntas sobre febre, dor de cabeça, dores musculares e outros sintomas característicos da dengue que pode ser preenchido periodicamente
-    \item Alertas de suspeita, caso os sintomas sejam compatíveis com a doença, indicando a necessidade de buscar atendimento médico e informando as autoridades de saúde.
-\end{enumerate}
-\subsection{Gerenciamento e Suporte a Autoridades}
-\begin{enumerate}
-    \item Painel de estatísticas permitindo que autoridades monitorem as informações geoespaciais da cidade e bairros, as denúncias de focos e o número de casos  reportados
-    \item Painel para a avaliação e atualização dos status de denúncias realizadas.
-    \item Integração com sistema oficiais para que dados sobre surtos, casos e relatórios de saúde pública possam ser importados.
-\end{enumerate}
-
-\newpage
-\section{Plano de Projeto}
-
-\subsection{Introdução}
 % descreve os objetivos gerais do trabalho e restrições que afetam a gerência do projeto
-
+\newpage
+\section{Desenvolvimento}
 \subsection{Organização do Projeto}
 % descreve o modo como a equipe de desenvolvimento é organizada, as pessoas envolvidas e seus papéis na equipe
 A equipe de desenvolvimento do projeto foi selecionada visando criar um grupo coeso, permitindo que os seus indivíduos trabalhem com eficiência em prol de entregar o melhor produto possível dentro do prazo e com bom custo-benefício. A seleção foi feita buscando criar um equilíbrio entre as habilidades técnicas (\textit{hard skills}) e personalidades complementares, facilitando assim o trabalho em equipe.
@@ -502,13 +417,6 @@ Após o lançamento do sistema, plataformas de análise como Google Analytics e 
 O sistema contará com soluções de monitoramento em tempo real, como Prometheus e Grafana, para acompanhar a disponibilidade, latência e desempenho dos servidores. Relatórios semanais de incidentes de infraestrutura serão elaborados, permitindo a identificação de gargalos e a adoção de medidas preventivas. Além disso, auditorias trimestrais de segurança e conformidade com a Lei Geral de Proteção de Dados (LGPD) serão realizadas, com relatórios que incluirão resultados de varreduras de vulnerabilidades e avaliações das práticas de segurança implementadas.
 
 Todos os relatórios serão organizados e disponibilizados em uma wiki interna segura, acessível aos membros da equipe e representantes das autoridades públicas, promovendo transparência, rápida disseminação de informações e sustentação de um processo contínuo de melhoria da PuSystems.
-
-\section{Projeto do Sistema}
-% “Como fazer?” (arquitetura e modelos do sistema)
-
-\newpage
-\section{Protótipo de Interface}
-% Projeto de tela e relatórios para ilustrar a solução
 
 \newpage
 \section{Conclusão}
