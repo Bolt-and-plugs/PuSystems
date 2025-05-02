@@ -95,8 +95,7 @@
 
 \subsection{Organização dos Componentes}
 
-% Coloquei o nome do App como PuSystem por enquanto
-O PuSystem será estruturado em seis componentes principais, cada um encarregado de uma área funcional específica, porém de forma interligada.  Esta estrutura modular visa assegurar a escalabilidade, simplificar a manutenção e possibilitar a evolução constante do sistema.
+O Zapp será estruturado em seis componentes principais, cada um encarregado de uma área funcional específica, porém de forma interligada.  Esta estrutura modular visa assegurar a escalabilidade, simplificar a manutenção e possibilitar a evolução constante do sistema.
 
 \subsubsection{Módulo de Autenticação e Gestão de Perfis}
 
@@ -108,8 +107,8 @@ O objetivo deste módulo é incentivar a sensibilização e o aprendizado consta
 
 \subsubsection{Módulo de Gamificação}
 
-%Falta inserir as recompensas
-Como já mencionado, a gamificação será o alicerce principal do engajamento do sistema.  O módulo incluirá classificações pessoais, classificações gerais e por bairro, resultados por atividades realizadas, tarefas individuais (como assistir a vídeos ou responder a questionários) e tarefas coletivas (como aprimorar a pontuação de uma área).  A participação ativa será premiada com pontos e medalhas, enquanto a inatividade pode resultar em penalidades.  Também serão adicionadas recompensas inesperadas e desafios de duração limitada para incentivar o uso constante.
+Como já mencionado, a gamificação será o alicerce principal do engajamento do sistema.  O módulo incluirá classificações pessoais, classificações gerais e por bairro, resultados por atividades realizadas, tarefas individuais (como assistir a vídeos ou responder a questionários) e tarefas coletivas (como aprimorar a pontuação de uma área).  A participação ativa será premiada com pontos e medalhas, enquanto a inatividade pode resultar em penalidades.  
+\par Também serão adicionadas recompensas inesperadas e desafios de duração limitada para incentivar o uso constante. Entre essas recompensas podemos citar as recompenas virtuais no app como pontos de experiência, títulos, medalhas e entre outros. Pode-se incluir também recompensas reais com apoio de parceiros, como descontos em farmácias ou mercados locais, participação em sorteios e um certificado de participação social emitido digitalmente para usuários ativos, que podem ser útil para atividades extracurriculares ou inclusão em currículos.
 
 \subsubsection{Módulo de Denúncias e Monitoramento de Áreas de Risco}
 
@@ -126,22 +125,21 @@ As autoridades de saúde pública terão acesso a uma interface administrativa c
 
 \subsection{Arquitetura de Aplicações}
 
-% Coloquei o nome do App como PuSystem por enquanto
-O PuSystem será construído com base em uma estrutura multicamadas, respeitando os princípios de separação de responsabilidades e escalabilidade horizontal.  Esta arquitetura tem como objetivo assegurar robustez, além de simplificar a manutenção e possíveis expansões futuras.  O sistema incluirá três camadas fundamentais: interface, lógica empresarial e armazenamento de dados, além de integrações com serviços externos.
+O Zapp será construído com base em uma estrutura multicamadas, respeitando os princípios de separação de responsabilidades e escalabilidade horizontal.  Esta arquitetura tem como objetivo assegurar robustez, além de simplificar a manutenção e possíveis expansões futuras.  O sistema incluirá três camadas fundamentais: interface, lógica empresarial e armazenamento de dados, além de integrações com serviços externos.
 
 \subsubsection{Camada de Apresentação (Frontend)}
 
-A implementação do frontend será feita com frameworks multiplataforma atuais, como React Native ou Flutter, assegurando a compatibilidade com dispositivos Android e iOS.  Esta camada será encarregada de exibir a interface do usuário, recebendo interações e fornecendo feedback em tempo real.
+A implementação do frontend será feita com frameworks multiplataforma atuais, por meio React Native em conjunto com TypeScript, assegurando a compatibilidade com dispositivos Android e iOS.  Esta camada será encarregada de exibir a interface do usuário, recebendo interações e fornecendo feedback em tempo real.
 Os componentes visuais abrangerão dashboards informativos, vídeos didáticos, formulários de denúncia e questionários de sintomas, bem como animações e notificações focadas na gamificação.  A interface será responsiva, de fácil acesso e concebida com o objetivo de facilitar a utilização e o envolvimento do público-alvo.
 
 \subsubsection{Camada de Lógica de Negócio (Backend)}
 
-A lógica empresarial será concentrada numa API RESTful, construída com frameworks sólidos como Node.js (com Express) ou Django (com o Django REST Framework)  Esta camada funcionará como o elo entre o frontend e o banco de dados, tratando as solicitações, implementando as regras de negócio e assegurando a integridade das operações.
+A lógica empresarial será concentrada numa API RESTful, construída com frameworks sólidos usando Node.js com Express.js. Esta camada funcionará como o elo entre o frontend e o banco de dados, tratando as solicitações, implementando as regras de negócio e assegurando a integridade das operações.
 Esta camada cuidará de todas as normas relacionadas à pontuação, autenticação, gerenciamento de denúncias, geração de alertas e gerenciamento de permissões.  Também terá a tarefa de coordenar solicitações a serviços externos, tais como APIs meteorológicas e geográficas, e realizar verificações de segurança.
 
 \subsubsection{Camada de Persistência (Banco de Dados)}
 
-A persistência dos dados será feita em um banco de dados relacional como PostgreSQL ou MySQL, estruturado para armazenar todas as informações dos usuários, sintomas relatados, denúncias com georreferenciamento, rankings, conteúdos educacionais e estatísticas de uso.
+O armazenamento dos dados será feita em um banco de dados relacional usando o  PostgreSQL, estruturado para armazenar todas as informações dos usuários, sintomas relatados, denúncias com georreferenciamento, rankings, conteúdos educacionais e estatísticas de uso.
 Será adotado um modelo de dados normalizado, com suporte a consultas eficientes por localização e data, e com logs transacionais com a finalidade de auditoria e análise. A segurança dos dados será garantida através de criptografia em repouso e backups periódicos automatizados.
 
 \subsubsection{Integrações com Serviços Externos}
@@ -161,7 +159,8 @@ A arquitetura da aplicação contará com mecanismos de segurança aplicados em 
 
 \subsubsection{Escalabilidade e Infraestrutura}
 
-O sistema foi criado para operar em uma infraestrutura baseada em microsserviços e conteinerização, utilizando tecnologias como Docker e orquestração com Kubernetes.  Isso possibilitará a personalização de serviços conforme a demanda, diminuindo o tempo de implementação e simplificando a monitoramento.  O sistema será hospedado em clouds como AWS, GCP ou Azure, com redundância geográfica e distribuição de carga equilibrada.
+O sistema foi desenvolvido com base na arquitetura MVC (Model-View-Controller), promovendo uma separação clara entre todas as camadas da aplicação, o que facilita a manutenção e escalabilidade da aplicação. O controle de versão é realizado com o uso do Git com auxílio do GitHub, permitindo rastrear alterações, trabalhar em equipe de forma eficiente e manter um histórico organizado do desenvolvimento por meio da política de branches e code review. Para garantir a qualidade do código, são utilizados testes automatizados com a biblioteca Jest, que possibilita a execução contínua de testes unitários e de integração. 
+\par Além disso, a aplicação opera sobre uma infraestrutura baseada em microsserviços e conteinerização, utilizando tecnologias como Docker e orquestração com Kubernetes. Isso possibilita a personalização de serviços conforme a demanda, reduzindo o tempo de implementação e simplificando o monitoramento. O sistema será hospedado em clouds como AWS, GCP ou Azure, com redundância geográfica e distribuição de carga equilibrada.
 
 \newpage
 \section{Conclusão}
