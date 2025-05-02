@@ -97,7 +97,73 @@
 
 \subsection{Organização dos Componentes}
 
+% Coloquei o nome do App como PuSystem por enquanto
+O PuSystem será estruturado em seis componentes principais, cada um encarregado de uma área funcional específica, porém de forma interligada.  Esta estrutura modular visa assegurar a escalabilidade, simplificar a manutenção e possibilitar a evolução constante do sistema.
+
+\subsubsection{Módulo de Autenticação e Gestão de Perfis}
+
+Este módulo será encarregado de todas as etapas de acesso e identificação dos usuários.  Os usuários terão a possibilidade de criar perfis personalizados, fornecendo informações como nome, idade, sexo, localização (bairro), documento de identidade e uma imagem.  O sistema solicitará a autenticação através de uma senha e um documento válido, utilizando protocolos de segurança adequados, tais como o login seguro por token JWT e a criptografia de informações confidenciais.  Além disso, possibilitará a modificação de preferências e informações de registro, fomentando um gerenciamento constante da identidade e garantindo uma grande customização da experiência do usuário.
+
+\subsubsection{Módulo Educacional}
+
+O objetivo deste módulo é incentivar a sensibilização e o aprendizado constante da população acerca da dengue por meio de uma plataforma multimídia com vídeos didáticos, textos explicativos e questionários interativos.  O material será estruturado em seções temáticas, tais como "Detecção de focos do Aedes aegypti", "Ciclo da dengue" e "Prevenção comunitária".  O avanço dos utilizadores poderá ser monitorado e premiado com vitórias, incorporando-se ao sistema de gamificação.
+
+\subsubsection{Módulo de Gamificação}
+
+%Falta inserir as recompensas
+Como já mencionado, a gamificação será o alicerce principal do engajamento do sistema.  O módulo incluirá classificações pessoais, classificações gerais e por bairro, resultados por atividades realizadas, tarefas individuais (como assistir a vídeos ou responder a questionários) e tarefas coletivas (como aprimorar a pontuação de uma área).  A participação ativa será premiada com pontos e medalhas, enquanto a inatividade pode resultar em penalidades.  Também serão adicionadas recompensas inesperadas e desafios de duração limitada para incentivar o uso constante.
+
+\subsubsection{Módulo de Denúncias e Monitoramento de Áreas de Risco}
+
+Este módulo permitirá que os usuários identifiquem focos de propagação do mosquito por meio de imagens, localização e descrição textual. Esses três elementos são essenciais para prevenir falsos alarmes e o uso desnecessário de recursos.   As queixas serão direcionadas aos órgãos competentes para validação e resposta.   Um mapa interativo mostrará as zonas de risco com base em dados geográficos, condições meteorológicas, queixas e registros de incidentes.   O módulo também irá notificar sobre o aumento do risco na região do usuário e fornecerá atualizações sobre a classificação do bairro, reforçando a natureza comunitária do aplicativo.
+
+\subsubsection{Módulo de Monitoramento de Sintomas}
+
+Este módulo, voltado para o bem-estar do usuário, coletará diariamente dados sobre sintomas que se assemelham à dengue.  Por meio de uma simples pesquisa, os usuários poderão comunicar febre, dor e outros sintomas.  Se houver fortes indícios de infecção, o sistema disparará alertas de suspeita, direcionando a procura por assistência médica e notificando as autoridades locais.  Este módulo também fornecerá informações para a avaliação epidemiológica do sistema.
+
+\subsubsection{Módulo de Administração para Autoridades}
+
+As autoridades de saúde pública terão acesso a uma interface administrativa contendo informações consolidadas sobre focos de dengue, estatísticas de sintomas e envolvimento da comunidade.  Elas terão a capacidade de confirmar denúncias, modificar o estado de ocorrências e importar informações de sistemas oficiais de monitoramento epidemiológico.  A meta é assegurar uma reação coordenada e fundamentada aos surtos, simplificando a decisão e a mobilização de recursos.
+
+
 \subsection{Arquitetura de Aplicações}
+
+% Coloquei o nome do App como PuSystem por enquanto
+O PuSystem será construído com base em uma estrutura multicamadas, respeitando os princípios de separação de responsabilidades e escalabilidade horizontal.  Esta arquitetura tem como objetivo assegurar robustez, além de simplificar a manutenção e possíveis expansões futuras.  O sistema incluirá três camadas fundamentais: interface, lógica empresarial e armazenamento de dados, além de integrações com serviços externos.
+
+\subsubsection{Camada de Apresentação (Frontend)}
+
+A implementação do frontend será feita com frameworks multiplataforma atuais, como React Native ou Flutter, assegurando a compatibilidade com dispositivos Android e iOS.  Esta camada será encarregada de exibir a interface do usuário, recebendo interações e fornecendo feedback em tempo real.
+Os componentes visuais abrangerão dashboards informativos, vídeos didáticos, formulários de denúncia e questionários de sintomas, bem como animações e notificações focadas na gamificação.  A interface será responsiva, de fácil acesso e concebida com o objetivo de facilitar a utilização e o envolvimento do público-alvo.
+
+\subsubsection{Camada de Lógica de Negócio (Backend)}
+
+A lógica empresarial será concentrada numa API RESTful, construída com frameworks sólidos como Node.js (com Express) ou Django (com o Django REST Framework)  Esta camada funcionará como o elo entre o frontend e o banco de dados, tratando as solicitações, implementando as regras de negócio e assegurando a integridade das operações.
+Esta camada cuidará de todas as normas relacionadas à pontuação, autenticação, gerenciamento de denúncias, geração de alertas e gerenciamento de permissões.  Também terá a tarefa de coordenar solicitações a serviços externos, tais como APIs meteorológicas e geográficas, e realizar verificações de segurança.
+
+\subsubsection{Camada de Persistência (Banco de Dados)}
+
+A persistência dos dados será feita em um banco de dados relacional como PostgreSQL ou MySQL, estruturado para armazenar todas as informações dos usuários, sintomas relatados, denúncias com georreferenciamento, rankings, conteúdos educacionais e estatísticas de uso.
+Será adotado um modelo de dados normalizado, com suporte a consultas eficientes por localização e data, e com logs transacionais com a finalidade de auditoria e análise. A segurança dos dados será garantida através de criptografia em repouso e backups periódicos automatizados.
+
+\subsubsection{Integrações com Serviços Externos}
+
+A aplicação será implementada com APIs públicas e privadas para fornecer funcionalidades adicionais. Entre as integrações previstas no projeto inicial estão:
+
+\begin{itemize}
+    \item \textbf{APIs Climáticas:} usadas para obter dados de temperatura, umidade e chuvas, elementos estes que são chaves para a proliferação do mosquito e com isso, o aumento de casos da doença.
+    \item \textbf{Serviços de Geolocalização:} como Google Maps ou OpenStreetMap, utilizados para exibir mapas para simplificar a apresentação de informações do aplicativo, além de auxiliar em ações como quando se faz uma denúncia.
+    \item \textbf{Notificações Push:} envio de alertas em tempo real para usuários sobre riscos na região bem como atualizações sobre a situação atual da região, atualização dos rankings ou recompensas para manter o engajamento.
+    \item \textbf{Bases Oficiais de Saúde:} importação de informações epidemiológicas e integração com entidades locais e regionais.
+\end{itemize}
+
+\subsubsection{Camada de Segurança e Autenticação}
+
+A arquitetura da aplicação contará com mecanismos de segurança aplicados em todas as camadas. A autenticação será feita com tokens JWT e os dados sensíveis serão protegidos com criptografia AES. As comunicações entre o cliente e o servidor serão realizadas através de HTTPS com TLS 1.3, garantindo maior segurança e anonimidade. Também serão postas em prática políticas de controle de acesso com base no perfil do usuário, assegurando recursos específicos para os três diferentes níveis de usuários: administração, autoridade e cidadão.
+
+\subsubsection{Escalabilidade e Infraestrutura}
+
+O sistema foi criado para operar em uma infraestrutura baseada em microsserviços e conteinerização, utilizando tecnologias como Docker e orquestração com Kubernetes.  Isso possibilitará a personalização de serviços conforme a demanda, diminuindo o tempo de implementação e simplificando a monitoramento.  O sistema será hospedado em clouds como AWS, GCP ou Azure, com redundância geográfica e distribuição de carga equilibrada.
 
 \newpage
 \section{Conclusão}
