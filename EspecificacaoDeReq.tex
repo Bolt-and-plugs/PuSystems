@@ -83,43 +83,74 @@
 \setlength\headheight{26pt}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\section{Introducao}
+\section{Introdução}
 
 São José do Rio Preto está lidando com uma das mais graves epidemias de dengue já registradas no estado, com mais de 35.000 casos confirmados da enfermidade apenas em 2025, posicionando-se como a cidade com maior probabilidade de casos prováveis em todo o Brasil. Claro que isso acontece, mesmo com os esforços das autoridades públicas para conscientizar a população, implementar uma urbanização adequada e eliminar focos do mosquito da dengue.
 
 Isso destaca a importância da população na luta contra o mosquito, sendo o único grupo capaz de identificar facilmente os focos de dengue em sua residência e arredores. Então, nosso objetivo é capacitar os habitantes de São José do Rio Preto para que eles mesmos possam aprimorar a condição da cidade e se empenhem para isso.
 
-Para estimular a participação, o sistema se baseará no modelo de gamificação Octalysis, criado pelo escritor e empresário Yu-Kai Chou.  O modelo Octalysis é empregado na criação de sistemas de gamificação destinados a potencializar a motivação humana.  Ele alcança esse objetivo ao reconhecer oito "impulsos principais" que precisam ser estimulados:
+Para estimular a participação, o sistema se baseará no modelo de \textit{gamificação} \textit{Octalysis}, criado pelo escritor e empresário Yu-Kai Chou.  O modelo \textit{Octalysis} é empregado na criação de sistemas de \textit{gamificação} destinados a potencializar a motivação humana, melhor tratado na seção \ref{sec:game}.
 
-\begin{enumerate}
-    \item \textbf{Epic Meaning \& Calling} se refere à motivação em participar de algo que consideramos maior que nós mesmos, tomando partido em uma causa nobre ou propósito grandioso com impacto importante a nossa vizinhança, cidade, país ou mundo. 
-    \item \textbf{Development \& Accomplishment} é o desejo de melhorar, crescer e conquistar. Refere-se à motivação que obtemos ao avançar em direção a algum objetivo e superarmos obstáculos e alcançarmos marcos, seja em habilidades, conquistas ou metas pessoais.
-    \item \textbf{Empowerment of Creativity \& Feedback} é a motivação que surge da chance de criar, experimentar e observar as consequências de suas ações. As pessoas se sentem estimuladas quando possuem liberdade para explorar e fazer suas próprias escolhas. 
-    \item \textbf{Ownership \& Possession} é o impulso que temos ao percebermos que possuímos responsabilidade sobre algo, seja um projeto, ideia ou objetivo. Nos sentimos mais estimulados ao investir tempo e esforço para preservar e aprimorar o que consideramos nosso
-    \item \textbf{Social Influence \& Relatedness} é a motivação social e ocorre através do contato com outras pessoas. Indivíduos se sentem estimulados a aderir a grupos ou  obter o apoio de seus colegas. 
-    \item \textbf{Scarcity \& Impatience} está intimamente ligado à percepção de valor que aumenta quando a disponibilidade de um item ou recurso é restrita. Além disso, a frustração causada pela espera ou pela falta de acesso a esses recursos escassos pode gerar um impulso emocional mais intenso para obtê-los.
-    \item \textbf{Unpredictability \& Curiosity} explora a imprevisibilidade presente em uma experiência, como surpresas e enigmas a serem desvendados, como uma forte fonte de motivação. Quando há dúvidas sobre o futuro, as pessoas costumam se envolver mais para satisfazer sua curiosidade e prever o que está por vir.
-    \item \textbf{Loss \& Avoidance} é a motivação que origina da vontade de evitar danos ou prejuízos, fazendo uso do instinto de protegermos aquilo que já possúimos, como um recurso, posição ou vantagem.
-\end{enumerate}
-
-Assim, nosso objetivo é desenvolver um sistema que incentive todos esses elementos motivacionais na população de São José do Rio Preto, permitindo que eles se conscientizem sobre sua própria saúde, entendam o ciclo de vida do Aedes aegypti e do vírus da dengue, além de agirem, eliminando focos de proliferação e acionando as autoridades em situações de emergência. Cada um dos 8 focos estará associado a requisitos funcionais abaixo.
+Assim, nosso objetivo é desenvolver um sistema que incentive todos esses elementos motivacionais na população de São José do Rio Preto, permitindo que eles se conscientizem sobre sua própria saúde, entendam o ciclo de vida do Aedes aegypti e do vírus da dengue, além de agirem, eliminando focos de proliferação e acionando as autoridades em situações de emergência. Cada um dos 8 focos estará associado a requisitos funcionais tratados na seção \ref{sec:req}.
 
 \section{O sistema e seu funcionamento}
 
 O sistema a ser desenvolvido será  um aplicativo que funcionará como uma plataforma unificada, combinando informações geoespaciais, dados climáticos e registros de casos de dengue para reconhecer e acompanhar zonas de perigo, tanto para as autoridades quanto para a população. O sistema determina uma pontuação para cada bairro, possibilitando a monitorização instantânea da situação local. Os usuários têm a capacidade de reportar pontos de proliferação de mosquitos, que serão examinados e erradicados pelas autoridades. Cada queixa confirmada e solucionada eleva a pontuação do usuário, que pode ser transformada em prêmios. Adicionalmente, ao aprimorar a condição de um bairro, a pontuação dessa região também é elevada.
 
-O aplicativo terá um componente de registro e administração de usuários, possibilitando a criação de um perfil personalizado com dados como nome social, documento oficial, foto de perfil, gênero, idade, local de residência e ênfase no combate à dengue. Os utilizadores poderão modificar suas informações e definir preferências, tais como notificações e categorias de missões. Será preciso fazer login para acessar recursos relevantes, assegurando a proteção dos dados através de boas práticas de criptografia.
+O aplicativo terá um componente de registro e administração de usuários, possibilitando a criação de um perfil personalizado com dados como nome social, documento oficial, foto de perfil, gênero, idade, local de residência e ênfase no combate à dengue. Os usuários poderão modificar suas informações e definir preferências, tais como notificações e categorias de missões. Será preciso fazer login para acessar recursos relevantes, assegurando a proteção dos dados através de boas práticas de criptografia.
 
 No segmento educacional, serão disponibilizados conteúdos interativos, tais como aulas em vídeo, transmissões ao vivo sobre a luta contra o mosquito, além de recursos de suporte, tais como infográficos, questionários e textos explicativos sobre o ciclo de vida do Aedes aegypti, os sintomas da dengue e métodos de prevenção.
 
-A gamificação será um elemento fundamental do aplicativo, com um sistema de pontuação individual e classificação global, além de classificação específica por bairro, promovendo a competição sadia. O sistema também contemplará realizações pessoais, tais como "Denúncias Realizadas" e "Focos Eliminados", bem como missões individuais e coletivas, premiando ações executadas e penalizando a inatividade. Missões de duração limitada e prêmios inesperados acrescentarão um elemento adicional de envolvimento e urgência.
+\subsection{Gamificação}
+\label{sec:game}
+A \textit{gamificação} será um elemento fundamental do aplicativo, com um sistema de pontuação individual e classificação global, além de classificação específica por bairro, promovendo a competição sadia. O sistema também contemplará realizações pessoais, tais como "Denúncias Realizadas" e "Focos Eliminados", bem como missões individuais e coletivas, premiando ações executadas e penalizando a inatividade. Missões de duração limitada e prêmios inesperados acrescentarão um elemento adicional de envolvimento e urgência.
+
+Para alcancar este objetivo, utilizaremos o sistema de gamificacao Octalysis que alcança nosso objetivo de engajamento ao reconhecer oito "impulsos principais" que precisam ser estimulados, sao elas:
+
+\begin{enumerate}
+    \item \textbf{Epic Meaning \& Calling} se refere à motivação em participar de algo que consideramos maior que nós mesmos, tomando partido em uma causa nobre ou propósito grandioso.
+    \item \textbf{Development \& Accomplishment}Refere-se à motivação que obtemos ao avançar em direção a algum objetivo e superarmos obstáculos e alcançarmos marcos.
+    \item \textbf{Empowerment of Creativity \& Feedback} é a motivação que surge da chance de criar, experimentar e observar as consequências de suas ações.
+    \item \textbf{Ownership \& Possession} é o impulso que temos ao percebermos que possuímos responsabilidade sobre algo, seja um projeto, ideia ou objetivo.
+    \item \textbf{Social Influence \& Relatedness} é a motivação social e ocorre através do contato com outras pessoas.
+    \item \textbf{Scarcity \& Impatience} está intimamente ligado à percepção de valor que aumenta quando a disponibilidade de um item ou recurso é restrita.
+    \item \textbf{Unpredictability \& Curiosity} explora a imprevisibilidade presente em uma experiência, como surpresas e enigmas a serem desvendados, como uma forte fonte de motivação.
+    \item \textbf{Loss \& Avoidance} é a motivação que origina da vontade de evitar danos ou prejuízos.
+\end{enumerate}
 
 O sistema de alertas e acompanhamento de zonas de risco possibilitará que os usuários reportem focos de mosquitos, sendo as denúncias confirmadas pela equipe encarregada. As informações serão empregadas na criação de um mapa de zonas de risco, mostrando as áreas com maior incidência de focos e casos de dengue, com atualizações em tempo real sobre o avanço das medidas de combate.
 
 Ademais, o sistema de rastreamento de sintomas possibilitará aos usuários o preenchimento de um formulário diário sobre seus sintomas, com notificações em caso de suspeita de dengue. O registro de saúde do usuário auxiliará no monitoramento da progressão do seu estado de saúde e fornecerá alertas de monitoramento.
 
+\subsection{Recompensas para o Usuário}
+
+Para aumentar o envolvimento da população, o sistema oferecerá um conjunto de recompensas que estão em conformidade com os princípios do modelo Octalysis. As recompensas serão distribuídas com base no nível de envolvimento, pontuação acumulada e conclusão de missões, incentivando a motivação constante e a sensação de avanço.
+
+As recompensas serão divididas em dois grupos principais:
+
+\begin{itemize}
+    \item \textbf{Recompensas simbólicas e sociais:}
+    \begin{itemize}
+        \item Certificados digitais de participação e impacto social.
+        \item Conquistas visuais no perfil do usuário (badges, medalhas).
+        \item Destaque em rankings públicos do aplicativo.
+        \item Acesso a conteúdos e funcionalidades exclusivas dentro da plataforma.
+    \end{itemize}
+
+    \item \textbf{Recompensas materiais e promocionais (parcerias privadas):}
+    \begin{itemize}
+        \item Brindes como camisetas, garrafas reutilizáveis ou kits educativos.
+        \item Cupons de desconto em empresas parceiras locais (mercados, farmácias, transporte), ou com sistemas que a administração atual julgue possível e importantes.
+        \item Participação em sorteios mensais com prêmios patrocinados.
+    \end{itemize}
+\end{itemize}
+
+Essas recompensas visam não apenas incentivar ações individuais, mas também reforçar o senso de comunidade, pertencimento e colaboração no combate à dengue.
+
 \section{Os requisitos funcionais}
-Para que atinja a sua descrição e seus objetivos, o sistema desenvolvido deverá conter:
+\label{sec:req}
+
+Para que o sistema atinja suas metas e proporcione uma experiência eficiente para os usuários, deve-se implementar uma série de requisitos funcionais que vão desde o registro de usuários até a interação com autoridades e mecanismos de gamificação.
 
 \subsection{Registro e Gestão de Usuários}
 \begin{enumerate}
@@ -131,25 +162,28 @@ Para que atinja a sua descrição e seus objetivos, o sistema desenvolvido dever
 \subsection{Módulo Educacional}
 \begin{enumerate}
     \item Conteúdo organizado em diferentes cursos/módulos para melhor absorção e aprendizado.
-    \item Player de vídeos para vídeo-aulas, com suporte a legendas.
+    \item \textit{Player} de vídeos para vídeo-aulas, com suporte a legendas.
     \item Transmissões ao vivo para anúncios oficiais em palestras de temas relevantes
-    \item Tutoriais multimídias (textos, vídeos e quizzes) que ensinam a identificar e eliminar focos de mosquito da dengue.
+    \item Tutoriais multimídias (textos, vídeos e \textit{quizzes}) que ensinam a identificar e eliminar focos de mosquito da dengue.
 \end{enumerate}
 
-\subsection{Sistema de Gamificação}
+\subsection{Sistema de Gamificação (Baseado no Octalysis)}
+Os princípios do modelo Octalysis serão utilizados para orientar a gamificação no sistema, que identifica oito impulsos motivacionais principais que envolvem os usuários em variados contextos. Essas motivações serão integradas às características do aplicativo para incentivar a participação engajada, o sentido de propósito, a competição saudável e recompensas relevantes.
 \begin{enumerate}
-    \item Um score pessoal para cada usuário registrado.
-    \item Ranking geral e por bairro mostrando a classificação de todos os usuários, incentivando uma competição de maneira saudável.
-    \item Destaque para os usuários de com maior ganho de pontuação na página principal.
-    \item Conquistas pessoais associadas a realização de ações incentivadas um número específico de vezes.
-    \item Histórico de conquista onde cada usuário poderá visualizar suas próprias conquistas, estatísticas e a de outros usuários.
-    \item Missões individuais aleatórias como assistir um número determinado de aulas, realizar ou eliminar um número específicos de focos, etc.
-    \item Missões cooperativas como reduzir o número de casos reportados ou focos denunciados, elevando o score da região.
-    \item Recompensas como ganho de pontos e conquistas ao concluir missões e realizar ações incentivadas.
-    \item Penalidades como perda de pontos por inatividade.
-    \item Recompensas surpresa ao preencher o registro de sintomas ou consumir conteúdo educacional regularmente, como pontos extras ou conquistas especiais.
-    \item Geração de missões de tempo limitado, com tarefas especiais surgindo por um período curto.
+    \item Score pessoal baseado em ações como denúncias e consumo de conteúdo educativo (Development \& Accomplishment*).
+    \item Rankings global e por bairro (Social Influence \& Relatedness).
+    \item Destaque para os usuários mais ativos na página inicial.
+    \item Conquistas pessoais desbloqueadas por frequência e impacto das ações realizadas.
+    \item Histórico de atividades e conquistas acessível pelo perfil.
+    \item Missões individuais aleatórias e personalizadas com base nos hábitos do usuário (Empowerment of Creativity \& Feedback).
+    \item Missões cooperativas para estimular ações comunitárias (Epic Meaning \& Calling).
+    \item Recompensas por ações específicas e conclusão de missões.
+    \item Penalidades leves por inatividade prolongada (Loss \& Avoidance).
+    \item Recompensas surpresa por interação com o app (Unpredictability \& Curiosity).
+    \item Missões de tempo limitado que geram senso de urgência (Scarcity \& Impatience).
 \end{enumerate}
+
+
 
 \subsection{Sistema de Denúncias e Monitoramento de Áreas de Risco}
 \begin{enumerate}
@@ -171,6 +205,11 @@ Para que atinja a sua descrição e seus objetivos, o sistema desenvolvido dever
     \item Painel para a avaliação e atualização dos status de denúncias realizadas.
     \item Integração com sistema oficiais para que dados sobre surtos, casos e relatórios de saúde pública possam ser importados.
 \end{enumerate}
-\section{Conclusao}
+
+
+
+
+\section{Conclusão}
+O sistema proposto tem como objetivo combinar tecnologia, educação e envolvimento social no combate à dengue em São José do Rio Preto. O uso do modelo de \textit{gamificação Octalysis} assegura uma motivação completa para os usuários, abrangendo elementos emocionais, sociais, criativos e racionais. Esperamos não só amenizar a crise atual ao motivar a população através de recompensas, desafios e aprendizado constante, mas também promover uma cultura de prevenção e envolvimento cidadã sustentável a longo prazo.
 
 \end{document}
