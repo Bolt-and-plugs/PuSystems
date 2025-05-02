@@ -28,6 +28,9 @@
             top=3cm,    
             bottom=2cm   
             ]{geometry}
+\usepackage{pgfgantt}
+\usepackage{xcolor}
+\usepackage{lscape}
 
 
 \begin{document}
@@ -76,7 +79,7 @@
 \fancyhead[C]{\nouppercase{\leftmark}}
 \rhead{\includegraphics[width=2cm]{Logo Transparente Preto.png}}
 \fancyfoot[R]{}
-\fancyfoot[C]{© 2025 - PuSystems}
+\fancyfoot[C]{© 2025 - PuSystem}
 \fancyfoot[L]{}
 \setlength\headheight{26pt}
 
@@ -85,16 +88,21 @@
 \newpage
 
 \section{Introdução}
-% descreve os objetivos gerais do trabalho e restrições que afetam a gerência do projeto
+A relevância do planejamento em projetos de software é enfatizada por Pressman, que define a gerência de projetos como o conjunto de atividades de planejamento e acompanhamento das pessoas envolvidas, do produto e do processo ao longo de todo o ciclo de vida do software \cite{pressman2010}. Segundo o mesmo autor, um gerenciamento eficaz garante que o sistema atenda às expectativas do cliente e seja entregue dentro dos prazos e do orçamento previstos.  
+
+Além disso, o Project Management Institute (PMI) aponta que, em média, “US\$ 122 milhões são desperdiçados para cada US\$ 1 bilhão investido devido ao baixo desempenho dos projetos” \cite{pmi-2016}, reforçando a importância de um planejamento rigoroso, da análise de riscos e do controle de cronograma desde o início do desenvolvimento.  
+
+Entende-se, então, que os passos elaborados no documento a seguir são de extrema importância para o andamento do projeto, permitindo ao grupo de desenvolvimento, aos stakeholders e até mesmo à população uma melhor entrega, organização, otimização e entendimento do projeto como um todo.
+
 \newpage
 \section{Desenvolvimento}
 \subsection{Organização do Projeto}
 % descreve o modo como a equipe de desenvolvimento é organizada, as pessoas envolvidas e seus papéis na equipe
 A equipe de desenvolvimento do projeto foi selecionada visando criar um grupo coeso, permitindo que os seus indivíduos trabalhem com eficiência em prol de entregar o melhor produto possível dentro do prazo e com bom custo-benefício. A seleção foi feita buscando criar um equilíbrio entre as habilidades técnicas (\textit{hard skills}) e personalidades complementares, facilitando assim o trabalho em equipe.
 
-Levando em consideração o porte médio e a urgência do projeto, foi priorizada uma equipe pequena formada por desenvolvedores experientes e multifuncionais. Isto permite uma organização democrática e informal, com comunicação, troca de informação e tomada de decisão altamente eficaz. Desta forma, o líder de projeto está envolvido diretamente no desenvolvimento do software, e as tarefas são alocadas conforme as habilidades e experiências de cada membro. As decisões referentes ao projeto são tomadas através do consenso entre a equipe, com o líder técnico podendo usar sua experiência para guiá-las. A troca de informação, discussões e documentação do projeto é realizada através de uma \textit{wiki} particular e e-mails, permitindo que membros trabalhando remotamente se comuniquem efetivamente.
+Levando em consideração o porte médio e a urgência do projeto, foi priorizada uma equipe pequena formada por desenvolvedores experientes e multifuncionais. Isto permite uma organização democrática e informal, com comunicação, troca de informação e tomada de decisão altamente eficaz. Desta forma, o líder de projeto está envolvido diretamente no desenvolvimento do software, e as tarefas são alocadas conforme as habilidades e experiências de cada membro. As decisões referentes ao projeto são tomadas através do consenso entre a equipe, com o líder técnico podendo usar sua experiência para guiá-las. A troca de informação, discussões e documentação do projeto é realizada através de uma \textit{wiki} particular e e-mails, permitindo que membros que trabalham remotamente se comuniquem efetivamente.
 
-A metodologia de desenvolvimento usada é equilibrada, fazendo uso de muitos dos princípios da metodologia ágil e adaptando-se às necessidades do cliente. \textbf{Optou-se pelo framework Scrum} devido à sua ênfase em entregas incrementais, transparência e adaptabilidade. O Scrum favorece a auto-organização da equipe, permitindo que os membros definam suas próprias tarefas com base nas prioridades do \textit{Product Backlog}, enquanto mantêm ciclos de trabalho curtos (\textit{sprints} de 2 semanas). Isso alinha-se ao contexto do projeto, que exige respostas rápidas a mudanças regulatórias (como integrações com sistemas de saúde públicos) e à necessidade de validar funcionalidades com \textit{stakeholders} frequentemente. 
+A metodologia de desenvolvimento usada é equilibrada, fazendo uso de muitos dos princípios da metodologia ágil e adaptando-se às necessidades do cliente. \textbf{Optou-se pelo framework Scrum} devido à sua ênfase em entregas incrementais, transparência e adaptabilidade. O Scrum favorece a auto-organização da equipe, permitindo que os membros definam suas próprias tarefas com base nas prioridades do \textit{Product Backlog}, enquanto mantêm ciclos de trabalho curtos (\textit{sprints} de 2 semanas). Isso alinha-se ao contexto do projeto, que exige respostas rápidas a mudanças regulatórias (como integrações com sistemas de saúde públicos) e à necessidade de validar funcionalidades com \textit{stakeholders} frequentemente [veja mais na seção \ref{sec:trabalho-cronograma}].
 
 \newpage
 \begin{longtable}[c]{@{} >{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}p{11cm} @{}}
@@ -244,7 +252,7 @@ Para os riscos classificados como \textbf{alto impacto} (R $\geq$ 6) e \textbf{c
 % descreve o hw e o sw de apoio exigidos para realizar o desenvolvimento. 
 % Se o hw precisar ser comprado, incluir prazos de entrega e estimativas de preço
 
-Para obter-se o melhor resultado na produção deste software, precisa-se analisar quais são os sistemas de apoio, tanto físicos quanto lógicos necessários. No geral, o desenvolvimento, pela parte da PuSystems, não precisara de uma grande massa de recursos, estes estarão ou armazenados em outros servidores, ou na própria borda do sistema, no usuário final. 
+Para obter-se o melhor resultado na produção deste software, precisa-se analisar quais são os sistemas de apoio, tanto físicos quanto lógicos necessários. No geral, o desenvolvimento, pela parte da PuSystem, não precisara de uma grande massa de recursos, estes estarão ou armazenados em outros servidores, ou na própria borda do sistema, no usuário final. 
 
 Estes, a seguir, são comportamentos esperados do sistema, baseados nos requisitos funcionais: 
 
@@ -335,74 +343,247 @@ Cloudflare/CDN & -- & 8.000,00 & Otimização de tráfego global e proteção co
 Elaborado pelos autores (2025).
 \end{table}
 
-Acredita-se, portanto, que os requisitos supracitados serão necessários para atender as demandas do produto, assim como as expectativas do contratante e, também, que os custos mencionados na tabela \ref{tab:custos} estão de acordo com o esperado.
+Acredita-se, portanto, que os requisitos supracitados serão necessários para atender às demandas do produto, assim como as expectativas do contratante e, também, que os custos mencionados na tabela \ref{tab:custos} estão de acordo com o esperado.
 
 \newpage
 
-\subsection{Divisão de Trabalho}
-% descreve a divisão do projeto em atividades e identifica os marcos e os produtos associados a cada atividade
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Cronograma de Projeto}
+\subsection{Divisão de Trabalho e Cronograma do Projeto}
+\label{sec:trabalho-cronograma}
 
-Considerando os requisitos apresentados, a estimativa de tempo para o desenvolvimento do sistema, por uma equipe formada por cinco profissionais da área de tecnologia, pode ser organizada com base na metodologia ágil, utilizando sprints de duas semanas.
+Esta seção apresenta a organização do desenvolvimento do sistema com base nos requisitos funcionais definidos, detalhando as principais atividades, os responsáveis e os produtos entregáveis (marcos do projeto). A divisão foi feita por módulos correspondentes a cada requisito principal.
 
-A seguir, a Tabela \ref{tab:cronograma}  apresenta a estimativa de tempo por módulo funcional detalhada para cada etapa:
+\subsubsection*{Requisito 1: Registro e Gestão de Usuários}
+\textbf{Atividades:}
+\begin{itemize}
+  \item Definição da arquitetura de autenticação;
+  \item Desenvolvimento da API de usuários;
+  \item Criação da interface de cadastro e login;
+  \item Testes de segurança e automação.
+\end{itemize}
+\textbf{Responsáveis:} Carlos Eduardo, Felipe Gomes, Felipe Possari, Matheus Thomé. \\
+\textbf{Marco associado:} \textbf{M1 – Sistema de Usuários} (Sprint 3): Autenticação, cadastro e perfis operacionais.
 
-\begin{table}[h]
+\subsubsection*{Requisito 2: Módulo Educacional}
+\textbf{Atividades:}
+\begin{itemize}
+  \item Modelagem do fluxo educacional;
+  \item Implementação de APIs para conteúdo e quizzes;
+  \item Desenvolvimento de interface interativa;
+  \item Dashboards para acompanhamento do progresso.
+\end{itemize}
+\textbf{Responsáveis:} Carlos Eduardo, Felipe Gomes, Felipe Possari, Santiago, Matheus Thomé. \\
+\textbf{Marco associado:} \textbf{M2 – Módulo Educacional} (Sprint 5): Conteúdo interativo e quizzes integrados.
+
+\subsubsection*{Requisito 3: Sistema de Gamificação}
+\textbf{Atividades:}
+\begin{itemize}
+  \item Definição das regras de gamificação;
+  \item Backend para pontuação e ranking;
+  \item Interface com elementos de engajamento;
+  \item Métricas e testes de usabilidade.
+\end{itemize}
+\textbf{Responsáveis:} Carlos Eduardo, Felipe Gomes, Felipe Possari, Santiago, Matheus Thomé. \\
+\textbf{Marco associado:} \textbf{M3 – Gamificação} (Sprint 10): Sistema de pontos, conquistas e feedback visual.
+
+\subsubsection*{Requisito 4: Sistema de Denúncias e Áreas de Risco}
+\textbf{Atividades:}
+\begin{itemize}
+  \item Integração com APIs de mapas;
+  \item Interface para submissão e visualização de denúncias;
+  \item Geração de heatmaps;
+  \item Implementação de anonimização e segurança.
+\end{itemize}
+\textbf{Responsáveis:} Felipe Gomes, Felipe Possari, Santiago, Carlos Eduardo, Matheus Thomé. \\
+\textbf{Marco associado:} \textbf{M4 – Denúncias e Áreas de Risco} (Sprint 13): Mapa interativo com denúncias georreferenciadas.
+
+\subsubsection*{Requisito 5: Monitoramento de Sintomas}
+\textbf{Atividades:}
+\begin{itemize}
+  \item Modelagem de dados clínicos;
+  \item Backend para coleta e geração de alertas;
+  \item Formulário dinâmico e validações no frontend;
+  \item Testes com dados simulados.
+\end{itemize}
+\textbf{Responsáveis:} Santiago, Felipe Gomes, Felipe Possari, Carlos Eduardo, Matheus Thomé. \\
+\textbf{Marco associado:} \textbf{M5 – Monitoramento de Sintomas} (Sprint 14): Histórico clínico e alertas implementados.
+
+\subsubsection*{Requisito 6: Gerenciamento e Suporte a Autoridades}
+\textbf{Atividades:}
+\begin{itemize}
+  \item Desenvolvimento de painel administrativo com níveis de acesso;
+  \item Exportação e visualização de dados agregados;
+  \item Geração de relatórios e dashboards analíticos.
+\end{itemize}
+\textbf{Responsáveis:} Carlos Eduardo, Felipe Gomes, Felipe Possari, Santiago, Matheus Thomé. \\
+\textbf{Marco associado:} \textbf{M6 – Painel de Autoridades} (Sprint 17): Dashboard com relatórios e permissões diferenciadas.
+
+\subsubsection*{Requisito 7: Infraestrutura, Testes e Lançamento}
+\textbf{Atividades:}
+\begin{itemize}
+  \item Implementação de pipelines CI/CD;
+  \item Monitoramento de desempenho e segurança;
+  \item Auditoria final e documentação;
+  \item Validação com stakeholders e preparação para produção.
+\end{itemize}
+\textbf{Responsáveis:} Felipe Gomes, Matheus Thomé, Carlos Eduardo, Felipe Possari. \\
+\textbf{Marco associado:} \textbf{M7 – Lançamento Final} (Sprint 19): Sistema completo em produção e infraestrutura monitorada.
+
+\subsubsection*{Cronograma Estimado}
+
+A Tabela~\ref{tab:cronograma} apresenta a estimativa de tempo de desenvolvimento por requisito, baseada em ciclos de entrega contínua organizados em sprints quinzenais.
+
+\begin{table}[H]
 \centering
 \caption{Duração Estimada por Requisito Principal}
 \label{tab:cronograma}
 \begin{tabular}{|l|c|c|}
 \hline
-\textbf{Requisito} & \textbf{Sprints} & \textbf{Duração} \\
+\textbf{Requisito} & \textbf{Sprints} & \textbf{Duração (semanas)} \\
 \hline
 Registro e Gestão de Usuários & 2 a 3 & 4 a 6 \\
 Módulo Educacional & 3  & 6 \\
 Sistema de Gamificação & 4 a 5  & 8 a 10 \\
-Sistema de Denúncias e Monitoramento de Áreas de Risco & 3  & 6  \\
-Sistema de Monitoramento de Sintomas & 1  & 2  \\
-Gerenciamento e Suporte a Autoridades & 2 a 3  & 4 a 6  \\
+Sistema de Denúncias e Áreas de Risco & 3  & 6  \\
+Monitoramento de Sintomas & 1  & 2  \\
+Painel para Autoridades & 2 a 3  & 4 a 6  \\
 Infraestrutura, Testes e Lançamento & 2  & 4 \\
 \hline
 \textbf{Total} & \textbf{17 a 20} & \textbf{34 a 40} \\
 \hline
 \end{tabular}
-
 \smallskip
-Elaborado pelos autores (2025).
+
+\raggedright
+\textit{Fonte: Elaborado pelos autores (2025).}
 \end{table}
 
-\noindent \textbf{Observações:}
+\noindent \textbf{Considerações Complementares:}
 \begin{itemize}
-    \item \textbf{Prazo Total:} O projeto pode levar de \textbf{8,5 a 10 meses} (considerando 1 sprint = 2 semanas).
-    \item \textbf{Maior Complexidade:} O \textbf{Sistema de Gamificação} é o mais demandante (até 10 semanas), sugerindo necessidade de recursos especializados (ex.: designers de UX para mecânicas de jogo).
-    \item \textbf{Itens Críticos:} 
+    \item \textbf{Duração Total do Projeto:} estimada entre \textbf{8,5 e 10 meses}.
+    \item \textbf{Requisitos com maior complexidade:} o \textbf{Sistema de Gamificação} demanda mais esforço técnico e criativo, com duração prevista de até 10 semanas.
+    \item \textbf{Requisitos com dependências externas:}
     \begin{itemize}
-        \item \textbf{Infraestrutura e Lançamento} (4 semanas) deve incluir testes de carga e segurança.
-        \item \textbf{Monitoramento de Sintomas} (2 semanas) pode ser estendido se integrar APIs externas (ex.: dados de saúde).
+        \item O \textbf{Módulo Educacional} pode depender da validação de conteúdo especializado.
+        \item O \textbf{Sistema de Denúncias} exige integração com serviços de mapas.
     \end{itemize}
-    \item \textbf{Dependências:} 
+    \item \textbf{Requisitos críticos:}
     \begin{itemize}
-        \item O \textbf{Módulo Educacional} pode depender de conteúdo aprovado por especialistas.
-        \item O \textbf{Sistema de Denúncias} requer integração com mapas (ex.: Google Maps API).
+        \item O \textbf{Monitoramento de Sintomas} pode exigir ajustes caso integre dados reais de saúde.
+        \item O \textbf{Lançamento Final} deve contemplar testes de carga, validações de segurança e testes de aceitação.
     \end{itemize}
 \end{itemize}
 
-Podemos ter uma visualização mais detalhada do projeto, no diagrama de Gantt a seguir:
+\subsection{Marcos do Projeto}
+\label{sec:marcos}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth,keepaspectratio]{2025-04-18_16-03-51_screenshot.png}
-    \caption{Diagrama de Gantt}
-    \label{fig:enter-label}
+A Tabela~\ref{tab:marcos} relaciona os principais marcos do projeto aos respectivos sprints e produtos entregáveis, funcionando como referência para o acompanhamento do progresso.
+
+\begin{table}[h]
+\centering
+\caption{Marcos do Projeto}
+\label{tab:marcos}
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Marco} & \textbf{Sprint} & \textbf{Descrição do Produto Entregável} \\
+\hline
+M1 – Sistema de Usuários & Sprint 3 & Autenticação, cadastro e perfis operacionais \\
+M2 – Módulo Educacional & Sprint 5 & Conteúdo educacional interativo e quizzes \\
+M3 – Gamificação & Sprint 10 & Sistema de pontos, ranking e conquistas \\
+M4 – Sistema de Denuncias & Sprint 13 & Submissão e visualização de denúncias no mapa \\
+M5 – Monitoramento de Sintomas & Sprint 14 & Coleta e histórico de sintomas com alertas \\
+M6 – Painel de Autoridades & Sprint 17 & Painel com dashboards e exportação de dados \\
+M7 – Lançamento Final & Sprint 19 & Sistema completo em produção, com monitoramento \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent Para uma visualização temporal detalhada das fases, recursos e dependências, consulte o Diagrama \ref{fig:gantt-estilizado} a seguir.
+
+\definecolor{barblue}{RGB}{153,204,254}
+\definecolor{groupblue}{RGB}{51,102,254}
+\definecolor{linkred}{RGB}{165,0,33}
+
+\newpage
+\begin{landscape}
+
+
+\definecolor{barblue}{RGB}{153,204,254}
+\definecolor{groupblue}{RGB}{51,102,254}
+\definecolor{linkred}{RGB}{165,0,33}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{ganttchart}[
+    canvas/.append style={fill=none, draw=black!5, line width=.100pt},
+    hgrid style/.style={draw=black!5, line width=.100pt},
+    vgrid={*1{draw=black!5, line width=.100pt}},
+    title/.style={draw=none, fill=none},
+    title label font=\bfseries\footnotesize,
+    title label node/.append style={below=7pt},
+    include title in canvas=false,
+    bar label font=\mdseries\small\color{black!70},
+    bar label node/.append style={left=2cm},
+    bar/.append style={draw=none, fill=barblue},
+    bar incomplete/.append style={fill=barblue},
+    group incomplete/.append style={fill=groupblue},
+    group left shift=0,
+    group right shift=0,
+    group height=.5,
+    group peaks tip position=0,
+    group label node/.append style={left=.5cm},
+    link/.style={-latex, line width=1.5pt, linkred}
+  ]{1}{19}
+  
+  \gantttitle[
+    title label node/.append style={below left=7pt and 3pt}
+  ]{SPRINTS:\quad1}{1}
+  \gantttitlelist{2,...,19}{1} \\[grid]
+  
+  % Requisito 1: Usuários
+  \ganttgroup[progress=0]{Requisito 1: Registro e Gestão de Usuários}{1}{3} \\
+  \ganttbar[progress=0,name=M1]{\textbf{M1} Sistema de Usuários}{3}{3} \\[grid]
+  
+  % Requisito 2: Educacional
+  \ganttgroup[progress=25]{Requisito 2: Módulo Educacional}{4}{5} \\
+  \ganttbar[progress=25,name=M2]{\textbf{M2} Módulo Educacional}{5}{5} \\[grid]
+  
+  % Requisito 3: Gamificação
+  \ganttgroup[progress=50]{Requisito 3: Gamificação}{6}{10} \\
+  \ganttbar[progress=50,name=M3]{\textbf{M3} Sistema de Gamificação}{10}{10} \\[grid]
+  
+  % Requisito 4: Denúncias
+  \ganttgroup[progress=75]{Requisito 4: Denúncias e Áreas de Risco}{11}{13} \\
+  \ganttbar[progress=75,name=M4]{\textbf{M4} Sistema de Denúncias}{13}{13} \\[grid]
+  
+  % Requisito 5: Sintomas
+  \ganttgroup[progress=90]{Requisito 5: Monitoramento de Sintomas}{14}{14} \\
+  \ganttbar[progress=90,name=M5]{\textbf{M5} Monitoramento de Sintomas}{14}{14} \\[grid]
+  
+  % Requisito 6: Autoridades
+  \ganttgroup[progress=95]{Requisito 6: Painel de Autoridades}{15}{17} \\
+  \ganttbar[progress=95,name=M6]{\textbf{M6} Painel de Autoridades}{17}{17} \\[grid]
+  
+  % Requisito 7: Infraestrutura
+  \ganttgroup[progress=100]{Requisito 7: Infraestrutura e Lançamento}{18}{19} \\
+  \ganttbar[progress=100,name=M7]{\textbf{M7} Lançamento Final}{19}{19}
+  
+  \end{ganttchart}
+  \caption{Diagrama de Gantt com Marcos e Progresso}
+  \label{fig:gantt-estilizado}
 \end{figure}
+\end{landscape}
+\newpage
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{Mecanismos de Monitoramento e Elaboração de Relatórios}
 
-Para garantir o acompanhamento contínuo do projeto e a tomada de decisões fundamentadas, a PuSystems adotará mecanismos sistemáticos de monitoramento e elaboração de relatórios, organizados em três frentes principais: desenvolvimento e qualidade, uso e engajamento, e infraestrutura e conformidade.
+Para garantir o acompanhamento contínuo do projeto e a tomada de decisões fundamentadas, a PuSystem adotará mecanismos sistemáticos de monitoramento e elaboração de relatórios, organizados em três frentes principais: desenvolvimento e qualidade, uso e engajamento, e infraestrutura e conformidade.
 
 \subsubsection{Desenvolvimento e Qualidade}
 
@@ -416,10 +597,16 @@ Após o lançamento do sistema, plataformas de análise como Google Analytics e 
 
 O sistema contará com soluções de monitoramento em tempo real, como Prometheus e Grafana, para acompanhar a disponibilidade, latência e desempenho dos servidores. Relatórios semanais de incidentes de infraestrutura serão elaborados, permitindo a identificação de gargalos e a adoção de medidas preventivas. Além disso, auditorias trimestrais de segurança e conformidade com a Lei Geral de Proteção de Dados (LGPD) serão realizadas, com relatórios que incluirão resultados de varreduras de vulnerabilidades e avaliações das práticas de segurança implementadas.
 
-Todos os relatórios serão organizados e disponibilizados em uma wiki interna segura, acessível aos membros da equipe e representantes das autoridades públicas, promovendo transparência, rápida disseminação de informações e sustentação de um processo contínuo de melhoria da PuSystems.
+Todos os relatórios serão organizados e disponibilizados em uma wiki interna segura, acessível aos membros da equipe e representantes das autoridades públicas, promovendo transparência, rápida disseminação de informações e sustentação de um processo contínuo de melhoria da PuSystem.
 
 \newpage
 \section{Conclusão}
+O planejamento detalhado apresentado neste documento demonstra a viabilidade técnica e organizacional do projeto, em conformidade com as melhores práticas de administração de software propostas por Pressman e com os critérios de eficácia do PMI. A organização em sprints com objetivos claros (M1–M7), apoiada por um gráfico de Gantt dinâmico e mecanismos de supervisão constante, estabelece uma estrutura sólida para minimizar os riscos críticos identificados - desde obstáculos técnicos como a integração de sistemas até questões sociais como a participação da população.
+
+A adoção do Scrum potencializa a capacidade de resposta da equipe a mudanças, enquanto a análise quantitativa de riscos (com 14 fatores críticos mapeados e priorizados) garantiu proatividade na mitigação de ameaças. A combinação de ferramentas modernas – como autenticação OAuth2, criptografia AES-256 e infraestrutura escalável em nuvem – com parcerias estratégicas (como o comitê consultivo com autoridades sanitárias) assegura não apenas a entrega técnica, mas a relevância social da solução.
+
+Os indicadores de desempenho estabelecidos (taxa de retenção >70\%, SLA de 99.9\% e carregamento de páginas em <1.5s) funcionarão como termômetros objetivos do sucesso, enquanto os relatórios trimestrais de segurança e engajamento sustentarão a melhoria contínua. Este projeto consolida-se, assim, como um modelo replicável de como planejamento rigoroso, métodos ágeis e monitoramento baseado em dados podem transformar desafios complexos de saúde pública em soluções tecnológicas eficazes, reduzindo o desperdício de recursos e maximizando o impacto social.
+
 
 \newpage
 \renewcommand{\refname}{Bibliografia}
@@ -430,11 +617,9 @@ Todos os relatórios serão organizados e disponibilizados em uma wiki interna s
 Disponível em: \url{https://www.ibge.gov.br/cidades-e-estados/sp/sao-jose-do-rio-preto.html}. 
 Acesso em: 20 abr. 2025.
 
-\bibitem{} %{title} %author name here
-\textbf{}. %text here
+\bibitem{pressman2010} PRESSMAN, R. S. \textit{Software Engineering: A Practitioner’s Approach}. 7. ed. McGraw‑Hill, 2010.
 
-\bibitem{} %{title} %author name here
-\textbf{}. %text here
+\bibitem{pmi-2016} PROJECT MANAGEMENT INSTITUTE (PMI). \textbf{Pulse of the Profession™ 2016: The High Cost of Low Performance}. 2016. Disponível em: \url{https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/pulse-of-the-profession-2016.pdf#:~:text=More%20critical%20is%20the%20money,percent%20increase%20over%20last%20year}. Acesso em: 02 abr. 2025.
 
 \end{thebibliography}
 \end{document}
