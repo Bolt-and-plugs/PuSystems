@@ -3,14 +3,14 @@
 \usepackage[portuges]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{times} % Fonte Times New Roman
+\usepackage{times}
 \usepackage{setspace}
 \usepackage{mathptmx} 
 \onehalfspacing
 \usepackage{amsmath}
 \usepackage{indentfirst}
 \usepackage{graphicx}
-\usepackage{multicol,lipsum}
+\usepackage{multicol}
 \usepackage{enumitem}
 \usepackage{url}
 \usepackage{booktabs}
@@ -22,6 +22,9 @@
 \usepackage{float}
 \usepackage{booktabs}   
 \usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{amssymb}
 \usepackage[a4paper, 
             left=3cm,    
             right=2cm,   
@@ -29,41 +32,34 @@
             bottom=2cm   
             ]{geometry}
 
-
 \begin{document}
-%\maketitle
 
 \begin{titlepage}
 	\begin{center}
 	
 	\begin{figure}[!ht]
 	\centering
-	\includegraphics[width=10cm]{dist/LogoTransparentePreto.png} \\ 
+	% \includegraphics[width=10cm]{dist/LogoTransparentePreto.png} \\ 
     \end{figure}
 
+	\vspace{115pt}
+    \textbf{\Huge{Projeto de Interface}}\\
         
-		\vspace{115pt}
-        \textbf{\Huge{Projeto de Interface}}\\
-		%\title{{\large{Título}}}
-        
-		\vspace{115pt}
-        Carlos Eduardo Nogueira Silva \\
-        Felipe Gomes da Silva \\
-        Felipe Matheus Possari \\
-        Matheus Thomé da Silva\\ 
-        Santiago Pinheiro Martins \\
+	\vspace{115pt}
+    Carlos Eduardo Nogueira Silva \\
+    Felipe Gomes da Silva \\
+    Felipe Matheus Possari \\
+    Matheus Thomé da Silva\\ 
+    Santiago Pinheiro Martins \\
 	\end{center}
-	
 	
 	\vspace{1cm}
 	\begin{center}
 		\vspace{\fill}
-		 Abril \\
-		 2025
-			\end{center}
+		Abril \\
+		2025
+	\end{center}
 \end{titlepage}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \newpage
 \thispagestyle{empty}
@@ -71,36 +67,190 @@
 
 \newpage
 \pagestyle{fancy}
-
 \fancyhead[L]{\thepage}
 \fancyhead[C]{\nouppercase{\leftmark}}
-\rhead{\includegraphics[width=2cm]{dist/LogoTransparentePreto.png}}
+% \rhead{\includegraphics[width=2cm]{dist/LogoTransparentePreto.png}}
 \fancyfoot[R]{}
 \fancyfoot[C]{© 2025 - PuSystems}
 \fancyfoot[L]{}
 \setlength\headheight{26pt}
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % %
-
-\newpage
 \section{Introdução}
-% descreve os objetivos gerais do trabalho e restrições que afetam a gerência do projeto
-\newpage
+Este documento apresenta o projeto de interface para o aplicativo ZAPP - Zona de Ação Pública, desenvolvido pela PuSystems. O objetivo é fornecer uma análise detalhada das telas do sistema, aplicando os princípios de usabilidade e design de interface para criar uma experiência intuitiva e eficiente para os usuários no combate à dengue.
+
 \section{Desenvolvimento}
 
 \subsection{Análise}
+A análise das telas foi realizada com base nos princípios de usabilidade de Pressman (Capítulo 11), considerando:
+\begin{itemize}
+\item Perfil dos usuários (novatos, intermediários e avançados)
+\item Tarefas que os usuários precisam realizar
+\item Ambiente físico de uso do aplicativo
+\item Fatores humanos como memória limitada e propensão a erros
+\end{itemize}
 
 \subsection{Projeto}
+\subsubsection{Tela de Login}
+\textbf{Princípios Aplicados:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Deixar o usuário no comando:}
+    \begin{itemize}
+        \item Flexibilidade de escolha entre login tradicional e autenticação via gov.br
+        \item Opção de recuperação de acesso
+    \end{itemize}
+
+    \item \textbf{Detalhes:}
+    \begin{itemize}
+        \item Ícone de olho para mostrar/ocultar senha
+        \item Mapa na parte inferior da tela para mostrar identidade visual
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Tela de Cadastro}
+\textbf{Princípios Aplicados:}
+\begin{itemize}[leftmargin=*]  
+    \item \textbf{Detalhes:}
+    \begin{itemize}
+        \item Opção de autenticação alternativa (gov.br)
+        \item Separação visual clara entre opções
+    \end{itemize}
+
+    \item \textbf{Experiência do usuário:}
+    \begin{itemize}
+        \item Link para visualização completa dos termos de uso e políticas de privacidade
+        \item Validação em tempo real dos campos
+        \item Dicas de requisitos para senha
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Tela Home}
+\textbf{Princípios Aplicados:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Navegação simplificada:}
+    \begin{itemize}
+        \item Botões principais destacados
+        \item Ícones autoexplicativos
+    \end{itemize}
+
+    \item \textbf{Detalhes:}
+    \begin{itemize}
+        \item Área de notificações
+        \item Seção de missões
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Tela Meu Bairro}
+\textbf{Princípios Aplicados:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Orientação espacial:}
+    \begin{itemize}
+        \item Campo de pesquisa por região
+        \item Listagem de áreas próximas
+    \end{itemize}
+    
+    \item \textbf{Informação contextual:}
+    \begin{itemize}
+        \item Seção dedicada para alertas na parte inferior
+    \end{itemize}
+
+    \item \textbf{Detalhes:}
+    \begin{itemize}
+        \item Mapa interativo integrado
+        \item Sistema de cores para prioridade de alertas
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Tela Denunciar Foco}
+\textbf{Princípios Aplicados:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Localização automática:}
+    \begin{itemize}
+        \item Detecção de GPS
+        \item Opção de ajuste manual
+    \end{itemize}
+
+    \item \textbf{Detalhes:}
+    \begin{itemize}
+        \item Upload de fotos integrado
+        \item Confirmação de envio com feedback
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Tela Monitoramento de Sintomas}
+\textbf{Princípios Aplicados:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Checklist intuitivo:}
+    \begin{itemize}
+        \item Sintomas comuns listados
+        \item Checklist para selecionar o que está sentindo
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Tela Aprender}
+\textbf{Princípios Aplicados:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Conteúdo educacional:}
+    \begin{itemize}
+        \item Materiais variados, vídeos, artigos e apostílas
+        \item Destaque para informações importantes
+    \end{itemize}
+
+    \item \textbf{Detalhes:}
+    \begin{itemize}
+        \item Busca por tópicos
+        \item Progresso de aprendizagem
+        \item Botão de salvar acima da barra de pesquisa
+        \item Player de reprodução e opção de compartilhar
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Tela Missões}
+\textbf{Princípios Aplicados:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Gamificação:}
+    \begin{itemize}
+        \item Sistema de pontos e recompensas
+        \item Barras de progresso para as missões
+    \end{itemize}
+    
+    \item \textbf{Detalhes:}
+    \begin{itemize}
+        \item Pontuação visual
+        \item Sistema de conquistas
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Tela de Loading}
+\textbf{Princípios Aplicados:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Feedback visual:}
+    \begin{itemize}
+        \item Indicador de carregamento com ícone piscando
+        \item Mapa no fundo, em verde, mostrando a identidade visual do aplicativo
+    \end{itemize}
+\end{itemize}
 
 \subsection{Construção}
+A construção da interface seguiu um processo iterativo com:
+\begin{itemize}
+\item Prototipação no papel para validação inicial
+\item Desenvolvimento de protótipos funcionais
+\item Testes com usuários reais
+\item Refinamento contínuo baseado em feedback
+\end{itemize}
 
 \subsection{Validação}
+A validação foi realizada através de:
+\begin{itemize}
+\item Testes de usabilidade com diferentes perfis de usuários
+\item Coleta de dados quantitativos (tempo de tarefa, erros)
+\item Avaliação qualitativa via questionários
+\item Ajustes finais baseados nos resultados
+\end{itemize}
 
-\newpage
 \section{Conclusão}
+O projeto de interface desenvolvido para o aplicativo ZAPP atende aos princípios de usabilidade estabelecidos, proporcionando uma experiência intuitiva e eficiente para os usuários no combate à dengue. As telas foram projetadas considerando a diversidade de usuários e as diferentes tarefas que precisam realizar, com foco especial na redução da carga cognitiva e na prevenção de erros.
 
-\newpage
-\renewcommand{\refname}{Bibliografia}
 \begin{thebibliography}{09}
 \bibitem{ibge-2022} INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). 
 \textbf{Censo Demográfico 2022: São José do Rio Preto}. 
@@ -108,11 +258,13 @@
 Disponível em: \url{https://www.ibge.gov.br/cidades-e-estados/sp/sao-jose-do-rio-preto.html}. 
 Acesso em: 20 abr. 2025.
 
-\bibitem{} %{title} %author name here
-\textbf{}. %text here
+\bibitem{pressman} PRESSMAN, R. S. 
+\textbf{Engenharia de Software}. 
+8. ed. McGraw Hill, 2019.
 
-\bibitem{} %{title} %author name here
-\textbf{}. %text here
-
+\bibitem{nielsen} NIELSEN, J. 
+\textbf{10 Usability Heuristics for User Interface Design}. 
+Nielsen Norman Group, 1994.
 \end{thebibliography}
+
 \end{document}
