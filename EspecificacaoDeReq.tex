@@ -28,6 +28,11 @@
             top=3cm,    
             bottom=2cm   
             ]{geometry}
+\usepackage{xcolor}
+
+\definecolor{priorityHigh}{RGB}{255,102,102}
+\definecolor{priorityMedium}{RGB}{255,178,102}
+\definecolor{priorityLow}{RGB}{153,255,153}
 
 
 \begin{document}
@@ -85,14 +90,15 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Introdução}
 
-São José do Rio Preto está lidando com uma das mais graves epidemias de dengue já registradas no estado, com mais de 35.000 casos confirmados da enfermidade apenas em 2025, posicionando-se como a cidade com maior probabilidade de casos prováveis em todo o Brasil. Claro que isso acontece, mesmo com os esforços das autoridades públicas para conscientizar a população, implementar uma urbanização adequada e eliminar focos do mosquito da dengue.
+São José do Rio Preto está lidando com uma das mais graves epidemias de dengue já registradas no estado, com mais de 35.000 casos confirmados da enfermidade apenas em 2025, posicionando-se como a cidade com maior probabilidade de casos prováveis em todo o Brasil. Infelizmente isso acontece, mesmo com os esforços das autoridades públicas para conscientizar a população, implementar uma urbanização adequada e eliminar focos do mosquito da dengue.
 
-Isso destaca a importância da população na luta contra o mosquito, sendo o único grupo capaz de identificar facilmente os focos de dengue em sua residência e arredores. Então, nosso objetivo é capacitar os habitantes de São José do Rio Preto para que eles mesmos possam aprimorar a condição da cidade e se empenhem para isso.
+Isso destaca a importância da população na luta contra o mosquito, sendo o único grupo capaz de identificar facilmente os focos de dengue em sua residência e arredores, eliminando os criadores da dengue em baixa escala para eliminar o problema em alta escala. Então, nosso objetivo é capacitar os habitantes de São José do Rio Preto para que eles mesmos possam aprimorar a condição da cidade e se empenhem para isso.
 
 Para estimular a participação, o sistema se baseará no modelo de \textit{gamificação} \textit{Octalysis}, criado pelo escritor e empresário Yu-Kai Chou.  O modelo \textit{Octalysis} é empregado na criação de sistemas de \textit{gamificação} destinados a potencializar a motivação humana, melhor tratado na seção \ref{sec:game}.
 
 Assim, nosso objetivo é desenvolver um sistema que incentive todos esses elementos motivacionais na população de São José do Rio Preto, permitindo que eles se conscientizem sobre sua própria saúde, entendam o ciclo de vida do Aedes aegypti e do vírus da dengue, além de agirem, eliminando focos de proliferação e acionando as autoridades em situações de emergência. Cada um dos 8 focos estará associado a requisitos funcionais tratados na seção \ref{sec:req}.
 
+\newpage
 \section{O sistema e seu funcionamento}
 
 O sistema a ser desenvolvido será  um aplicativo que funcionará como uma plataforma unificada, combinando informações geoespaciais, dados climáticos e registros de casos de dengue para reconhecer e acompanhar zonas de perigo, tanto para as autoridades quanto para a população. O sistema determina uma pontuação para cada bairro, possibilitando a monitorização instantânea da situação local. Os usuários têm a capacidade de reportar pontos de proliferação de mosquitos, que serão examinados e erradicados pelas autoridades. Cada queixa confirmada e solucionada eleva a pontuação do usuário, que pode ser transformada em prêmios. Adicionalmente, ao aprimorar a condição de um bairro, a pontuação dessa região também é elevada.
@@ -109,7 +115,7 @@ Para alcancar este objetivo, utilizaremos o sistema de gamificacao Octalysis que
 
 \begin{enumerate}
     \item \textbf{Epic Meaning \& Calling} se refere à motivação em participar de algo que consideramos maior que nós mesmos, tomando partido em uma causa nobre ou propósito grandioso.
-    \item \textbf{Development \& Accomplishment}Refere-se à motivação que obtemos ao avançar em direção a algum objetivo e superarmos obstáculos e alcançarmos marcos.
+    \item \textbf{Development \& Accomplishment} refere-se à motivação que obtemos ao avançar em direção a algum objetivo e superarmos obstáculos e alcançarmos marcos.
     \item \textbf{Empowerment of Creativity \& Feedback} é a motivação que surge da chance de criar, experimentar e observar as consequências de suas ações.
     \item \textbf{Ownership \& Possession} é o impulso que temos ao percebermos que possuímos responsabilidade sobre algo, seja um projeto, ideia ou objetivo.
     \item \textbf{Social Influence \& Relatedness} é a motivação social e ocorre através do contato com outras pessoas.
@@ -147,68 +153,175 @@ As recompensas serão divididas em dois grupos principais:
 
 Essas recompensas visam não apenas incentivar ações individuais, mas também reforçar o senso de comunidade, pertencimento e colaboração no combate à dengue.
 
-\section{Os requisitos funcionais}
-\label{sec:req}
+\section{Requisitos do sistema}
+    \subsection{Requisitos Funcionais}
+    \label{sec:req}
+    
+    Para que o sistema atinja suas metas e proporcione uma experiência eficiente para os usuários, deve-se implementar uma série de requisitos funcionais que vão desde o registro de usuários até a interação com autoridades e mecanismos de gamificação.
+    
+    \subsubsection{RF1 - Registro e Gestão de Usuários}
+    \begin{enumerate}
+        \item Registro de um perfil personalizado, com os seguintes campos: nome social, documento oficial, foto de perfil, gênero, idade, endereço (bairro) e foco no combate à dengue.
+        \item Exigência de login com senha e documento oficial e senha para acesso aos recursos do aplicativo.
+        \item Possibilidade de atualização dos dados cadastrais.
+    \end{enumerate}
+    
+    \subsubsection{RF2 - Módulo Educacional}
+    \begin{enumerate}
+        \item Conteúdo organizado em diferentes cursos/módulos para melhor absorção e aprendizado.
+        \item \textit{Player} de vídeos para vídeo-aulas, com suporte a legendas.
+        \item Transmissões ao vivo para anúncios oficiais em palestras de temas relevantes
+        \item Tutoriais multimídias (textos, vídeos e \textit{quizzes}) que ensinam a identificar e eliminar focos de mosquito da dengue.
+    \end{enumerate}
+    
+    \subsubsection{RF3 - Sistema de Gamificação (Baseado no Octalysis)}
+    Os princípios do modelo Octalysis serão utilizados para orientar a gamificação no sistema, que identifica oito impulsos motivacionais principais que envolvem os usuários em variados contextos. Essas motivações serão integradas às características do aplicativo para incentivar a participação engajada, o sentido de propósito, a competição saudável e recompensas relevantes.
+    \begin{enumerate}
+        \item Score pessoal baseado em ações como denúncias e consumo de conteúdo educativo (Development \& Accomplishment*).
+        \item Rankings global e por bairro (Social Influence \& Relatedness).
+        \item Destaque para os usuários mais ativos na página inicial.
+        \item Conquistas pessoais desbloqueadas por frequência e impacto das ações realizadas.
+        \item Histórico de atividades e conquistas acessível pelo perfil.
+        \item Missões individuais aleatórias e personalizadas com base nos hábitos do usuário (Empowerment of Creativity \& Feedback).
+        \item Missões cooperativas para estimular ações comunitárias (Epic Meaning \& Calling).
+        \item Recompensas por ações específicas e conclusão de missões.
+        \item Penalidades leves por inatividade prolongada (Loss \& Avoidance).
+        \item Recompensas surpresa por interação com o app (Unpredictability \& Curiosity).
+        \item Missões de tempo limitado que geram senso de urgência (Scarcity \& Impatience).
+    \end{enumerate}
+    
+    
+    
+    \subsubsection{RF4 - Sistema de Denúncias e Monitoramento de Áreas de Risco}
+    \begin{enumerate}
+        \item Formulário de denúncia de focos de mosquito, incluindo texto, foto e localização.
+        \item Envio automático de denúncias para a equipe responsável para que validem e atualizem o status do foco. 
+        \item Exibição de áreas de risco no mapa, utilizando dados climáticos, registros de casos e localização de denúncias para indicar regiões com maior incidência.
+        \item Envio de notificações ao usuário sobre aumento de casos em sua região ou surgimento de focos próximos ao seu endereço.
+        \item Envio de notificações sobre a pontuação do bairro, informando se está melhorando ou piorando com base no engajamento comunitário.
+    \end{enumerate}
+    
+    \subsubsection{RF5 - Sistema de Monitoramento de Sintomas}
+    \begin{enumerate}
+        \item Um questionário simples com perguntas sobre febre, dor de cabeça, dores musculares e outros sintomas característicos da dengue que pode ser preenchido periodicamente
+        \item Alertas de suspeita, caso os sintomas sejam compatíveis com a doença, indicando a necessidade de buscar atendimento médico e informando as autoridades de saúde.
+    \end{enumerate}
+    \subsubsection{RF6 - Gerenciamento e Suporte a Autoridades}
+    \begin{enumerate}
+        \item Painel de estatísticas permitindo que autoridades monitorem as informações geoespaciais da cidade e bairros, as denúncias de focos e o número de casos  reportados
+        \item Painel para a avaliação e atualização dos status de denúncias realizadas.
+        \item Integração com sistema oficiais para que dados sobre surtos, casos e relatórios de saúde pública possam ser importados.
+    \end{enumerate}
+    \subsubsection{RF7 - Infraestrutura, Testes e Lançamento}
+            \begin{itemize}
+                \item Implantação em cloud (AWS/Azure) com auto-scaling baseado em demanda;
+                \item Configuração de CDN para distribuição de conteúdo educativo;
+                \item Balanceamento de carga para até 500.000 usuários simultâneos;
+                \item Testes de carga com Locust ou JMeter simulando 10.000 denúncias/minuto;
+                \item Validação de segurança com OWASP ZAP para vulnerabilidades críticas;
+                \item Testes A/B para mecânicas de gamificação
+                \item Rollout por bairros prioritários (baseado em mapas de risco da prefeitura;
+                \item Versão beta para 5\% dos usuários por 2 semanas para coleta de feedback;
+                \item Painel de métricas em tempo real com Kibana:
+                    \begin{itemize}
+                        \item Taxa de falhas em denúncias
+                        \item Tempo médio de validação por autoridades
+                        \item Engajamento com conteúdos educativos
+                    \end{itemize}
+                \item Sistema de rollback automático se disponibilidade é de até 99\%
+            \end{itemize}
+    
+    \subsection{Requisitos Não-Funcionais}
+        \subsubsection{RNF1 - Segurança}
+            \begin{itemize}
+                \item Criptografia AES-256 para todos os dados sensíveis incluindo dados de saúde e pessoais;
+                \item Autenticação via OAuth 2.0 com validacão de 2 fatores para autoridades;
+                \item Conformidade integral com a Lei Geral de Proteção de Dados.
+            \end{itemize}
+        
+        \subsubsection{RNF2 - Desempenho}
+            \begin{itemize}
+                \item Tempo de resposta menor a 2s para 95\% das requisições com até 10 mil usuários concorrentes.
+                \item Sincronização em tempo real do mapa de calor de riscos onde ocorre atualizações a cada 15min.
+                \item Capacidade para processar até 500 denúncias/minuto no pico
+            \end{itemize}
+        
+        \subsubsection{RNF3 - Usabilidade}
+            \begin{itemize}
+                \item Interface acessível com suporte a leitores de tela;
+                \item Onboarding intuitivo onde é necessário até 3 cliques para primeira denúncia;
+                \item Disponibilidade em Português Brasileiro para interface e vídeos educacionais e Libras para os vídeos educacionais.
+            \end{itemize}
+            
+        \subsubsection{RNF4 - Confiabilidade}
+            \begin{itemize}
+                \item Uptime de 99.7\% com no máximo 2h de indisponibilidade mensal;
+                \item Backup diário automático com retenção de 30 dias;
+                \item Sistema de fallback para operação offline básica, como a realização de denúncias e questionários.
+            \end{itemize}
+            
+        \subsubsection{RNF5 - Escalabilidade}
+            \begin{itemize}
+                \item Arquitetura em microsserviços com auto-scaling horizontal
+                \item Suporte a expansão para outras cidades sem refatoração
+                \item Limite escalonável de usuários tendo um limite inicial de 100 mil podendo alcançar até 500 mil usuários.
+            \end{itemize}
+        
+    \subsection{Priorização de Requisitos}
+    
+        \begin{table}[h]
+        \centering
+            \begin{tabular}{|l|l|l|}
+            \hline
+            \textbf{Categoria} & \textbf{Requisitos} & \textbf{Prioridade} \\
+            \hline
+            \cellcolor Crítico & RF1.1, RF1.2, RF4.1, RF5.2, RF7.1, RF 7.4, RNF1 & \textcolor{red}{Alta} \\
+            \hline
+            \cellcolor Essencial & RF2.1, RF3.1, RF3.2, RF6.1, RF7.2, RNF2 & \textcolor{orange}{Média} \\
+            \hline
+            \cellcolor Complementar & RF3.5, RF2.3, RF6.3, RF7.3, RNF5 &   \textcolor{green}{Baixa} \\
+            \hline
+            \end{tabular}
+        \end{table}
+    
+    \subsection{Critérios de Aceitação}
+        \subsubsection{CA1 - Cadastro de Usuários}
+            \begin{itemize}
+                \item 95\% dos usuários conseguem completar o registro em até minutos
+                \item 100\% dos campos obrigatórios validados conforme LGPD
+            \end{itemize}
+            
+        \subsubsection{CA2 - Sistema de Denúncias}
+            \begin{itemize}
+                \item 90\% das denúncias processadas em até 1h
+                \item Taxa de falsos positivos sendo menor que 15\% após validação
+            \end{itemize}
+            
+        \subsubsection{CA3 - Gamificação}
+            \begin{itemize}
+                \item Aumento de 40\% no engajamento após 2 meses usando a métrica de logins semanais.
+                \item 80\% dos usuários ativos completam até 1 missão semanal
+            \end{itemize}
+            
+        \subsubsection{CA4 - Monitoramento de Sintomas}
+            \begin{itemize}
+                \item Sensibilidade de até 85\% na detecção de casos suspeitos
+                \item 95\% dos alertas gerados encaminhados às autoridades no máximo até $\leq$30min
+            \end{itemize}
+            
+        \subsubsection{CA5 - Painel de Autoridades}
+            \begin{itemize}
+                \item Geração de relatórios municipais até no máximo em 10 segundos
+                \item Integração com com até 3 sistemas oficiais de saúde
+            \end{itemize}
+        \subsubsection{CA7 - Infraestrutura}
+            \begin{itemize}
+                \item Infraestrutura suporta picos de 20.000 usuários em 1h durante campanhas públicas
+                \item 95\% das falhas críticas detectadas em testes de carga são resolvidas pre-lançamento
+                \item Beta reduz taxa de erros em denúncias para <5\% antes do lançamento geral
+            \end{itemize}
 
-Para que o sistema atinja suas metas e proporcione uma experiência eficiente para os usuários, deve-se implementar uma série de requisitos funcionais que vão desde o registro de usuários até a interação com autoridades e mecanismos de gamificação.
-
-\subsection{Registro e Gestão de Usuários}
-\begin{enumerate}
-    \item Registro de um perfil personalizado, com os seguintes campos: nome social, documento oficial, foto de perfil, gênero, idade, endereço (bairro) e foco no combate à dengue.
-    \item Exigência de login com senha e documento oficial e senha para acesso aos recursos do aplicativo.
-    \item Possibilidade de atualização dos dados cadastrais.
-\end{enumerate}
-
-\subsection{Módulo Educacional}
-\begin{enumerate}
-    \item Conteúdo organizado em diferentes cursos/módulos para melhor absorção e aprendizado.
-    \item \textit{Player} de vídeos para vídeo-aulas, com suporte a legendas.
-    \item Transmissões ao vivo para anúncios oficiais em palestras de temas relevantes
-    \item Tutoriais multimídias (textos, vídeos e \textit{quizzes}) que ensinam a identificar e eliminar focos de mosquito da dengue.
-\end{enumerate}
-
-\subsection{Sistema de Gamificação (Baseado no Octalysis)}
-Os princípios do modelo Octalysis serão utilizados para orientar a gamificação no sistema, que identifica oito impulsos motivacionais principais que envolvem os usuários em variados contextos. Essas motivações serão integradas às características do aplicativo para incentivar a participação engajada, o sentido de propósito, a competição saudável e recompensas relevantes.
-\begin{enumerate}
-    \item Score pessoal baseado em ações como denúncias e consumo de conteúdo educativo (Development \& Accomplishment*).
-    \item Rankings global e por bairro (Social Influence \& Relatedness).
-    \item Destaque para os usuários mais ativos na página inicial.
-    \item Conquistas pessoais desbloqueadas por frequência e impacto das ações realizadas.
-    \item Histórico de atividades e conquistas acessível pelo perfil.
-    \item Missões individuais aleatórias e personalizadas com base nos hábitos do usuário (Empowerment of Creativity \& Feedback).
-    \item Missões cooperativas para estimular ações comunitárias (Epic Meaning \& Calling).
-    \item Recompensas por ações específicas e conclusão de missões.
-    \item Penalidades leves por inatividade prolongada (Loss \& Avoidance).
-    \item Recompensas surpresa por interação com o app (Unpredictability \& Curiosity).
-    \item Missões de tempo limitado que geram senso de urgência (Scarcity \& Impatience).
-\end{enumerate}
-
-
-
-\subsection{Sistema de Denúncias e Monitoramento de Áreas de Risco}
-\begin{enumerate}
-    \item Formulário de denúncia de focos de mosquito, incluindo texto, foto e localização.
-    \item Envio automático de denúncias para a equipe responsável para que validem e atualizem o status do foco. 
-    \item Exibição de áreas de risco no mapa, utilizando dados climáticos, registros de casos e localização de denúncias para indicar regiões com maior incidência.
-    \item Envio de notificações ao usuário sobre aumento de casos em sua região ou surgimento de focos próximos ao seu endereço.
-    \item Envio de notificações sobre a pontuação do bairro, informando se está melhorando ou piorando com base no engajamento comunitário.
-\end{enumerate}
-
-\subsection{Sistema de Monitoramento de Sintomas}
-\begin{enumerate}
-    \item Um questionário simples com perguntas sobre febre, dor de cabeça, dores musculares e outros sintomas característicos da dengue que pode ser preenchido periodicamente
-    \item Alertas de suspeita, caso os sintomas sejam compatíveis com a doença, indicando a necessidade de buscar atendimento médico e informando as autoridades de saúde.
-\end{enumerate}
-\subsection{Gerenciamento e Suporte a Autoridades}
-\begin{enumerate}
-    \item Painel de estatísticas permitindo que autoridades monitorem as informações geoespaciais da cidade e bairros, as denúncias de focos e o número de casos  reportados
-    \item Painel para a avaliação e atualização dos status de denúncias realizadas.
-    \item Integração com sistema oficiais para que dados sobre surtos, casos e relatórios de saúde pública possam ser importados.
-\end{enumerate}
-
-
-
-
+\newpage
 \section{Conclusão}
 O sistema proposto tem como objetivo combinar tecnologia, educação e envolvimento social no combate à dengue em São José do Rio Preto. O uso do modelo de \textit{gamificação Octalysis} assegura uma motivação completa para os usuários, abrangendo elementos emocionais, sociais, criativos e racionais. Esperamos não só amenizar a crise atual ao motivar a população através de recompensas, desafios e aprendizado constante, mas também promover uma cultura de prevenção e envolvimento cidadã sustentável a longo prazo.
 
