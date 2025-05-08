@@ -77,7 +77,7 @@
 \section{Introdução}
 A interface desempenha um papel essencial no sucesso do aplicativo, pois é o ponto de contato direto entre o usuário e as funcionalidades do sistema, sendo determinante para garantir a usabilidade, o engajamento e a eficácia das ações propostas. O objetivo central deste documento é detalhar o planejamento, o design e a construção das telas do sistema, com foco em criar uma experiência de usuário intuitiva, acessível e eficiente.
 
- A interface foi desenvolvida levando em conta os princípios de usabilidade tradicionais, conforme Pressman (2019) e Nielsen (1994), com o objetivo de satisfazer as demandas de diversos tipos de usuários, do mais iniciante ao mais avançado, minimizando falhas, diminuindo o esforço cognitivo e aprimorando a execução de tarefas. 
+A interface foi desenvolvida levando em conta os princípios de usabilidade tradicionais, conforme Pressman \cite{pressman-2019} e Nielsen (1994), com o objetivo de satisfazer as demandas de diversos tipos de usuários, do mais iniciante ao mais avançado, minimizando falhas, diminuindo o esforço cognitivo e aprimorando a execução de tarefas. 
  
 O documento descreve as etapas de análise, projeto, construção e validação, além de apresentar cada tela e suas respectivas decisões de design. O foco principal é garantir que a interface do aplicativo contribua efetivamente para engajar a população no combate à dengue, promovendo ações informadas e coletivas no contexto urbano de São José do Rio Preto.
 
@@ -85,7 +85,7 @@ O documento descreve as etapas de análise, projeto, construção e validação,
 \section{Desenvolvimento}
 
 \subsection{Análise}
-A análise das interfaces do aplicativo ZAPP foi realizada seguindo os princípios de usabilidade propostos por Pressman (Capítulo 11), com o objetivo de assegurar que o design do sistema seja acessível, funcional e adaptável às necessidades reais dos usuários. Um aspecto crucial dessa análise foi a identificação minuciosa do perfil dos usuários, abrangendo desde pessoas iniciantes, que podem ter pouca experiência com tecnologia, até usuários intermediários e avançados, que necessitam de funcionalidades mais rápidas e eficazes.
+A análise das interfaces do aplicativo ZAPP foi realizada seguindo os princípios de usabilidade propostos por Pressman \cite{pressman-2019}, com o objetivo de assegurar que o design do sistema seja acessível, funcional e adaptável às necessidades reais dos usuários. Um aspecto crucial dessa análise foi a identificação minuciosa do perfil dos usuários, abrangendo desde pessoas iniciantes, que podem ter pouca experiência com tecnologia, até usuários intermediários e avançados, que necessitam de funcionalidades mais rápidas e eficazes.
 
 Outro ponto examinado foram as tarefas que os usuários precisam executar no sistema. Isso engloba ações como login, registro, denúncia de focos, acompanhamento de sintomas, consulta a rankings e acesso a materiais educativos. Cada tarefa foi avaliada com base na frequência, complexidade e relevância, possibilitando a identificação de áreas críticas que necessitam de um cuidado especial no design. Por exemplo, diminuir a quantidade de cliques necessários para denúncias ou fornecer atalhos para funções mais usadas, o que aumenta a eficácia geral.
 
@@ -100,7 +100,7 @@ O desenvolvimento das interfaces do aplicativo ZAPP foi realizado cuidadosamente
 
 \begin{figure}[H]
   \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{PuSystems/dist/sign-in.png}}
+  \fbox{\includegraphics[width=0.5\textwidth]{dist/sign-in.png}}
   \caption{Tela de Login}
   \label{fig:login}
 \end{figure}
@@ -111,7 +111,7 @@ No ecrã de login, optou-se por colocar o usuário no controle, proporcionando a
 
 \begin{figure}[H]
   \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{PuSystems/dist/sign-up.png}}
+  \fbox{\includegraphics[width=0.5\textwidth]{dist/sign-up.png}}
   \caption{Tela de Cadastro}
   \label{fig:cadastro}
 \end{figure}
@@ -122,7 +122,7 @@ A tela de cadastro segue essa a mesma ideia da tela de login, com atenção a de
 
 \begin{figure}[H]
   \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{PuSystems/dist/home.png}}
+  \fbox{\includegraphics[width=0.5\textwidth]{dist/home.png}}
   \caption{Página Inicial}
   \label{fig:home}
 \end{figure}
@@ -133,7 +133,7 @@ Na tela home, a navegação simplificada foi priorizada. Botões principais dest
 
 \begin{figure}[H]
   \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{PuSystems/dist/meu-bairro.png}}
+  \fbox{\includegraphics[width=0.5\textwidth]{dist/meu-bairro.png}}
   \caption{Mapa do Bairro Local}
   \label{fig:bairro}
 \end{figure}
@@ -144,7 +144,7 @@ O "Meu Bairro" foi projetado para proporcionar uma orientação espacial eficien
 
 \begin{figure}[H]
   \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{PuSystems/dist/denunciar-foco.png}}
+  \fbox{\includegraphics[width=0.5\textwidth]{dist/denunciar-foco.png}}
   \caption{Tela de Denúncias}
   \label{fig:denuncia}
 \end{figure}
@@ -155,7 +155,7 @@ Na tela de denúncia de focos, a ênfase está na praticidade e exatidão: a loc
 
 \begin{figure}[H]
   \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{PuSystems/dist/monitoramento-de-sintomas.png}}
+  \fbox{\includegraphics[width=0.5\textwidth]{dist/monitoramento-de-sintomas.png}}
   \caption{Monitoramento de Sintomas}
   \label{fig:sintomas}
 \end{figure}
@@ -166,7 +166,7 @@ A interface de monitoramento de sintomas possui um checklist intuitivo, onde os 
 
 \begin{figure}[H]
   \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{PuSystems/dist/modulo-educacional.png}}
+  \fbox{\includegraphics[width=0.5\textwidth]{dist/modulo-educacional.png}}
   \caption{Módulo Educacional}
   \label{fig:educacao}
 \end{figure}
@@ -177,7 +177,7 @@ Na tela "Aprender", an estrutura foi planejada para potencializar o efeito educa
 
 \begin{figure}[H]
   \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{PuSystems/dist/missoes.png}}
+  \fbox{\includegraphics[width=0.5\textwidth]{dist/missoes.png}}
   \caption{Tela de Gamificação}
   \label{fig:missao}
 \end{figure}
@@ -188,7 +188,7 @@ A interface de missões inclui componentes de gamificação, como o sistema de p
 
 \begin{figure}[H]
   \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{PuSystems/dist/splash-screen.png}}
+  \fbox{\includegraphics[width=0.5\textwidth]{dist/splash-screen.png}}
   \caption{Splash Screen}
   \label{fig:loading}
 \end{figure}
@@ -213,15 +213,10 @@ Acreditamos que o ZAPP tem potencial para se tornar uma ferramenta relevante no 
 
 
 \begin{thebibliography}{09}
-\bibitem{ibge-2022} INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). 
-\textbf{Censo Demográfico 2022: São José do Rio Preto}. 
-2022. 
-Disponível em: \url{https://www.ibge.gov.br/cidades-e-estados/sp/sao-jose-do-rio-preto.html}. 
-Acesso em: 20 abr. 2025.
-
-\bibitem{pressman} PRESSMAN, R. S. 
+\bibitem{pressman-2019} PRESSMAN, R. S. 
 \textbf{Engenharia de Software}. 
 8. ed. McGraw Hill, 2019.
+
 
 \bibitem{nielsen} NIELSEN, J. 
 \textbf{10 Usability Heuristics for User Interface Design}. 
