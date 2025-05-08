@@ -1,6 +1,6 @@
 # PuSystems
 
-![logo](LogoTransparentePreto.png)
+![logo](dist/LogoTransparentePreto.png)
 
 Esse projeto consiste numa documentacao e projeto de um sistema ficticio para as aulas de engenharia de software
 
