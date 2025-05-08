@@ -2,14 +2,14 @@
 \usepackage[portuguese,provide=*]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{times}
+\usepackage{times} % Fonte Times New Roman
 \usepackage{setspace}
 \usepackage{mathptmx} 
 \onehalfspacing
 \usepackage{amsmath}
 \usepackage{indentfirst}
 \usepackage{graphicx}
-\usepackage{multicol}
+\usepackage{multicol,lipsum}
 \usepackage{enumitem}
 \usepackage{url}
 \usepackage{booktabs}
@@ -21,9 +21,6 @@
 \usepackage{float}
 \usepackage{booktabs}   
 \usepackage{makecell}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{amssymb}
 \usepackage[a4paper, 
             left=3cm,    
             right=2cm,   
@@ -31,34 +28,41 @@
             bottom=2cm   
             ]{geometry}
 
+
 \begin{document}
+%\maketitle
 
 \begin{titlepage}
 	\begin{center}
 	
 	\begin{figure}[!ht]
 	\centering
-	  \includegraphics[width=10cm]{dist/LogoTransparentePreto.png} \\ 
+	\includegraphics[width=10cm]{dist/LogoTransparentePreto.png} \\ 
     \end{figure}
 
-	\vspace{115pt}
-    \textbf{\Huge{Projeto de Interface}}\\
         
-	\vspace{115pt}
-    Carlos Eduardo Nogueira Silva \\
-    Felipe Gomes da Silva \\
-    Felipe Matheus Possari \\
-    Matheus Thomé da Silva\\ 
-    Santiago Pinheiro Martins \\
+		\vspace{115pt}
+        \textbf{\Huge{Projeto do Sistema}}\\
+		%\title{{\large{Título}}}
+        
+		\vspace{115pt}
+        Carlos Eduardo Nogueira Silva \\
+        Felipe Gomes da Silva \\
+        Felipe Matheus Possari \\
+        Matheus Thomé da Silva\\ 
+        Santiago Pinheiro Martins \\
 	\end{center}
+	
 	
 	\vspace{1cm}
 	\begin{center}
 		\vspace{\fill}
-		Abril \\
-		2025
-	\end{center}
+		 Abril \\
+		 2025
+			\end{center}
 \end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \newpage
 \thispagestyle{empty}
@@ -66,6 +70,7 @@
 
 \newpage
 \pagestyle{fancy}
+
 \fancyhead[L]{\thepage}
 \fancyhead[C]{\nouppercase{\leftmark}}
 \rhead{\includegraphics[width=2cm]{dist/LogoTransparentePreto.png}}
@@ -74,160 +79,201 @@
 \fancyfoot[L]{}
 \setlength\headheight{26pt}
 
-\section{Introdução}
-A interface desempenha um papel essencial no sucesso do aplicativo, pois é o ponto de contato direto entre o usuário e as funcionalidades do sistema, sendo determinante para garantir a usabilidade, o engajamento e a eficácia das ações propostas. O objetivo central deste documento é detalhar o planejamento, o design e a construção das telas do sistema, com foco em criar uma experiência de usuário intuitiva, acessível e eficiente.
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
 
-A interface foi desenvolvida levando em conta os princípios de usabilidade tradicionais, conforme Pressman \cite{pressman-2019} e Nielsen (1994), com o objetivo de satisfazer as demandas de diversos tipos de usuários, do mais iniciante ao mais avançado, minimizando falhas, diminuindo o esforço cognitivo e aprimorando a execução de tarefas. 
- 
-O documento descreve as etapas de análise, projeto, construção e validação, além de apresentar cada tela e suas respectivas decisões de design. O foco principal é garantir que a interface do aplicativo contribua efetivamente para engajar a população no combate à dengue, promovendo ações informadas e coletivas no contexto urbano de São José do Rio Preto.
+
+\newpage
+\section{Introdução}
+
+O \textit{Zapp} surge como uma ponte entre cidadãos e autoridades no combate à dengue, sendo mais do que um aplicativo, a solução propõe uma experiência interativa, transformando a prevenção em uma jornada coletiva. Com módulos que vão desde gamificação até monitoramento de sintomas (melhor exemplificado no documento Plano do Projeto), a plataforma busca engajar usuários por meio de recompensas, educação acessível e respostas ágeis a riscos epidemiológicos.
+
+A arquitetura do sistema, pensada para ser dinâmica e escalável para os moradores de São José do Rio Preto, integra ferramentas modernas como \textit{React Native, Node.js} e \textit{PostgreSQL}, garantindo não apenas segurança e eficiência, mas também adaptabilidade para crescimento. Este documento explora como cada decisão, arquitetura e componente — da autenticação segura às integrações com serviços externos — se conectam para criar um ecossistema digital capaz de salvar vidas.
 
 \newpage
 \section{Desenvolvimento}
 
-\subsection{Análise}
-A análise das interfaces do aplicativo Zapp foi realizada seguindo os princípios de usabilidade propostos por Pressman \cite{pressman-2019}, com o objetivo de assegurar que o design do sistema seja acessível, funcional e adaptável às necessidades reais dos usuários. Um aspecto crucial dessa análise foi a identificação minuciosa do perfil dos usuários, abrangendo desde pessoas iniciantes, que podem ter pouca experiência com tecnologia, até usuários intermediários e avançados, que necessitam de funcionalidades mais rápidas e eficazes.
-
-Outro ponto examinado foram as tarefas que os usuários precisam executar no sistema. Isso engloba ações como login, registro, denúncia de focos, acompanhamento de sintomas, consulta a rankings e acesso a materiais educativos. Cada tarefa foi avaliada com base na frequência, complexidade e relevância, possibilitando a identificação de áreas críticas que necessitam de um cuidado especial no design. Por exemplo, diminuir a quantidade de cliques necessários para denúncias ou fornecer atalhos para funções mais usadas, o que aumenta a eficácia geral.
-
-Adicionalmente, levou-se em conta o contexto físico de utilização do aplicativo, considerando que muitos usuários o usarão em locais públicos, ruas, com variações de luminosidade, e possivelmente enquanto desempenham outras tarefas (como caminhar ou conversar). Essa avaliação destacou a importância de desenvolver telas responsivas, com contraste apropriado, elementos grandes e bem dispostos, prevenindo o excesso de informação na tela ou solicitando interações excessivamente precisas que poderiam não funcionar em situações de movimento.
-
-Finalmente, a análise considerou aspectos humanos cruciais, como a limitação da memória de curto prazo e a tendência inata de cometer erros. O sistema foi concebido para não sobrecarregar o usuário com informações demasiadamente complexas em uma única tela, além de oferecer suporte contínuo durante a interação, através de mensagens de confirmação, indicadores visuais claros e opções de recuperação de falhas. Esses componentes são cruciais para assegurar uma experiência não só funcional, mas também segura e confortável, fomentando a confiança no uso contínuo do aplicativo.
-
-\subsection{Projeto}
-O desenvolvimento das interfaces do aplicativo Zapp foi realizado cuidadosamente, levando em conta os princípios tradicionais de usabilidade e design focado no usuário.  Cada tela foi concebida não somente para desempenhar seu papel prático, mas também para proporcionar uma experiência fluida, intuitiva e eficaz, minimizando falhas, potencializando o envolvimento e assegurando a acessibilidade para diversos tipos de usuários.
-
-\subsubsection{Tela de Login}
+\subsection{Modelagem do Sistema}
 
 \begin{figure}[H]
-  \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{dist/sign-in.png}}
-  \caption{Tela de Login}
-  \label{fig:login}
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Diagrama de clases.png}
+    \caption{Diagrama de classes}
+    \label{fig:arquitetura}
 \end{figure}
-
-No menu de login, optou-se por colocar o usuário no controle, proporcionando a flexibilidade entre o login convencional e a autenticação integrada ao sistema do gov.br.  Esta decisão possibilita ao usuário selecionar a alternativa que julga mais conveniente e segura, fortalecendo a sensação de controle.  Adicionalmente, foi adicionada a opção de recuperação de acesso para reduzir o efeito de senhas perdidas, prevenindo bloqueios desnecessários.  Itens minúsculos, como o ícone de olho que permite exibir ou esconder a senha, reforçam a confiança e a transparência. Por outro lado, o mapa localizado na parte inferior liga a identidade visual do aplicativo à proposta comunitária, intensificando o engajamento.
-
-\subsubsection{Tela de Cadastro}
 
 \begin{figure}[H]
-  \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{dist/sign-up.png}}
-  \caption{Tela de Cadastro}
-  \label{fig:cadastro}
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Geração de relatório para autoridades.png}
+    \caption{Diagrama de interação para a geração de relatório para autoridades}
+    \label{fig:arquitetura}
 \end{figure}
-
-A tela de cadastro segue essa mesma ideia da tela de login, com atenção a detalhes que melhoram a experiência do usuário. Incorporou-se a opção de autenticação alternativa pelo gov.br e uma separação visual evidente entre as alternativas para prevenir confusão.  Componentes como o link para os termos de uso e as políticas de privacidade fomentam a transparência e a responsabilidade. Por outro lado, a validação em tempo real dos campos e as orientações para a criação da senha direcionam o usuário e diminuem a possibilidade de falhas, tornando o procedimento mais seguro e eficaz.
-
-\subsubsection{Home}
 
 \begin{figure}[H]
-  \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{dist/home.png}}
-  \caption{Página Inicial}
-  \label{fig:home}
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Validação de denúncia.png}
+    \caption{Diagrama de interação para a validação de denúncias}
+    \label{fig:arquitetura}
 \end{figure}
-
-Na tela home, a navegação simplificada foi priorizada. Botões principais destacados e ícones autoexplicativos permitem acesso rápido às funções essenciais, enquanto áreas dedicadas para notificações e missões mantêm o usuário informado e engajado. Isso garante que as ações mais importantes estejam sempre visíveis, mesmo para usuários com pouca familiaridade tecnológica.
-
-\subsubsection{Tela Meu Bairro}
 
 \begin{figure}[H]
-  \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{dist/meu-bairro.png}}
-  \caption{Mapa do Bairro Local}
-  \label{fig:bairro}
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Preenchimento de questionário de sintomas.png}
+    \caption{Diagrama de interação para o preenchimento do questionário de sintomas}
+    \label{fig:arquitetura}
 \end{figure}
-
-O "Meu Bairro" foi projetado para proporcionar uma orientação espacial eficiente.  O campo de busca por região e a relação de regiões próximas auxiliam o usuário na localização, enquanto uma seção dedicada a alertas oferece informações contextuais fundamentais para que ele entenda os riscos ao seu entorno.  O sistema de cores para priorização de alertas e o mapa interativo tornam a visualização mais intuitiva, possibilitando uma compreensão ágil e auxiliando na tomada de decisões.
-
-\subsubsection{Tela Denunciar Foco}
 
 \begin{figure}[H]
-  \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{dist/denunciar-foco.png}}
-  \caption{Tela de Denúncias}
-  \label{fig:denuncia}
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Sistema de gamificação.png}
+    \caption{Diagrama de interação para o sistema de gamificação}
+    \label{fig:arquitetura}
 \end{figure}
-
-Na tela de denúncia de focos, a ênfase está na praticidade e exatidão: a localização automática via GPS simplifica o procedimento, porém a possibilidade de ajuste manual assegura flexibilidade em caso de erro.  O envio integrado de imagens reforça a denúncia com provas visuais, e a confirmação de envio com retorno reforça a segurança do usuário de que sua contribuição foi recebida e está sendo tratada.
-
-\subsubsection{Tela Monitoramento de Sintomas}
 
 \begin{figure}[H]
-  \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{dist/monitoramento-de-sintomas.png}}
-  \caption{Monitoramento de Sintomas}
-  \label{fig:sintomas}
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Integração com APIs externas.png}
+    \caption{Diagrama de interação para as APIs externas}
+    \label{fig:arquitetura}
 \end{figure}
-
-A interface de monitoramento de sintomas possui um checklist intuitivo, onde os sintomas mais frequentes são apresentados de maneira clara, facilitando a escolha do usuário sobre o que está sentindo.  Isso reduz o esforço cognitivo e aprimora a exatidão do relato, crucial para produzir alertas de saúde.
-
-\subsubsection{Tela Aprender}
 
 \begin{figure}[H]
-  \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{dist/modulo-educacional.png}}
-  \caption{Módulo Educacional}
-  \label{fig:educacao}
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Diagrama de casos de uso.png}
+    \caption{Diagrama de casos de uso}
+    \label{fig:arquitetura}
 \end{figure}
 
-Na tela "Aprender", an estrutura foi planejada para potencializar o efeito educativo.  Foram organizados diversos materiais, incluindo vídeos, artigos e apostilas, com ênfase em informações críticas.  A pesquisa por temas e o avanço do aprendizado auxiliam o usuário a percorrer o conteúdo. Por outro lado, os botões de salvar, reproduzir e compartilhar estimulam a propagação do saber e a memorização das informações.
+\subsection{Projeto de Arquitetura do Sistema}
 
-\subsubsection{Tela Missões}
+\subsubsection{Proposta de Arquitetura}
 
-\begin{figure}[H]
-  \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{dist/missoes.png}}
-  \caption{Tela de Gamificação}
-  \label{fig:missao}
+A arquitetura sugerida utiliza uma estratégia cliente-servidor em camadas, incorporando componentes de microsserviços para assegurar escalabilidade, adaptabilidade e alta disponibilidade nos módulos vitais do sistema. Esta estrutura tem como objetivo proporcionar aos usuários uma experiência sólida, com uma integração suave entre as diversas camadas e componentes.
+
+\subsubsection{Cliente (Front)}
+ 
+ O desenvolvimento do lado do cliente é realizado com React Native, uma tecnologia de desenvolvimento multiplataforma que possibilita a produção de aplicativos nativos para Android e iOS, assegurando eficácia e uma experiência de usuário consistente.  O desenvolvedor de interface será encarregado de interagir diretamente com os usuários, oferecendo uma interface intuitiva e de fácil utilização.  A \textbf{autenticação} é um dos módulos principais do frontend, que emprega o \textbf{OAuth2} para um acesso seguro e incorpora um processo de verificação de documentos oficiais, assegurando que somente usuários autenticados tenham acesso às funcionalidades da plataforma.
+ 
+O módulo \textbf{educacional} inclui um reprodutor de vídeos com funcionalidades de legendas e Libras, bem como testes interativos para estimular o aprendizado.  O recurso de \textbf{denúncias} possibilita que os usuários preencham um formulário com a opção de enviar fotos e registrar sua localização geográfica, além de fornecer um retorno para uso offline, assegurando a acessibilidade em regiões com conexão de internet restrita.  A \textbf{gamificação} é realizada através de um sistema de classificação, tarefas e prêmios visuais, fundamentados no modelo Octalysis, promovendo a participação ativa e o envolvimento constante dos usuários.  O \textbf{monitoramento de sintomas} disponibiliza um questionário interativo com a habilidade de emitir alertas em tempo real, possibilitando que o usuário seja notificado imediatamente sobre qualquer sintoma relevante.
+
+\subsubsection{Servidor (Backend)}
+ O servidor é construído combinando Node.js e Express.js, resultando em uma API REST sólida e expansível para gerenciar as solicitações do frontend de maneira eficaz.  A estrutura do servidor utiliza containers com Docker, garantindo isolamento, portabilidade e escalabilidade simples.  O \textbf{API Gateway}, que emprega \textbf{NGINX}, tem a função de equilibrar a carga e encaminhar as solicitações, assegurando a alta disponibilidade e distribuindo eficientemente as solicitações entre os microsserviços.  O backend é formado por microsserviços especializados, cada um com uma função crucial a desempenhar.
+ 
+ O microsserviço de \textbf{usuários} gerencia a autenticação, o gerenciamento de perfis e as interações relacionadas aos usuários. O microsserviço de \textbf{gamificação} é responsável por calcular os algoritmos de pontuação, além de aplicar um sistema de \textbf{anti-viés socioeconômico}, garantindo que os processos sejam justos e imparciais para todos os participantes. O microsserviço de \textbf{denúncias} valida as informações recebidas, utilizando \textbf{inteligência artificial} para análise de fotos e integrando-se com sistemas de mapas para georreferenciamento.
+
+subsubsection{Camada de Dados}
+
+A camada de dados é composta por um banco de dados \textbf{PostgreSQL}, que é responsável por armazenar dados estruturados, como as informações dos usuários e as denúncias realizadas. O \textbf{Redis} é utilizado como sistema de cache, otimizando o desempenho ao armazenar rankings e métricas de engajamento, que são acessados com frequência. O armazenamento de arquivos grandes, como fotos e vídeos educacionais, é feito através do serviço \textbf{Amazon S3}, que oferece escalabilidade e segurança para armazenar grandes volumes de dados de forma eficiente e econômica.
+
+\subsubsection{Integrações Externas}
+
+A arquitetura proposta também inclui diversas integrações com serviços externos para enriquecer a funcionalidade da aplicação. A \textbf{OpenWeatherMap} é utilizada para fornecer dados climáticos em tempo real, permitindo que a plataforma faça previsões sobre áreas de risco e condições climáticas que podem afetar a saúde dos usuários. A integração com o \textbf{Google Maps} permite o georreferenciamento de denúncias, facilitando a localização exata dos eventos reportados. Além disso, a integração com a \textbf{Secretaria Municipal de Saúde} permite acessar dados epidemiológicos atualizados, proporcionando informações críticas em tempo real para o monitoramento de possíveis surtos e a adoção de medidas preventivas.
+
+Esta arquitetura foi planejada para garantir alta disponibilidade, escalabilidade e desempenho, criando uma plataforma robusta e eficiente que atende tanto às necessidades dos usuários quanto às exigências de processamento de dados e integração com sistemas externos.
+
+\subsubsection{Diagrama da Arquitetura}
+
+A seguir, apresentamos o diagrama que ilustra a arquitetura proposta, mostrando as camadas e seus componentes principais.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{dist/Arquitetura final.png}
+    \caption{Diagrama da Arquitetura usada no sistema Zapp}
+    \label{fig:arquitetura}
 \end{figure}
 
-A interface de missões inclui componentes de gamificação, como o sistema de pontos, prêmios e indicadores de avanço, que contribuem para manter a motivação e incentivar atitudes positivas.  O sistema de conquistas e a pontuação visual proporcionam ao usuário uma sensação contínua de avanço, inclusão e influência na comunidade.
 
-\subsubsection{Tela de Loading}
+\subsection{Organização dos Componentes}
 
-\begin{figure}[H]
-  \centering
-  \fbox{\includegraphics[width=0.5\textwidth]{dist/splash-screen.png}}
-  \caption{Splash Screen}
-  \label{fig:loading}
-\end{figure}
+O Zapp será estruturado em seis componentes principais, cada um encarregado de uma área funcional específica, porém de forma interligada.  Esta estrutura modular visa assegurar a escalabilidade, simplificar a manutenção e possibilitar a evolução constante do sistema.
 
-Por fim, a tela de loading não foi negligenciada: ela oferece feedback visual ao usuário por meio de um indicador de carregamento com ícone piscante, evitando a sensação de inatividade ou erro. O mapa de fundo, em verde, reforça a identidade visual do aplicativo, criando uma conexão emocional e estética mesmo nos momentos de espera.
+\subsubsection{Módulo de Autenticação e Gestão de Perfis}
 
-\subsection{Construção}
+Este módulo será encarregado de todas as etapas de acesso e identificação dos usuários.  Os usuários terão a possibilidade de criar perfis personalizados, fornecendo informações como nome, idade, sexo, localização (bairro), documento de identidade e uma imagem.  O sistema solicitará a autenticação através de uma senha e um documento válido, utilizando protocolos de segurança adequados, tais como o login seguro por token JWT e a criptografia de informações confidenciais.  Além disso, possibilitará a modificação de preferências e informações de registro, fomentando um gerenciamento constante da identidade e garantindo uma grande customização da experiência do usuário.
 
-A elaboração da interface seguirá um processo iterativo, iniciando com a prototipagem em papel para validação inicial das ideias, assegurando rapidez e custo reduzido nas alterações. Posteriormente, serão criados protótipos funcionais, possibilitando testes reais e correções antes da codificação final. 
+\subsubsection{Módulo Educacional}
 
-Ademais, a construção da interface será desenvolvida utilizando frameworks multiplataforma modernos, com ênfase no React Native em combinação com o TypeScript, garantindo compatibilidade integral com dispositivos Android e iOS. A interface priorizará design responsivo, adaptando-se a diferentes tamanhos de tela e orientações (retrato/paisagem). Além disso, foi concebida com foco em acessibilidade, seguindo diretrizes como contraste adequado e navegação simplificada.
+O objetivo deste módulo é incentivar a sensibilização e o aprendizado constante da população acerca da dengue por meio de uma plataforma multimídia com vídeos didáticos, textos explicativos e questionários interativos.  O material será estruturado em seções temáticas, tais como "Detecção de focos do Aedes aegypti", "Ciclo da dengue" e "Prevenção comunitária".  O avanço dos utilizadores poderá ser monitorado e premiado com vitórias, incorporando-se ao sistema de gamificação.
 
-Os testes com usuários reais permitirão identificar áreas críticas e validar decisões de design, enquanto o aprimoramento constante com base em \textit{feedback} permitirá aprimorar a interface para atingir o equilíbrio perfeito entre estética, funcionalidade e usabilidade.
+\subsubsection{Módulo de Gamificação}
+
+Como já mencionado, a gamificação será o alicerce principal do engajamento do sistema.  O módulo incluirá classificações pessoais, classificações gerais e por bairro, resultados por atividades realizadas, tarefas individuais (como assistir a vídeos ou responder a questionários) e tarefas coletivas (como aprimorar a pontuação de uma área).  A participação ativa será premiada com pontos e medalhas.  
+\par Também serão adicionadas recompensas inesperadas e desafios de duração limitada para incentivar o uso constante. Entre essas recompensas, podemos citar as recompenas virtuais no app como pontos de experiência, títulos, medalhas, entre outros. Pode-se incluir, também, recompensas reais com apoio de parceiros, como descontos em farmácias ou mercados locais, participação em sorteios e um certificado de participação social emitido digitalmente para usuários ativos, que podem ser útil para atividades extracurriculares ou inclusão em currículos.
+
+\subsubsection{Módulo de Denúncias e Monitoramento de Áreas de Risco}
+
+Este módulo permitirá que os usuários identifiquem focos de propagação do mosquito por meio de imagens, localização e descrição textual. Esses três elementos são essenciais para prevenir falsos alarmes e o uso desnecessário de recursos.   As queixas serão direcionadas aos órgãos competentes para validação e resposta.   Um mapa interativo mostrará as zonas de risco com base em dados geográficos, condições meteorológicas, queixas e registros de incidentes.   O módulo também irá notificar sobre o aumento do risco na região do usuário e fornecerá atualizações sobre a classificação do bairro, reforçando a natureza comunitária do aplicativo.
+
+\subsubsection{Módulo de Monitoramento de Sintomas}
+
+Este módulo, voltado para o bem-estar do usuário, coletará diariamente dados sobre sintomas que se assemelham à dengue.  Por meio de uma simples pesquisa, os usuários poderão comunicar febre, dor e outros sintomas.  Se houver fortes indícios de infecção, o sistema disparará alertas de suspeita, direcionando a procura por assistência médica e notificando as autoridades locais.  Este módulo também fornecerá informações para a avaliação epidemiológica do sistema.
+
+\subsubsection{Módulo de Administração para Autoridades}
+
+As autoridades de saúde pública terão acesso a uma interface administrativa contendo informações consolidadas sobre focos de dengue, estatísticas de sintomas e envolvimento da comunidade.  Elas terão a capacidade de confirmar denúncias, modificar o estado de ocorrências e importar informações de sistemas oficiais de monitoramento epidemiológico.  A meta é assegurar uma reação coordenada e fundamentada aos surtos, simplificando a decisão e a mobilização de recursos.
 
 
+\subsection{Arquitetura de Aplicações}
 
-\subsection{Validação}
+O Zapp será construído com base em uma estrutura multicamadas e tambem Cliente-Servidor (como previamente mencionado), respeitando os princípios de separação de responsabilidades e escalabilidade horizontal.  Esta arquitetura tem como objetivo assegurar robustez, além de simplificar a manutenção e possíveis expansões futuras.  O sistema incluirá três camadas fundamentais: interface, lógica empresarial e armazenamento de dados, além de integrações com serviços externos.
 
-A validação do projeto será feita meticulosamente, aplicando testes de usabilidade para diversos perfis de usuários, assegurando que o sistema atenda desde iniciantes até usuários avançados. Dados quantitativos e qualitativos serão coletados através de questionários, possibilitando uma análise completa do desempenho da interface. Serão feitos ajustes finais com base nesses dados, consolidando um produto que proporcionará uma experiência confiável, eficaz e em consonância com os objetivos do projeto.
+\subsubsection{Camada de Apresentação (Frontend)}
+
+A implementação do frontend será feita com \textit{frameworks} multiplataforma atuais, por meio \textit{React Native} em conjunto com \textit{TypeScript}, assegurando a compatibilidade com dispositivos Android e iOS.  Esta camada será encarregada de exibir a interface do usuário, recebendo interações e fornecendo feedback em tempo real.
+Os componentes visuais abrangerão dashboards informativos, vídeos didáticos, formulários de denúncia e questionários de sintomas, bem como animações e notificações focadas na gamificação.  A interface será responsiva, de fácil acesso e concebida com o objetivo de facilitar a utilização e o envolvimento do público-alvo, mantendo os princípios de qualidade esperados e listados no documento Projeto de Interface.
+
+
+\subsubsection{Camada de Lógica de Negócio (Backend)}
+
+A lógica empresarial será concentrada numa API RESTful, construída com \textit{frameworks} sólidos usando \textit{Node.js} com Express.js. Esta camada funcionará como o elo entre o frontend e o banco de dados, tratando as solicitações, implementando as regras de negócio e assegurando a integridade das operações.
+Esta camada cuidará de todas as normas relacionadas à pontuação, autenticação, gerenciamento de denúncias, geração de alertas e gerenciamento de permissões.  Também terá a tarefa de coordenar solicitações a serviços externos, tais como APIs meteorológicas e geográficas, e realizar verificações de segurança.
+
+\subsubsection{Camada de Persistência (Banco de Dados)}
+
+O armazenamento dos dados será feita em um banco de dados relacional usando o  \textit{PostgreSQL}, estruturado para armazenar todas as informações dos usuários, sintomas relatados, denúncias com georreferenciamento, rankings, conteúdos educacionais e estatísticas de uso.
+Será adotado um modelo de dados normalizado, com suporte a consultas eficientes por localização e data, e com logs transacionais com a finalidade de auditoria e análise. A segurança dos dados será garantida através de criptografia em repouso e backups periódicos automatizados.
+
+\subsubsection{Integrações com Serviços Externos}
+
+A aplicação será implementada com APIs públicas e privadas para fornecer funcionalidades adicionais. Entre as integrações previstas no projeto inicial estão:
+
+\begin{itemize}
+    \item \textbf{APIs Climáticas:} usadas para obter dados de temperatura, umidade e chuvas, elementos estes que são chaves para a proliferação do mosquito e com isso, o aumento de casos da doença.
+    \item \textbf{Serviços de Geolocalização:} como Google Maps ou OpenStreetMap, utilizados para exibir mapas para simplificar a apresentação de informações do aplicativo, além de auxiliar em ações como quando se faz uma denúncia.
+    \item \textbf{Notificações Push:} envio de alertas em tempo real para usuários sobre riscos na região bem como atualizações sobre a situação atual da região, atualização dos rankings ou recompensas para manter o engajamento.
+    \item \textbf{Bases Oficiais de Saúde:} importação de informações epidemiológicas e integração com entidades locais e regionais.
+\end{itemize}
+
+\subsubsection{Camada de Segurança e Autenticação}
+
+A arquitetura da aplicação contará com mecanismos de segurança aplicados em todas as camadas. A autenticação será feita com tokens JWT e os dados sensíveis serão protegidos com criptografia AES. As comunicações entre o cliente e o servidor serão realizadas através de HTTPS com TLS 1.3, garantindo maior segurança e anonimidade. Também serão postas em prática políticas de controle de acesso com base no perfil do usuário, assegurando recursos específicos para os três diferentes níveis de usuários: administração, autoridade e cidadão.
+
+\subsubsection{Escalabilidade e Infraestrutura}
+
+O sistema foi desenvolvido com base no modelo MVC (Model-View-Controller), promovendo uma separação clara entre todas as camadas da aplicação, o que facilita a manutenção e escalabilidade da aplicação. O versionamento é realizado com o uso do Git com auxílio do GitHub, permitindo rastrear alterações, trabalhar em equipe de forma eficiente e manter um histórico organizado do desenvolvimento por meio da política de branches e code review. Para garantir a qualidade do código, são utilizados testes automatizados com a biblioteca Jest, que possibilita a execução contínua de testes unitários e de integração. 
+\par Além disso, a aplicação opera sobre uma infraestrutura baseada em microsserviços e conteinerização, utilizando tecnologias como Docker e orquestração com Kubernetes. Isso possibilita a personalização de serviços conforme a demanda, reduzindo o tempo de implementação e simplificando o monitoramento. O sistema será hospedado em clouds como AWS, GCP ou Azure, com redundância geográfica e distribuição de carga equilibrada.
 
 \newpage
 \section{Conclusão}
+Ao unir jogos educativos, alertas personalizados e mapas interativos, \textit{Zapp} convida a população a ser protagonista na luta contra a dengue, enquanto oferece às autoridades informações precisas para decisões estratégicas.
 
-O protótipo de interface desenvolvido para o aplicativo Zapp cumpre os objetivos estabelecidos, alinhando os requisitos de usabilidade, acessibilidade e engajamento social. As telas foram projetadas e construídas considerando não apenas a estética visual, mas também a eficiência e a clareza das interações, garantindo que usuários de diferentes perfis possam navegar pelo aplicativo sem dificuldades.  
+A escolha de uma arquitetura Cliente-Servidor e tecnologias escaláveis reflete um cuidado em manter o sistema vivo, sempre pronto para evoluir com novas funcionalidades, integrar-se a novas políticas públicas e de fácil manutenção. Recompensas virtuais, certificados de participação social e a integração com serviços locais não apenas motivam o engajamento, mas também reforçam laços comunitários.
 
-Além disso, a adoção de práticas de prototipação, testes de usabilidade e validação contínua com usuários reais permitiu refinar a interface de forma iterativa, resultando em um produto final robusto e adaptado às necessidades do público-alvo.  
-
-Acreditamos que o Zapp tem potencial para se tornar uma ferramenta relevante no contexto de saúde pública, unindo tecnologia, educação e participação comunitária para reduzir a incidência de dengue e fortalecer o senso de responsabilidade coletiva.
+No fim, o escopo do projeto está além de prevenir uma doença: propõe um modelo de como a inovação digital pode ser simples, envolvente e, acima de tudo, coletiva.
 
 \newpage
+\renewcommand{\refname}{Bibliografia}
 \begin{thebibliography}{09}
-\bibitem{pressman-2019} PRESSMAN, R. S. 
-\textbf{Engenharia de Software}. 
-8. ed. McGraw Hill, 2019.
+\bibitem{ibge-2022} INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). 
+\textbf{Censo Demográfico 2022: São José do Rio Preto}. 
+2022. 
+Disponível em: \url{https://www.ibge.gov.br/cidades-e-estados/sp/sao-jose-do-rio-preto.html}. 
+Acesso em: 20 abr. 2025.
 
+\bibitem{} %{title} %author name here
+\textbf{}. %text here
 
-\bibitem{nielsen} NIELSEN, J. 
-\textbf{10 Usability Heuristics for User Interface Design}. 
-Nielsen Norman Group, 1994.
+\bibitem{} %{title} %author name here
+\textbf{}. %text here
+
 \end{thebibliography}
-
 \end{document}
