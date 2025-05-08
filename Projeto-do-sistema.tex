@@ -93,8 +93,122 @@ A arquitetura do sistema, pensada para ser dinâmica e escalável para os morado
 \section{Desenvolvimento}
 
 \subsection{Modelagem do Sistema}
+A modelagem do Zapp evidencia a complexidade e a multidisciplinaridade requeridas para unir cidadãos, autoridades e tecnologia numa plataforma focada na luta contra a dengue. A arquitetura do sistema foi estruturada com base nos diagramas apresentados para assegurar a participação coletiva, rapidez na resposta epidemiológica e escalabilidade, em conformidade com os pilares de interatividade, segurança e adaptabilidade descritos no projeto. A seguir, diversos diagramas serão utilizados para melhor entendimento acerca do projeto.
 
+
+\subsubsection{Diagrama de Classes}
+O Diagrama de Classes (Figura \ref{fig:classes}) estabelece a espinha dorsal do sistema, definindo entidades como Usuário, Denúncia, Sintoma, Recompensa e Relatório, além de suas relações. Essa estrutura assegura a gestão de dados essenciais, como perfis de usuários, histórico de interações, denúncias validadas e métricas de gamificação, consolidando a base para operações seguras e eficientes no PostgreSQL.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Diagrama de clases.png}
+    \caption{Diagrama de classes}
+    \label{fig:classes}
+\end{figure}
+
+
+\subsubsection{Diagramas de Interação}
+Os Diagramas de Interação a seguir detalham processos críticos do sistema
+
+\begin{enumerate}
+  \item Geração de Relatórios para Autoridades (Figura \ref{fig:autoridades}): Automatiza a compilação de dados epidemiológicos (ex.: focos de dengue, sintomas reportados) em relatórios acionáveis, facilitando decisões em tempo real pelas autoridades.
+
+  \item Validação de Denúncias (Figura \ref{fig:denuncias}): Define o fluxo colaborativo entre cidadãos (envio de denúncias) e agentes de saúde (análise in loco), garantindo confiabilidade nas informações.
+
+  \item Questionário de Sintomas (Figura \ref{fig:sintomas}): Orienta usuários na autoavaliação de saúde, com respostas direcionando alertas para o sistema de vigilância.
+
+  \item Gamificação (Figura \ref{fig:gamefy}): Conecta conquistas (ex.: eliminação de focos) a recompensas (pontos, badges), incentivando participação contínua.
+
+  \item Integração com APIs Externas (Figura \ref{fig:apis}): Permite interoperabilidade com serviços como mapas georreferenciados e sistemas de saúde públicos, ampliando a capacidade de análise contextual.
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Geração de relatório para autoridades.png}
+    \caption{Diagrama de interação para a geração de relatório para autoridades}
+    \label{fig:autoridades}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Validação de denúncia.png}
+    \caption{Diagrama de interação para a validação de denúncias}
+    \label{fig:denuncias}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Preenchimento de questionário de sintomas.png}
+    \caption{Diagrama de interação para o preenchimento do questionário de sintomas}
+    \label{fig:sintomas}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Sistema de gamificação.png}
+    \caption{Diagrama de interação para o sistema de gamificação}
+    \label{fig:gamefy}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Integração com APIs externas.png}
+    \caption{Diagrama de interação para as APIs externas}
+    \label{fig:apis}
+\end{figure}
+
+\subsubsection{Diagrama de Casos de Uso}
+O Diagrama de Casos de Uso (Figura \ref{fig:use-case}) sintetiza as interações entre atores (cidadãos, autoridades, sistemas externos) e funcionalidades centrais, reforçando a natureza colaborativa da plataforma.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{dist/Diagrama de casos de uso.png}
+    \caption{Diagrama de casos de uso}
+    \label{fig:use-case}
+\end{figure}
+
+A união desses modelos demonstra como o Zapp harmoniza a experiência do usuário (por meio da gamificação e do design intuitivo no React Native) com a solidez técnica (com o Node.js cuidando da lógica de negócio e das integrações). A proteção de dados sensíveis é garantida pela autenticação segura no diagrama de classes, enquanto a modularidade da arquitetura possibilita a adaptação a novas necessidades, como a expansão para outras enfermidades ou regiões. Por enquanto, podemos nos concentrar na arquitetura do sistema.
+
+\newpage
 \subsection{Projeto de Arquitetura do Sistema}
+
+\subsubsection{Proposta de Arquitetura}
+
+A arquitetura sugerida utiliza uma estratégia cliente-servidor em camadas, incorporando componentes de microsserviços para assegurar escalabilidade, adaptabilidade e alta disponibilidade nos módulos vitais do sistema. Esta estrutura tem como objetivo proporcionar aos usuários uma experiência sólida, com uma integração suave entre as diversas camadas e componentes.
+
+\subsubsection{Cliente (Front)}
+ 
+ O desenvolvimento do lado do cliente é realizado com React Native, uma tecnologia de desenvolvimento multiplataforma que possibilita a produção de aplicativos nativos para Android e iOS, assegurando eficácia e uma experiência de usuário consistente.  O desenvolvedor de interface será encarregado de interagir diretamente com os usuários, oferecendo uma interface intuitiva e de fácil utilização.  A \textbf{autenticação} é um dos módulos principais do frontend, que emprega o \textbf{OAuth2} para um acesso seguro e incorpora um processo de verificação de documentos oficiais, assegurando que somente usuários autenticados tenham acesso às funcionalidades da plataforma.
+ 
+O módulo \textbf{educacional} inclui um reprodutor de vídeos com funcionalidades de legendas e Libras, bem como testes interativos para estimular o aprendizado.  O recurso de \textbf{denúncias} possibilita que os usuários preencham um formulário com a opção de enviar fotos e registrar sua localização geográfica, além de fornecer um retorno para uso offline, assegurando a acessibilidade em regiões com conexão de internet restrita.  A \textbf{gamificação} é realizada através de um sistema de classificação, tarefas e prêmios visuais, fundamentados no modelo Octalysis, promovendo a participação ativa e o envolvimento constante dos usuários.  O \textbf{monitoramento de sintomas} disponibiliza um questionário interativo com a habilidade de emitir alertas em tempo real, possibilitando que o usuário seja notificado imediatamente sobre qualquer sintoma relevante.
+
+\subsubsection{Servidor (Backend)}
+ O servidor é construído combinando Node.js e Express.js, resultando em uma API REST sólida e expansível para gerenciar as solicitações do frontend de maneira eficaz.  A estrutura do servidor utiliza containers com Docker, garantindo isolamento, portabilidade e escalabilidade simples.  O \textbf{API Gateway}, que emprega \textbf{NGINX}, tem a função de equilibrar a carga e encaminhar as solicitações, assegurando a alta disponibilidade e distribuindo eficientemente as solicitações entre os microsserviços.  O backend é formado por microsserviços especializados, cada um com uma função crucial a desempenhar.
+ 
+ O microsserviço de \textbf{usuários} gerencia a autenticação, o gerenciamento de perfis e as interações relacionadas aos usuários. O microsserviço de \textbf{gamificação} é responsável por calcular os algoritmos de pontuação, além de aplicar um sistema de \textbf{anti-viés socioeconômico}, garantindo que os processos sejam justos e imparciais para todos os participantes. O microsserviço de \textbf{denúncias} valida as informações recebidas, utilizando \textbf{inteligência artificial} para análise de fotos e integrando-se com sistemas de mapas para georreferenciamento.
+
+subsubsection{Camada de Dados}
+
+A camada de dados é composta por um banco de dados \textbf{PostgreSQL}, que é responsável por armazenar dados estruturados, como as informações dos usuários e as denúncias realizadas. O \textbf{Redis} é utilizado como sistema de cache, otimizando o desempenho ao armazenar rankings e métricas de engajamento, que são acessados com frequência. O armazenamento de arquivos grandes, como fotos e vídeos educacionais, é feito através do serviço \textbf{Amazon S3}, que oferece escalabilidade e segurança para armazenar grandes volumes de dados de forma eficiente e econômica.
+
+\subsubsection{Integrações Externas}
+
+A arquitetura proposta também inclui diversas integrações com serviços externos para enriquecer a funcionalidade da aplicação. A \textbf{OpenWeatherMap} é utilizada para fornecer dados climáticos em tempo real, permitindo que a plataforma faça previsões sobre áreas de risco e condições climáticas que podem afetar a saúde dos usuários. A integração com o \textbf{Google Maps} permite o georreferenciamento de denúncias, facilitando a localização exata dos eventos reportados. Além disso, a integração com a \textbf{Secretaria Municipal de Saúde} permite acessar dados epidemiológicos atualizados, proporcionando informações críticas em tempo real para o monitoramento de possíveis surtos e a adoção de medidas preventivas.
+
+Esta arquitetura foi planejada para garantir alta disponibilidade, escalabilidade e desempenho, criando uma plataforma robusta e eficiente que atende tanto às necessidades dos usuários quanto às exigências de processamento de dados e integração com sistemas externos.
+
+\subsubsection{Diagrama da Arquitetura}
+
+A seguir, apresentamos o diagrama que ilustra a arquitetura proposta, mostrando as camadas e seus componentes principais.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{dist/Arquitetura final.png}
+    \caption{Diagrama da Arquitetura usada no sistema Zapp}
+    \label{fig:arquitetura}
+\end{figure}
+
 
 \subsection{Organização dos Componentes}
 
