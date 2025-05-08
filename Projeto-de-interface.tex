@@ -85,7 +85,7 @@ O documento descreve as etapas de análise, projeto, construção e validação,
 \section{Desenvolvimento}
 
 \subsection{Análise}
-A análise das interfaces do aplicativo ZAPP foi realizada seguindo os princípios de usabilidade propostos por Pressman \cite{pressman-2019}, com o objetivo de assegurar que o design do sistema seja acessível, funcional e adaptável às necessidades reais dos usuários. Um aspecto crucial dessa análise foi a identificação minuciosa do perfil dos usuários, abrangendo desde pessoas iniciantes, que podem ter pouca experiência com tecnologia, até usuários intermediários e avançados, que necessitam de funcionalidades mais rápidas e eficazes.
+A análise das interfaces do aplicativo Zapp foi realizada seguindo os princípios de usabilidade propostos por Pressman \cite{pressman-2019}, com o objetivo de assegurar que o design do sistema seja acessível, funcional e adaptável às necessidades reais dos usuários. Um aspecto crucial dessa análise foi a identificação minuciosa do perfil dos usuários, abrangendo desde pessoas iniciantes, que podem ter pouca experiência com tecnologia, até usuários intermediários e avançados, que necessitam de funcionalidades mais rápidas e eficazes.
 
 Outro ponto examinado foram as tarefas que os usuários precisam executar no sistema. Isso engloba ações como login, registro, denúncia de focos, acompanhamento de sintomas, consulta a rankings e acesso a materiais educativos. Cada tarefa foi avaliada com base na frequência, complexidade e relevância, possibilitando a identificação de áreas críticas que necessitam de um cuidado especial no design. Por exemplo, diminuir a quantidade de cliques necessários para denúncias ou fornecer atalhos para funções mais usadas, o que aumenta a eficácia geral.
 
@@ -94,7 +94,7 @@ Adicionalmente, levou-se em conta o contexto físico de utilização do aplicati
 Finalmente, a análise considerou aspectos humanos cruciais, como a limitação da memória de curto prazo e a tendência inata de cometer erros. O sistema foi concebido para não sobrecarregar o usuário com informações demasiadamente complexas em uma única tela, além de oferecer suporte contínuo durante a interação, através de mensagens de confirmação, indicadores visuais claros e opções de recuperação de falhas. Esses componentes são cruciais para assegurar uma experiência não só funcional, mas também segura e confortável, fomentando a confiança no uso contínuo do aplicativo.
 
 \subsection{Projeto}
-O desenvolvimento das interfaces do aplicativo ZAPP foi realizado cuidadosamente, levando em conta os princípios tradicionais de usabilidade e design focado no usuário.  Cada tela foi concebida não somente para desempenhar seu papel prático, mas também para proporcionar uma experiência fluida, intuitiva e eficaz, minimizando falhas, potencializando o envolvimento e assegurando a acessibilidade para diversos tipos de usuários.
+O desenvolvimento das interfaces do aplicativo Zapp foi realizado cuidadosamente, levando em conta os princípios tradicionais de usabilidade e design focado no usuário.  Cada tela foi concebida não somente para desempenhar seu papel prático, mas também para proporcionar uma experiência fluida, intuitiva e eficaz, minimizando falhas, potencializando o envolvimento e assegurando a acessibilidade para diversos tipos de usuários.
 
 \subsubsection{Tela de Login}
 
@@ -105,7 +105,7 @@ O desenvolvimento das interfaces do aplicativo ZAPP foi realizado cuidadosamente
   \label{fig:login}
 \end{figure}
 
-No ecrã de login, optou-se por colocar o usuário no controle, proporcionando a flexibilidade entre o login convencional e a autenticação integrada ao sistema do gov.br.  Esta decisão possibilita ao usuário selecionar a alternativa que julga mais conveniente e segura, fortalecendo a sensação de controle.  Adicionalmente, foi adicionada a opção de recuperação de acesso para reduzir o efeito de senhas perdidas, prevenindo bloqueios desnecessários.  Itens minúsculos, como o ícone de olho que permite exibir ou esconder a senha, reforçam a confiança e a transparência. Por outro lado, o mapa localizado na parte inferior liga a identidade visual do aplicativo à proposta comunitária, intensificando o engajamento.
+No menu de login, optou-se por colocar o usuário no controle, proporcionando a flexibilidade entre o login convencional e a autenticação integrada ao sistema do gov.br.  Esta decisão possibilita ao usuário selecionar a alternativa que julga mais conveniente e segura, fortalecendo a sensação de controle.  Adicionalmente, foi adicionada a opção de recuperação de acesso para reduzir o efeito de senhas perdidas, prevenindo bloqueios desnecessários.  Itens minúsculos, como o ícone de olho que permite exibir ou esconder a senha, reforçam a confiança e a transparência. Por outro lado, o mapa localizado na parte inferior liga a identidade visual do aplicativo à proposta comunitária, intensificando o engajamento.
 
 \subsubsection{Tela de Cadastro}
 
@@ -116,9 +116,9 @@ No ecrã de login, optou-se por colocar o usuário no controle, proporcionando a
   \label{fig:cadastro}
 \end{figure}
 
-A tela de cadastro segue essa a mesma ideia da tela de login, com atenção a detalhes que melhoram a experiência do usuário. Incorporou-se a opção de autenticação alternativa pelo gov.br e uma separação visual evidente entre as alternativas para prevenir confusão.  Componentes como o link para os termos de uso e as políticas de privacidade fomentam a transparência e a responsabilidade. Por outro lado, a validação em tempo real dos campos e as orientações para a criação da senha direcionam o usuário e diminuem a possibilidade de falhas, tornando o procedimento mais seguro e eficaz.
+A tela de cadastro segue essa mesma ideia da tela de login, com atenção a detalhes que melhoram a experiência do usuário. Incorporou-se a opção de autenticação alternativa pelo gov.br e uma separação visual evidente entre as alternativas para prevenir confusão.  Componentes como o link para os termos de uso e as políticas de privacidade fomentam a transparência e a responsabilidade. Por outro lado, a validação em tempo real dos campos e as orientações para a criação da senha direcionam o usuário e diminuem a possibilidade de falhas, tornando o procedimento mais seguro e eficaz.
 
-\subsubsection{Tela Home}
+\subsubsection{Home}
 
 \begin{figure}[H]
   \centering
@@ -197,21 +197,28 @@ Por fim, a tela de loading não foi negligenciada: ela oferece feedback visual a
 
 \subsection{Construção}
 
-A elaboração da interface seguiu um processo iterativo, iniciando com a prototipagem em papel para validação inicial das ideias, assegurando rapidez e custo reduzido nas alterações. Posteriormente, foram criados protótipos funcionais, possibilitando testes reais e correções antes da codificação final. Os testes com usuários reais permitiram identificar áreas críticas e validar decisões de design, enquanto o aprimoramento constante com base em feedback permitiu aprimorar a interface para atingir o equilíbrio perfeito entre estética, funcionalidade e usabilidade.
+A elaboração da interface seguirá um processo iterativo, iniciando com a prototipagem em papel para validação inicial das ideias, assegurando rapidez e custo reduzido nas alterações. Posteriormente, serão criados protótipos funcionais, possibilitando testes reais e correções antes da codificação final. 
+
+Ademais, a construção da interface será desenvolvida utilizando frameworks multiplataforma modernos, com ênfase no React Native em combinação com o TypeScript, garantindo compatibilidade integral com dispositivos Android e iOS. A interface priorizará design responsivo, adaptando-se a diferentes tamanhos de tela e orientações (retrato/paisagem). Além disso, foi concebida com foco em acessibilidade, seguindo diretrizes como contraste adequado e navegação simplificada.
+
+Os testes com usuários reais permitirão identificar áreas críticas e validar decisões de design, enquanto o aprimoramento constante com base em \textit{feedback} permitirá aprimorar a interface para atingir o equilíbrio perfeito entre estética, funcionalidade e usabilidade.
+
+
 
 \subsection{Validação}
-A validação do projeto foi feita meticulosamente, aplicando testes de usabilidade para diversos perfis de usuários, assegurando que o sistema atendesse desde iniciantes até usuários avançados. Dados quantitativos e qualitativos foram coletados através de questionários, possibilitando uma análise completa do desempenho da interface. Foram feitos ajustes finais com base nesses dados, consolidando um produto que proporciona uma experiência confiável, eficaz e em consonância com os objetivos do projeto.
+
+A validação do projeto será feita meticulosamente, aplicando testes de usabilidade para diversos perfis de usuários, assegurando que o sistema atenda desde iniciantes até usuários avançados. Dados quantitativos e qualitativos serão coletados através de questionários, possibilitando uma análise completa do desempenho da interface. Serão feitos ajustes finais com base nesses dados, consolidando um produto que proporcionará uma experiência confiável, eficaz e em consonância com os objetivos do projeto.
 
 \newpage
 \section{Conclusão}
 
-O protótipo de interface desenvolvido para o aplicativo ZAPP cumpre os objetivos estabelecidos, alinhando os requisitos de usabilidade, acessibilidade e engajamento social. As telas foram projetadas e construídas considerando não apenas a estética visual, mas também a eficiência e a clareza das interações, garantindo que usuários de diferentes perfis possam navegar pelo aplicativo sem dificuldades.  
+O protótipo de interface desenvolvido para o aplicativo Zapp cumpre os objetivos estabelecidos, alinhando os requisitos de usabilidade, acessibilidade e engajamento social. As telas foram projetadas e construídas considerando não apenas a estética visual, mas também a eficiência e a clareza das interações, garantindo que usuários de diferentes perfis possam navegar pelo aplicativo sem dificuldades.  
 
 Além disso, a adoção de práticas de prototipação, testes de usabilidade e validação contínua com usuários reais permitiu refinar a interface de forma iterativa, resultando em um produto final robusto e adaptado às necessidades do público-alvo.  
 
-Acreditamos que o ZAPP tem potencial para se tornar uma ferramenta relevante no contexto de saúde pública, unindo tecnologia, educação e participação comunitária para reduzir a incidência de dengue e fortalecer o senso de responsabilidade coletiva.
+Acreditamos que o Zapp tem potencial para se tornar uma ferramenta relevante no contexto de saúde pública, unindo tecnologia, educação e participação comunitária para reduzir a incidência de dengue e fortalecer o senso de responsabilidade coletiva.
 
-
+\newpage
 \begin{thebibliography}{09}
 \bibitem{pressman-2019} PRESSMAN, R. S. 
 \textbf{Engenharia de Software}. 
